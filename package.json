@@ -1,0 +1,25 @@
+{
+  "name": "peloton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "skeletor": "skeletor --output styles/skeletor --no-sourcemap",
+    "typebeast": "typebeast --output styles/typebeast --no-sourcemap"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^9.3.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@skeletor/css": "^0.11.0",
+    "typebeast": "^0.1.2"
+  }
+}
