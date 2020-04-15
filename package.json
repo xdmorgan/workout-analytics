@@ -19,7 +19,7 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "@skeletor/css": "^0.11.0",
-    "typebeast": "^0.1.2"
+    "@skeletor/css": "^0.12.0",
+    "typebeast": "^0.1.3"
   }
 }

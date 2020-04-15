@@ -1,0 +1,42 @@
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, figure, pre { margin-top: 1rem; margin-bottom: 1rem; }
+
+blockquote, figure { margin-left: 0; margin-right: 0; }
+
+.type-h1-xxl { font-size: 2.625rem; line-height: 1.1; font-weight: bold; letter-spacing: -0.03125em; }
+
+.type-h1-xl { font-size: 2.25rem; line-height: 1.1; font-weight: bold; letter-spacing: -0.03125em; }
+
+.type-h1, .wysiwyg h1 { font-size: 2rem; line-height: 1.1; font-weight: bold; letter-spacing: -0.03125em; }
+
+.type-h2, .wysiwyg h2 { font-size: 1.75rem; line-height: 1.1; font-weight: bold; }
+
+.type-h3, .wysiwyg h3 { font-size: 1.25rem; line-height: 1.1; font-weight: bold; }
+
+.type-h4, .wysiwyg h4 { font-size: 1rem; line-height: 1.2; font-weight: bold; }
+
+.type-h5, .wysiwyg h5 { font-size: 0.8125rem; line-height: 1.2; font-weight: bold; }
+
+.type-h6, .wysiwyg h6 { font-size: 0.625rem; line-height: 1.2; font-weight: bold; text-transform: uppercase; }
+
+.type-lede { font-size: 1.125rem; line-height: 1.5; }
+
+.type-para, .wysiwyg p, .wysiwyg ul, .wysiwyg ol, .wysiwyg dl, .wysiwyg blockquote { font-size: 1rem; line-height: 1.7; }
+
+.type-small, .wysiwyg small { font-size: 0.875rem; line-height: 1.7; }
+
+.type-caption, .wysiwyg figcaption { font-size: 0.625rem; line-height: 1.5; }
+
+@media screen and (min-width: 768px) { .type-h1-xxl { font-size: 5rem; }
+  .type-h1-xl { font-size: 4rem; }
+  .type-h1, .wysiwyg h1 { font-size: 3rem; }
+  .type-h2, .wysiwyg h2 { font-size: 2rem; }
+  .type-h3, .wysiwyg h3 { font-size: 1.5rem; }
+  .type-h4, .wysiwyg h4 { font-size: 1.25rem; }
+  .type-h5, .wysiwyg h5 { font-size: 1rem; }
+  .type-h6, .wysiwyg h6 { font-size: 0.75rem; }
+  .type-lede { font-size: 1.5rem; }
+  .type-para, .wysiwyg p, .wysiwyg ul, .wysiwyg ol, .wysiwyg dl, .wysiwyg blockquote { font-size: 1.125rem; }
+  .type-small, .wysiwyg small { font-size: 1rem; }
+  .type-caption, .wysiwyg figcaption { font-size: 0.75rem; } }
+
+/*# sourceMappingURL=typebeast.css.map */
