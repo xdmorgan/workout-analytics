@@ -1,0 +1,25 @@
+// Margin resets
+// ----------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+blockquote,
+figure,
+pre {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+blockquote,
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}

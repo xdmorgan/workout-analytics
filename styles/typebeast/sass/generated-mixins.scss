@@ -1,0 +1,515 @@
+// h1-xxl
+// ---------------------------------------------------------
+
+@mixin type-h1-xxl-default(
+  $family: null,
+  $letter: -0.03125em,
+  $line: 46.2,
+  $size: 42,
+  $style: null,
+  $transform: null,
+  $weight: bold
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+@mixin type-h1-xxl-large(
+  $family: null,
+  $letter: null,
+  $line: null,
+  $size: 80,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+// h1-xl
+// ---------------------------------------------------------
+
+@mixin type-h1-xl-default(
+  $family: null,
+  $letter: -0.03125em,
+  $line: 39.6,
+  $size: 36,
+  $style: null,
+  $transform: null,
+  $weight: bold
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+@mixin type-h1-xl-large(
+  $family: null,
+  $letter: null,
+  $line: null,
+  $size: 64,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+// h1
+// ---------------------------------------------------------
+
+@mixin type-h1-default(
+  $family: null,
+  $letter: -0.03125em,
+  $line: 35.2,
+  $size: 32,
+  $style: null,
+  $transform: null,
+  $weight: bold
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+@mixin type-h1-large(
+  $family: null,
+  $letter: null,
+  $line: null,
+  $size: 48,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+// h2
+// ---------------------------------------------------------
+
+@mixin type-h2-default(
+  $family: null,
+  $letter: null,
+  $line: 30.8,
+  $size: 28,
+  $style: null,
+  $transform: null,
+  $weight: bold
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+@mixin type-h2-large(
+  $family: null,
+  $letter: null,
+  $line: null,
+  $size: 32,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+// h3
+// ---------------------------------------------------------
+
+@mixin type-h3-default(
+  $family: null,
+  $letter: null,
+  $line: 22,
+  $size: 20,
+  $style: null,
+  $transform: null,
+  $weight: bold
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+@mixin type-h3-large(
+  $family: null,
+  $letter: null,
+  $line: null,
+  $size: 24,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+// h4
+// ---------------------------------------------------------
+
+@mixin type-h4-default(
+  $family: null,
+  $letter: null,
+  $line: 19.2,
+  $size: 16,
+  $style: null,
+  $transform: null,
+  $weight: bold
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+@mixin type-h4-large(
+  $family: null,
+  $letter: null,
+  $line: null,
+  $size: 20,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+// h5
+// ---------------------------------------------------------
+
+@mixin type-h5-default(
+  $family: null,
+  $letter: null,
+  $line: 15.6,
+  $size: 13,
+  $style: null,
+  $transform: null,
+  $weight: bold
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+@mixin type-h5-large(
+  $family: null,
+  $letter: null,
+  $line: null,
+  $size: 16,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+// h6
+// ---------------------------------------------------------
+
+@mixin type-h6-default(
+  $family: null,
+  $letter: null,
+  $line: 12,
+  $size: 10,
+  $style: null,
+  $transform: uppercase,
+  $weight: bold
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+@mixin type-h6-large(
+  $family: null,
+  $letter: null,
+  $line: null,
+  $size: 12,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+// lede
+// ---------------------------------------------------------
+
+@mixin type-lede-default(
+  $family: null,
+  $letter: null,
+  $line: 27,
+  $size: 18,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+@mixin type-lede-large(
+  $family: null,
+  $letter: null,
+  $line: null,
+  $size: 24,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+// para
+// ---------------------------------------------------------
+
+@mixin type-para-default(
+  $family: null,
+  $letter: null,
+  $line: 27.2,
+  $size: 16,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+@mixin type-para-large(
+  $family: null,
+  $letter: null,
+  $line: null,
+  $size: 18,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+// small
+// ---------------------------------------------------------
+
+@mixin type-small-default(
+  $family: null,
+  $letter: null,
+  $line: 23.8,
+  $size: 14,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+@mixin type-small-large(
+  $family: null,
+  $letter: null,
+  $line: null,
+  $size: 16,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+// caption
+// ---------------------------------------------------------
+
+@mixin type-caption-default(
+  $family: null,
+  $letter: null,
+  $line: 15,
+  $size: 10,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
+@mixin type-caption-large(
+  $family: null,
+  $letter: null,
+  $line: null,
+  $size: 12,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
