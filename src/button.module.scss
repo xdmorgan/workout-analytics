@@ -5,12 +5,13 @@
   position: relative;
   display: inline-block;
   min-width: var(--space-2x);
-  padding: 12px var(--space-3x) 14px;
-  border-radius: var(--radius-normal);
+  padding: 14px var(--space-3x) 16px;
+  border-radius: var(--radius-small);
+  letter-spacing: 0.025em;
   border: none;
   // theme styles
   color: var(--color-n80);
-  background-color: var(--color-r40);
+  background-color: var(--color-g30);
   font-weight: bold;
   // content styles
   text-align: center;
@@ -21,17 +22,17 @@
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px color(r30, 0.3);
+    box-shadow: 0 0 0 3px color(g40, 0.3);
   }
   &:hover,
   &:active {
     color: var(--color-n80);
   }
   &:hover {
-    background-color: var(--color-r50);
+    background-color: var(--color-g40);
   }
   &:active {
-    background-color: var(--color-r30);
+    background-color: var(--color-g20);
   }
   &[disabled] {
     color: var(--color-n20);
