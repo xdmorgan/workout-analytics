@@ -7,13 +7,14 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "skeletor": "skeletor --output styles/skeletor --no-sourcemap",
-    "typebeast": "typebeast --output styles/typebeast --no-sourcemap"
+    "skeletor": "skeletor --output public/skeletor",
+    "typebeast": "typebeast --output public/typebeast"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "classnames": "^2.2.6",
     "next": "^9.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

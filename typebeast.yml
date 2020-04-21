@@ -1,42 +1,42 @@
-# hello, world
-
-breakpoints: # required, mvp
+breakpoints:
   large: 768px
 
-typography: # required, mvp
+typography:
   h1-xxl:
     default:
+      family: var(--font-heading)
       size: 42
       line: 46.2
-      weight: bold
-      letter: -0.03125em
+      weight: 300
     large:
       size: 80
   h1-xl:
     default:
+      family: var(--font-heading)
       size: 36
       line: 39.6
-      weight: bold
-      letter: -0.03125em
+      weight: 300
     large:
       size: 64
   h1:
     default:
+      family: var(--font-heading)
       size: 32
       line: 35.2
-      weight: bold
-      letter: -0.03125em
+      weight: 300
     large:
       size: 48
   h2:
     default:
+      family: var(--font-heading)
       size: 28
       line: 30.8
-      weight: bold
+      weight: normal
     large:
       size: 32
   h3:
     default:
+      family: var(--font-heading)
       size: 20
       line: 22
       weight: bold
@@ -44,6 +44,7 @@ typography: # required, mvp
       size: 24
   h4:
     default:
+      family: var(--font-heading)
       size: 16
       line: 19.2
       weight: bold
@@ -51,6 +52,7 @@ typography: # required, mvp
       size: 20
   h5:
     default:
+      family: var(--font-heading)
       size: 13
       line: 15.6
       weight: bold
@@ -58,6 +60,7 @@ typography: # required, mvp
       size: 16
   h6:
     default:
+      family: var(--font-heading)
       size: 10
       line: 12
       weight: bold
@@ -89,7 +92,7 @@ typography: # required, mvp
     large:
       size: 12
 
-wysiwyg: # optional, 1.0
+wysiwyg:
   scope: "wysiwyg"
   elements:
     h1: h1
