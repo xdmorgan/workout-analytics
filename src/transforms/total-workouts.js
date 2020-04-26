@@ -1,4 +1,4 @@
-export default function totalWorkouts({ data }) {
+export default function transform({ data }) {
   return {
     total: 420,
     types: {

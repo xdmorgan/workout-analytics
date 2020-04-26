@@ -1,19 +1,48 @@
-import transformer from "./total-workouts";
+import transformer from "./activity-calendar";
 
 const data = mockData();
 
-// TODO: more Jest config later?
-// https://developer-log.netlify.app/testing-react-components-with-jest-enzyme-nextjs/
-// https://jestjs.io/docs/en/getting-started
-describe("totalWorkouts()", () => {
-  test("Convert raw data to calculated totals", async () => {
-    expect(transformer({ data })).toMatchInlineSnapshot(`
+describe("transform()", () => {
+  test("Convert raw data to calendar friendly format", async () => {
+    const transformed = transformer({ data });
+    expect(transformed).toMatchInlineSnapshot(`
       Object {
-        "total": 420,
-        "types": Object {
-          "ride": 200,
-          "stretch": 205,
-        },
+        "entries": Array [
+          Object {
+            "day": "2019-02-14",
+            "value": 116,
+          },
+          Object {
+            "day": "2019-02-17",
+            "value": 183,
+          },
+          Object {
+            "day": "2019-02-19",
+            "value": 146,
+          },
+          Object {
+            "day": "2019-02-20",
+            "value": 178,
+          },
+          Object {
+            "day": "2019-02-22",
+            "value": 228,
+          },
+          Object {
+            "day": "2019-02-23",
+            "value": 239,
+          },
+          Object {
+            "day": "2019-02-24",
+            "value": 245,
+          },
+          Object {
+            "day": "2019-02-25",
+            "value": 1,
+          },
+        ],
+        "max": "2019-02-24",
+        "min": "2019-02-13",
       }
     `);
   });
