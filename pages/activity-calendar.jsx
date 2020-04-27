@@ -9,7 +9,14 @@ export default function ActivityCalendarPage({ data }) {
         from={min}
         to={max}
         emptyColor="#eeeeee"
-        colors={["#61cdbb", "#97e3d5", "#e8c1a0", "#f47560"]}
+        // colors={["#61cdbb", "#97e3d5", "#e8c1a0", "#f47560"]}
+        colors={[
+          "var(--color-r60)",
+          "var(--color-r50)",
+          "var(--color-r40)",
+          "var(--color-r30)",
+          "var(--color-r20)",
+        ]}
         margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
         yearSpacing={40}
         monthBorderColor="#ffffff"

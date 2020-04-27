@@ -1,17 +1,29 @@
 @import "../../public/skeletor/sass/skeletor.core";
 
 .button {
+  // --button-text-color: var(--color-n80);
+  // --button-text-color--hover: var(--color-n80);
+  // --button-text-color--active: var(--color-n80);
+  // --button-text-color--disabled: var(--color-n20);
+  // --button-bg-color: var(--color-r30);
+  // --button-bg-color--hover: var(--color-r40);
+  // --button-bg-color--active: var(--color-r20);
+  // --button-bg-color--disabled: var(--color-n50);
+  // --button-border-radius: var(--radius-small);
+  // --button-focus-ring-size: 3px;
+  // --button-focus-ring-color: #{color(r40, 0.3)};
+
   // boz-sizing
   position: relative;
   display: inline-block;
   min-width: var(--space-2x);
   padding: 14px var(--space-3x) 16px;
-  border-radius: var(--radius-small);
+  border-radius: var(--button-border-radius, --radius-small);
   letter-spacing: 0.025em;
   border: none;
   // theme styles
-  color: var(--color-n80);
-  background-color: var(--color-g30);
+  color: var(--button-text-color, --color-n80);
+  background-color: var(--button-bg-color, --color-r30);
   font-weight: bold;
   // content styles
   text-align: center;
@@ -22,24 +34,28 @@
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px color(g40, 0.3);
+    box-shadow: 0 0 0 var(--button-focus-ring-size, 3px)
+      var(--button-focus-ring-color);
   }
   &:hover,
   &:active {
-    color: var(--color-n80);
+    color: var(--button-text-color--hover, --color-n80);
   }
   &:hover {
-    background-color: var(--color-g40);
+    background-color: var(--button-bg-color--hover, var(--color-r40));
   }
   &:active {
-    background-color: var(--color-g20);
+    background-color: var(--button-bg-color--active, --color-r20);
   }
   &[disabled] {
-    color: var(--color-n20);
-    background-color: var(--color-n50);
+    color: var(--button-text-color--disabled, --color-n20);
+    background-color: var(--button-bg-color--disabled, --color-n50);
   }
 
   &.fill {
     width: 100%;
+  }
+
+  &--secondary {
   }
 }
