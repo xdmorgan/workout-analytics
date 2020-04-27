@@ -2,13 +2,13 @@
 // ---------------------------------------------------------
 
 @mixin type-h1-xxl-default(
-  $family: null,
-  $letter: -0.03125em,
+  $family: var(--font-heading),
+  $letter: null,
   $line: 46.2,
   $size: 42,
   $style: null,
   $transform: null,
-  $weight: bold
+  $weight: 300
 ) {
   @include typebeast(
     $family,
@@ -45,13 +45,13 @@
 // ---------------------------------------------------------
 
 @mixin type-h1-xl-default(
-  $family: null,
-  $letter: -0.03125em,
+  $family: var(--font-heading),
+  $letter: null,
   $line: 39.6,
   $size: 36,
   $style: null,
   $transform: null,
-  $weight: bold
+  $weight: 300
 ) {
   @include typebeast(
     $family,
@@ -88,13 +88,13 @@
 // ---------------------------------------------------------
 
 @mixin type-h1-default(
-  $family: null,
-  $letter: -0.03125em,
+  $family: var(--font-heading),
+  $letter: null,
   $line: 35.2,
   $size: 32,
   $style: null,
   $transform: null,
-  $weight: bold
+  $weight: 300
 ) {
   @include typebeast(
     $family,
@@ -131,13 +131,13 @@
 // ---------------------------------------------------------
 
 @mixin type-h2-default(
-  $family: null,
+  $family: var(--font-heading),
   $letter: null,
   $line: 30.8,
   $size: 28,
   $style: null,
   $transform: null,
-  $weight: bold
+  $weight: normal
 ) {
   @include typebeast(
     $family,
@@ -174,7 +174,7 @@
 // ---------------------------------------------------------
 
 @mixin type-h3-default(
-  $family: null,
+  $family: var(--font-heading),
   $letter: null,
   $line: 22,
   $size: 20,
@@ -217,7 +217,7 @@
 // ---------------------------------------------------------
 
 @mixin type-h4-default(
-  $family: null,
+  $family: var(--font-heading),
   $letter: null,
   $line: 19.2,
   $size: 16,
@@ -260,7 +260,7 @@
 // ---------------------------------------------------------
 
 @mixin type-h5-default(
-  $family: null,
+  $family: var(--font-heading),
   $letter: null,
   $line: 15.6,
   $size: 13,
@@ -303,7 +303,7 @@
 // ---------------------------------------------------------
 
 @mixin type-h6-default(
-  $family: null,
+  $family: var(--font-heading),
   $letter: null,
   $line: 12,
   $size: 10,
