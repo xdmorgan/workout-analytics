@@ -21,7 +21,7 @@ export function transform({ data, transformers }) {
  * Key constants, these will surely change at some point
  */
 
-export const KEY_NAMES = {
+export const RAW_KEYS = {
   WorkoutTimestamp: "Workout Timestamp",
   LiveOnDemand: "Live/On-Demand",
   InstructorName: "Instructor Name",
@@ -40,6 +40,15 @@ export const KEY_NAMES = {
   AverageHeartrate: "Avg. Heartrate",
   AverageIncline: "Avg. Incline",
   AveragePace: "Avg. Pace (min/mi)",
+};
+
+/**
+ * Key constants, these will surely change at some point
+ */
+
+export const TRANSFORMED_KEYS = {
+  TotalWorkouts: "total-workouts",
+  ActivityCalendar: "activity-calendar",
 };
 
 /**
