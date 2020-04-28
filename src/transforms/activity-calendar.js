@@ -1,14 +1,14 @@
 import dateFormat from "date-fns/format";
 import min from "date-fns/min";
 import max from "date-fns/max";
-import { KEY_NAMES } from ".";
+import { RAW_KEYS } from ".";
 
 const format = (d, pattern = "yyyy-MM-dd") => dateFormat(d, pattern);
 
 export default function transform({ data }) {
   const entries = data.reduce((all, entry) => {
-    const day = format(new Date(entry[KEY_NAMES.WorkoutTimestamp]));
-    const value = entry[KEY_NAMES.CaloriesBurned];
+    const day = format(new Date(entry[RAW_KEYS.WorkoutTimestamp]));
+    const value = entry[RAW_KEYS.CaloriesBurned];
     if (all[day]) {
       all[day] = {
         ...all[day],

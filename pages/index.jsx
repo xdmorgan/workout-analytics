@@ -51,7 +51,7 @@ export default function Index() {
               or
             </div>
             <div className="d-block">
-              <Button>Use test data instead</Button>
+              <Button appearance="secondary">Use test data instead</Button>
             </div>
           </div>
           <p className="type-small c-n50 my-0" style={{ maxWidth: 660 }}>
@@ -69,7 +69,16 @@ export default function Index() {
           <a>activity-calendar Page</a>
         </Link>
 
-        <div className="mt-10x"></div>
+        <div className="mt-10x">
+          <div className="d-block mb-4x">
+            <Button>Analyze my workouts</Button>
+            <Button disabled>Analyze my workouts</Button>
+            <Button appearance="secondary">Analyze my workouts</Button>
+            <Button appearance="negative">Analyze my workouts</Button>
+            <Button appearance="ghost-light">Analyze my workouts</Button>
+            <Button appearance="ghost-dark">Analyze my workouts</Button>
+          </div>
+        </div>
       </div>
     </main>
   );
