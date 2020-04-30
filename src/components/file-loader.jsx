@@ -35,8 +35,8 @@ export function FileLoader({
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   return (
-    <div className="d-flex bg-n70">
-      <div {...getRootProps({ className: "w-100" })}>
+    <div className="d-flex bg-n70 h-fill" style={{ minHeight: "100vh" }}>
+      <div {...getRootProps({ className: "d-flex flx-a-c flx-g-1 flx-j-c" })}>
         <input {...getInputProps({ accept })} />
         <p>Drag 'n' drop some files here, or click to select files</p>
       </div>

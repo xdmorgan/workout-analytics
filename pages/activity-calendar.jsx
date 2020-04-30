@@ -1,9 +1,19 @@
+import Router from "next/router";
 import { ResponsiveCalendar } from "@nivo/calendar";
 import { TRANSFORMED_KEYS } from "../src/transforms";
+import { WorkoutDataContext } from "../src/contexts/workout-data";
 
-export default function ActivityCalendarPage({ data }) {
-  console.log(data);
-  const { min, max, entries } = data[TRANSFORMED_KEYS.ActivityCalendar];
+export default function ActivityCalendarPage() {
+  const { ready, transformed } = React.useContext(WorkoutDataContext);
+  return ready ? <View data={transformed} /> : <Loader />;
+}
+
+function Loader() {
+  return <p>loading...</p>;
+}
+
+function View(props) {
+  const { min, max, entries } = props.data[TRANSFORMED_KEYS.ActivityCalendar];
   return (
     <div style={{ height: 500 }}>
       <ResponsiveCalendar

@@ -5,7 +5,7 @@ export default function App({ Component, pageProps }) {
   const workoutData = useWorkoutData();
   return (
     <WorkoutDataContext.Provider value={workoutData}>
-      <Component {...pageProps} data={workoutData.transformed} />
+      <Component {...pageProps} />
     </WorkoutDataContext.Provider>
   );
 }
