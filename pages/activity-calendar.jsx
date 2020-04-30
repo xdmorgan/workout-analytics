@@ -1,8 +1,19 @@
+import Router from "next/router";
 import { ResponsiveCalendar } from "@nivo/calendar";
 import { TRANSFORMED_KEYS } from "../src/transforms";
+import { WorkoutDataContext } from "../src/contexts/workout-data";
 
-export default function ActivityCalendarPage({ data }) {
-  const { min, max, entries } = data[TRANSFORMED_KEYS.ActivityCalendar];
+export default function ActivityCalendarPage() {
+  const { ready, transformed } = React.useContext(WorkoutDataContext);
+  return ready ? <View data={transformed} /> : <Loader />;
+}
+
+function Loader() {
+  return <p>loading...</p>;
+}
+
+function View(props) {
+  const { min, max, entries } = props.data[TRANSFORMED_KEYS.ActivityCalendar];
   return (
     <div style={{ height: 500 }}>
       <ResponsiveCalendar
@@ -12,11 +23,11 @@ export default function ActivityCalendarPage({ data }) {
         emptyColor="#eeeeee"
         // colors={["#61cdbb", "#97e3d5", "#e8c1a0", "#f47560"]}
         colors={[
-          "var(--color-g60)",
-          "var(--color-g50)",
-          "var(--color-g40)",
-          "var(--color-g30)",
-          "var(--color-g20)",
+          "var(--color-r60)",
+          "var(--color-r50)",
+          "var(--color-r40)",
+          "var(--color-r30)",
+          "var(--color-r20)",
         ]}
         margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
         yearSpacing={40}

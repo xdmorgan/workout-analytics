@@ -1,7 +1,19 @@
 import Link from "next/link";
 import { Button } from "../src/components/button";
+import { FileLoader } from "../src/components/file-loader";
+import { WorkoutDataContext } from "../src/contexts/workout-data";
 
 export default function Index() {
+  const { ready, setData } = React.useContext(WorkoutDataContext);
+  if (!ready) {
+    return (
+      <FileLoader
+        onLoad={setData}
+        onError={console.error}
+        onAbort={console.error}
+      />
+    );
+  }
   return (
     <main>
       <div className="bg-n0 c-n70 align-c py-1x">
@@ -19,8 +31,6 @@ export default function Index() {
       </div>
       <div className="bg-n10 c-n80 align-c py-10x md:py-16x">
         <div className="container d-flex flx-a-c flx-j-c flx-d-c child-my-0">
-          <h1 className="type-h1-xxl mb-4x">200 Rides Later</h1>
-          <h1 className="type-h1-xxl mb-4x">Pelotongle Analytics</h1>
           <h1 className="type-h1-xxl mb-4x">🚴‍♂️ &times; 💯 &times; ✌️</h1>
           <div
             className="type-para mb-3x md:mb-6x mx-auto child-my-0"

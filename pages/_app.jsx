@@ -1,8 +1,11 @@
-import data from "../src/data/workouts";
-import transformers, { transform } from "../src/transforms";
-
-const TRANSFORMED = transform({ data, transformers });
+import { useWorkoutData } from "../src/hooks/use-workout-data";
+import { WorkoutDataContext } from "../src/contexts/workout-data";
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} data={TRANSFORMED} />;
+  const workoutData = useWorkoutData();
+  return (
+    <WorkoutDataContext.Provider value={workoutData}>
+      <Component {...pageProps} />
+    </WorkoutDataContext.Provider>
+  );
 }
