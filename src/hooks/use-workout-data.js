@@ -1,6 +1,5 @@
 import React from "react";
 import transformers, { transform } from "../transforms";
-import Router from "next/router";
 
 const APP_VERSION = process.env.APP_VERSION || 1;
 const LOCAL_STORAGE_KEY = `workout-data-v${APP_VERSION}`;
@@ -29,22 +28,33 @@ function loadSavedSession(key) {
 export function useWorkoutData() {
   const [original, setOriginal] = React.useState(null);
   const [transformed, setTransformed] = React.useState(null);
+  const [ready, setReady] = React.useState(false);
+
   React.useEffect(() => {
-    if (original) {
-      const transformed = transform({ data: original, transformers });
-      setTransformed(transformed);
-      createSavedSession(LOCAL_STORAGE_KEY, original);
-    } else {
+    if (!original) {
+      // if there's no original data, try and retrieve it from ls
+      // if found, set it and trigger the transform in the condition above
       const saved = loadSavedSession(LOCAL_STORAGE_KEY);
       if (saved) {
         setOriginal(saved);
-      } else {
-        Router.push("/");
       }
     }
+  }, []);
+
+  React.useEffect(() => {
+    if (original) {
+      // original was set by file upload or below in else clause from
+      // localstorage retrieval
+      const transformed = transform({ data: original, transformers });
+      setTransformed(transformed);
+      createSavedSession(LOCAL_STORAGE_KEY, original);
+    }
+    setReady(true); // this is annoying!
   }, [original]);
+
   return {
-    ready: !!original && !!transformed,
+    ready,
+    canAccess: !!original && !!transformed,
     original,
     transformed,
     setData: setOriginal,

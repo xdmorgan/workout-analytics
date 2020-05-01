@@ -4,7 +4,6 @@ import csv from "csvtojson";
 
 async function convertCSVToJSON(str) {
   const json = await csv({ checkType: true }).fromString(str);
-  console.log(json);
   return json;
 }
 

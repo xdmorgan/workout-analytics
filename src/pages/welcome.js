@@ -1,14 +1,14 @@
-import Link from "next/link";
-import { Button } from "../src/components/button";
-import { FileLoader } from "../src/components/file-loader";
-import { WorkoutDataContext } from "../src/contexts/workout-data";
+import React from "react";
+import { Button } from "../components/button";
+import { FileLoader } from "../components/file-loader";
+import { WorkoutDataContext } from "../contexts/workout-data-provider";
 
-export default function Index() {
-  const { ready, setData } = React.useContext(WorkoutDataContext);
-  if (!ready) {
+export default function Page() {
+  const { state, dispatch } = React.useContext(WorkoutDataContext);
+  if (!state.canAccessProtectedPages) {
     return (
       <FileLoader
-        onLoad={setData}
+        onLoad={(raw) => dispatch({ type: "USER_UPLOADED_CSV", payload: raw })}
         onError={console.error}
         onAbort={console.error}
       />
@@ -75,20 +75,7 @@ export default function Index() {
         </div>
       </div>
       <div className="container wysiwyg child-my-0">
-        <Link href="/activity-calendar">
-          <a>activity-calendar Page</a>
-        </Link>
-
-        <div className="mt-10x">
-          <div className="d-block mb-4x">
-            <Button>Analyze my workouts</Button>
-            <Button disabled>Analyze my workouts</Button>
-            <Button appearance="secondary">Analyze my workouts</Button>
-            <Button appearance="negative">Analyze my workouts</Button>
-            <Button appearance="ghost-light">Analyze my workouts</Button>
-            <Button appearance="ghost-dark">Analyze my workouts</Button>
-          </div>
-        </div>
+        <a href="/activity-calendar">activity-calendar Page</a>
       </div>
     </main>
   );
