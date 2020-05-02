@@ -76,3 +76,9 @@ export default function Page() {
     </main>
   );
 }
+
+export const meta = {
+  route: "/",
+  title: "Welcome",
+  component: Page,
+};
