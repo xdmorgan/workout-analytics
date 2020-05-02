@@ -4,7 +4,6 @@ import csv from "csvtojson";
 
 async function convertCSVToJSON(str) {
   const json = await csv({ checkType: true }).fromString(str);
-  console.log(json);
   return json;
 }
 
@@ -19,19 +18,22 @@ export function FileLoader({
   /** See react-dropzone `accept` (mime-type) documentation */
   accept,
 }) {
-  const onDrop = useCallback((acceptedFiles) => {
-    acceptedFiles.forEach((file) => {
-      const reader = new FileReader();
-      reader.onabort = onAbort;
-      reader.onerror = onError;
-      reader.onload = async () => {
-        await convertCSVToJSON(reader.result)
-          .then(onLoad)
-          .catch(onError);
-      };
-      reader.readAsText(file);
-    });
-  }, []);
+  const onDrop = useCallback(
+    (acceptedFiles) => {
+      acceptedFiles.forEach((file) => {
+        const reader = new FileReader();
+        reader.onabort = onAbort;
+        reader.onerror = onError;
+        reader.onload = async () => {
+          await convertCSVToJSON(reader.result)
+            .then(onLoad)
+            .catch(onError);
+        };
+        reader.readAsText(file);
+      });
+    },
+    [onLoad, onError, onAbort]
+  );
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   return (

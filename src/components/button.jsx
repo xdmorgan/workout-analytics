@@ -1,6 +1,6 @@
 import React from "react";
 import cx from "classnames";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import styles from "./button.module.scss";
 
 export function Button({
