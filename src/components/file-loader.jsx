@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import csv from "csvtojson";
+import cx from "classnames";
 
 async function convertCSVToJSON(str) {
   const json = await csv({ checkType: true }).fromString(str);
@@ -34,13 +35,31 @@ export function FileLoader({
     },
     [onLoad, onError, onAbort]
   );
-  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   return (
-    <div className="d-flex bg-n70 h-fill" style={{ minHeight: "100vh" }}>
-      <div {...getRootProps({ className: "d-flex flx-a-c flx-g-1 flx-j-c" })}>
+    <div
+      className={cx(
+        "d-flex rc-small w-fill",
+        isDragActive ? "bg-g70" : "bg-n70"
+      )}
+      style={{
+        borderWidth: 2,
+        borderStyle: isDragActive ? "solid" : "dashed",
+        borderColor: isDragActive ? "var(--color-g60)" : "var(--color-n60)",
+        maxWidth: 420,
+        minHeight: 180,
+      }}
+    >
+      <div
+        {...getRootProps({
+          className: "d-flex flx-a-c flx-g-1 flx-j-c px-4x py-3x",
+        })}
+      >
         <input {...getInputProps({ accept })} />
-        <p>Drag 'n' drop some files here, or click to select files</p>
+        <div className="child-my-0 c-n40">
+          <p>Drag and drop or click to browse</p>
+        </div>
       </div>
     </div>
   );

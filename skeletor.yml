@@ -10,7 +10,7 @@ breakpoints:
 
 colors:
   # neutral scale
-  n0: "#000000"
+  n0: "#19191a"
   n10: "#252729"
   n20: "#353738"
   n30: "#55585b"
@@ -103,5 +103,5 @@ z-indexes:
   orbit: 1000
 
 rounded-corners:
-  small: 4px
-  normal: 8px
+  small: 6px
+  normal: 12px
