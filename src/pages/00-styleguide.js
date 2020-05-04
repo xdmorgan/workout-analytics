@@ -1,20 +1,81 @@
 import React from "react";
+import cx from "classnames";
 import { Button } from "../components/button";
+import { AppLayout } from "../layouts/app-layout";
+
+function Grid({ style = {}, ...props }) {
+  return (
+    <div
+      {...props}
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+        gap: "var(--space-3x",
+        ...style,
+      }}
+    />
+  );
+}
+
+function Label({ className, ...props }) {
+  return <p {...props} className={cx("type-small", className)} />;
+}
 
 export default function Page() {
   return (
-    <div>
-      <div className="mt-10x">
+    <AppLayout title="Styleguide">
+      <div className="container py-6x md:py-8x child-my-0">
+        <h2 classname="type-h1 my-4x">Buttons</h2>
+
         <div className="d-block mb-4x">
-          <Button>Analyze my workouts</Button>
-          <Button disabled>Analyze my workouts</Button>
-          <Button appearance="secondary">Analyze my workouts</Button>
-          <Button appearance="negative">Analyze my workouts</Button>
-          <Button appearance="ghost-light">Analyze my workouts</Button>
-          <Button appearance="ghost-dark">Analyze my workouts</Button>
+          <h3 classname="type-h2">Appearances</h3>
+          <Grid>
+            <div className="child-my-0 p-2x">
+              <Button>Button text</Button>
+              <Label>default</Label>
+            </div>
+            <div className="child-my-0 p-2x">
+              <Button disabled>Button text</Button>
+              <Label>disabled</Label>
+            </div>
+            <div className="child-my-0 p-2x">
+              <Button appearance="secondary">Button text</Button>
+              <Label>secondary</Label>
+            </div>
+            <div className="child-my-0 p-2x">
+              <Button appearance="destructive">Button text</Button>
+              <Label>destructive</Label>
+            </div>
+            <div className="child-my-0 p-2x">
+              <Button appearance="ghost-light">Button text</Button>
+              <Label>ghost-light</Label>
+            </div>
+            <div className="child-my-0 p-2x bg-n0 c-n80">
+              <Button appearance="ghost-dark">Button text</Button>
+              <Label>ghost-dark</Label>
+            </div>
+          </Grid>
+        </div>
+
+        <div className="d-block mb-4x">
+          <h3 classname="type-h2">Sizes</h3>
+          <Grid>
+            <div className="child-my-0 p-2x">
+              <Button size="small">Button text</Button>
+              <Label>small</Label>
+            </div>
+            <div className="child-my-0 p-2x">
+              <Button>Button text</Button>
+              <Label>default</Label>
+            </div>
+            <div className="child-my-0 p-2x">
+              <Button size="large">Button text</Button>
+              <Label>large</Label>
+            </div>
+          </Grid>
         </div>
       </div>
-    </div>
+    </AppLayout>
   );
 }
 

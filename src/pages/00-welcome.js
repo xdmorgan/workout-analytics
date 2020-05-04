@@ -133,7 +133,7 @@ function FooterSection() {
   return (
     <footer className="bg-n0 py-3x c-n40 child-my-0 align-c">
       <div className="container">
-        <p className="type-small">
+        <p className="type-caption">
           This project is not affiliated with Peloton in any way. All rights
           reserved. {YEAR}
         </p>

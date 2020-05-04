@@ -1,41 +1,35 @@
 @import "../../public/skeletor/sass/skeletor.core";
 
 .button {
-  // --button-text-color: var(--color-n80);
-  // --button-text-color--hover: var(--color-n80);
-  // --button-text-color--active: var(--color-n80);
-  // --button-text-color--disabled: var(--color-n20);
-  // --button-bg-color: var(--color-g30);
-  // --button-bg-color--hover: var(--color-g40);
-  // --button-bg-color--active: var(--color-g20);
-  // --button-bg-color--disabled: var(--color-n50);
-  // --button-border-radius: var(--radius-small);
-  // --button-focus-ring-size: 3px;
-  // --button-focus-ring-color: #{color(r40, 0.3)};
+  // TODO: Document button var API
 
   // boz-sizing
   position: relative;
   display: inline-block;
   min-width: var(--space-2x);
-  padding: var(--space-2x) var(--space-3x);
-  border-radius: var(--button-border-radius, var(--radius-small));
+  padding: var(--button-inset-y, 12px) var(--button-inset-x, var(--space-3x));
+  border-radius: var(--button-border-radius, var(--radius-normal));
   letter-spacing: 0.025em;
   border: none;
   // theme styles
   color: var(--button-text-color, var(--color-n80));
   background-color: var(--button-bg-color, var(--color-g30));
+  font-size: var(--button-font-size, 1rem);
+  line-height: var(
+    --button-line-height,
+    1.5
+  ); // line-height * font-size should be divisible by 8
   font-weight: bold;
   // content styles
   text-align: center;
-  text-decoration: none;
-  line-height: var(--line-compact);
+  text-decoration: none !important;
   transition: all 200ms ease-in-out;
   box-shadow: 0 0 0 0 transparent;
 
   &:focus {
     outline: none;
     box-shadow: 0 0 0 var(--button-focus-ring-size, 3px)
-      var(--button-focus-ring-color, #{color(g40, 0.3)});
+      var(--button-focus-ring-color, #{color(g40, 0.5)});
   }
 
   &:hover {
@@ -48,25 +42,21 @@
   }
   &[disabled] {
     color: var(--button-text-color--disabled, var(--color-n50));
-    background-color: var(--button-bg-color--disabled, var(--color-n70));
-  }
-
-  &.fill {
-    width: 100%;
+    background-color: var(--button-bg-color--disabled, var(--color-n60));
   }
 
   &--secondary {
     --button-bg-color: var(--color-n40);
     --button-bg-color--hover: var(--color-n30);
     --button-bg-color--active: var(--color-n20);
-    --button-focus-ring-color: #{color(n40, 0.3)};
+    --button-focus-ring-color: #{color(n40, 0.5)};
   }
 
-  &--negative {
+  &--destructive {
     --button-bg-color: var(--color-r40);
     --button-bg-color--hover: var(--color-r30);
     --button-bg-color--active: var(--color-r20);
-    --button-focus-ring-color: #{color(r40, 0.3)};
+    --button-focus-ring-color: #{color(r40, 0.5)};
   }
 
   &--ghost-dark {
@@ -84,5 +74,18 @@
     --button-bg-color--hover: rgba(0, 0, 0, 0.05);
     --button-bg-color--active: rgba(0, 0, 0, 0.1);
     --button-focus-ring-color: rgba(0, 0, 0, 0.05);
+  }
+
+  &--small {
+    --button-border-radius: var(--radius-small);
+    --button-font-size: 0.875rem;
+    --button-line-height: 1rem;
+    --button-inset-x: 14px;
+    --button-inset-y: 10px;
+  }
+
+  &--large {
+    --button-inset-x: 48px;
+    --button-inset-y: 20px;
   }
 }

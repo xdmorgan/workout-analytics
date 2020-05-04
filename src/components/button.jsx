@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import styles from "./button.module.scss";
 
 export function Button({
-  fill = false,
   as = undefined,
   href = undefined,
   to = undefined,
   className = undefined,
   appearance = undefined,
+  size = undefined,
   ...props
 }) {
   const Element = as || (href || to ? Link : "button");
@@ -22,8 +22,8 @@ export function Button({
       className={cx(
         styles.button,
         {
-          [styles.fill]: !!fill,
           [styles[`button--${appearance}`]]: !!appearance,
+          [styles[`button--${size}`]]: !!size,
         },
         className
       )}
