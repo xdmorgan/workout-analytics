@@ -7,7 +7,7 @@ export default function RouterViews() {
     <Switch>
       {Object.entries(pages).map(([name, meta]) => (
         <Route
-          key={meta}
+          key={meta.route}
           exact
           path={meta.route}
           component={meta.component}

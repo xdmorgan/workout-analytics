@@ -1,0 +1,56 @@
+@import "../../public/skeletor/sass/skeletor.core";
+
+.layout {
+  --layout-header-height: 64px;
+  --layout-sidebar-width: 100%;
+
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-top: var(--layout-header-height);
+}
+
+.header {
+  z-index: var(--layer-nav);
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: var(--layout-header-height);
+  width: var(--layout-sidebar-width);
+}
+
+.sidebar {
+  z-index: var(--layer-nav);
+  position: fixed;
+  left: 0;
+  top: var(--layout-header-height);
+  width: var(--layout-sidebar-width);
+  bottom: 0;
+  box-sizing: border-box;
+}
+
+@include max-width(breakpoint(md)) {
+  .sidebar.is-hidden-menu {
+    display: none;
+  }
+}
+
+@include min-width(breakpoint(md)) {
+  .layout {
+    --layout-header-height: 96px;
+    --layout-sidebar-width: 240px;
+
+    padding-top: 0;
+    padding-left: var(--layout-sidebar-width);
+  }
+
+  .header__menu {
+    display: none;
+  }
+}
+
+@include min-width(breakpoint(xl)) {
+  .layout {
+    --layout-sidebar-width: 296px;
+  }
+}

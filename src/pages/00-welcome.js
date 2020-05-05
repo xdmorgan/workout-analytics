@@ -73,7 +73,7 @@ function WelcomeHeroSection({
 
 function WalkthroughAndMoreInfoSection() {
   return (
-    <section className="bg-n70 py-8x md:py-10x">
+    <section className="bg-n80 py-8x md:py-10x">
       <div
         className="container"
         style={{
@@ -88,7 +88,7 @@ function WalkthroughAndMoreInfoSection() {
             Want a step-by-step guide for downloading your workout data? See
             here for the two-step walkthrough
           </p>
-          <Button appearance="ghost-light">Show me how</Button>
+          <Button appearance="ghost">Show me how</Button>
         </aside>
         <aside className="align-c d-flex flx-d-c flx-a-c">
           <h2 className="type-h3 mt-0 mb-3x">More information</h2>
@@ -96,7 +96,7 @@ function WalkthroughAndMoreInfoSection() {
             For more information on this project, see the accompanying blog post
             on my personal site.
           </p>
-          <Button href="//danny.codes" appearance="ghost-light">
+          <Button href="//danny.codes" appearance="ghost">
             Tell me more
           </Button>
         </aside>
@@ -133,7 +133,7 @@ function FooterSection() {
   return (
     <footer className="bg-n0 py-3x c-n40 child-my-0 align-c">
       <div className="container">
-        <p className="type-small">
+        <p className="type-caption">
           This project is not affiliated with Peloton in any way. All rights
           reserved. {YEAR}
         </p>

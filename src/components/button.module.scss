@@ -1,88 +1,115 @@
 @import "../../public/skeletor/sass/skeletor.core";
 
 .button {
-  // --button-text-color: var(--color-n80);
-  // --button-text-color--hover: var(--color-n80);
-  // --button-text-color--active: var(--color-n80);
-  // --button-text-color--disabled: var(--color-n20);
-  // --button-bg-color: var(--color-g30);
-  // --button-bg-color--hover: var(--color-g40);
-  // --button-bg-color--active: var(--color-g20);
-  // --button-bg-color--disabled: var(--color-n50);
-  // --button-border-radius: var(--radius-small);
-  // --button-focus-ring-size: 3px;
-  // --button-focus-ring-color: #{color(r40, 0.3)};
+  // TODO: Document button var API
 
   // boz-sizing
   position: relative;
   display: inline-block;
-  min-width: var(--space-2x);
-  padding: var(--space-2x) var(--space-3x);
-  border-radius: var(--button-border-radius, var(--radius-small));
+  min-width: var(--button-min-width, 48px);
+  padding: var(--button-inset-y, 12px) var(--button-inset-x, var(--space-3x));
+  border-radius: var(--button-border-radius, var(--radius-normal));
   letter-spacing: 0.025em;
   border: none;
   // theme styles
-  color: var(--button-text-color, var(--color-n80));
-  background-color: var(--button-bg-color, var(--color-g30));
+  color: var(--button-text-color, var(--color-n90));
+  background-color: var(--button-bg-color, var(--color-n10));
+  font-size: var(--button-font-size, 1rem);
+  line-height: var(
+    --button-line-height,
+    1.5
+  ); // line-height * font-size should be divisible by 8
   font-weight: bold;
   // content styles
   text-align: center;
-  text-decoration: none;
-  line-height: var(--line-compact);
+  text-decoration: none !important;
   transition: all 200ms ease-in-out;
   box-shadow: 0 0 0 0 transparent;
 
   &:focus {
     outline: none;
     box-shadow: 0 0 0 var(--button-focus-ring-size, 3px)
-      var(--button-focus-ring-color, #{color(g40, 0.3)});
+      var(--button-focus-ring-color, #{color(n40, 0.5)});
   }
 
   &:hover {
-    color: var(--button-text-color--hover, var(--color-n80));
-    background-color: var(--button-bg-color--hover, var(--color-g20));
+    color: var(--button-text-color--hover, var(--color-n90));
+    background-color: var(--button-bg-color--hover, var(--color-n20));
   }
   &:active {
-    color: var(--button-text-color--active, var(--color-n80));
-    background-color: var(--button-bg-color--active, var(--color-g10));
+    color: var(--button-text-color--active, var(--color-n90));
+    background-color: var(--button-bg-color--active, var(--color-n30));
   }
   &[disabled] {
-    color: var(--button-text-color--disabled, var(--color-n50));
-    background-color: var(--button-bg-color--disabled, var(--color-n70));
+    color: var(--button-text-color--disabled, var(--color-n40));
+    background-color: var(--button-bg-color--disabled, var(--color-n80));
   }
 
-  &.fill {
-    width: 100%;
+  &--light {
+    &--secondary {
+      --button-text-color: var(--color-g10);
+      --button-text-color--hover: var(--color-g10);
+      --button-text-color--active: var(--color-g10);
+      --button-bg-color: var(--color-g80);
+      --button-bg-color--hover: var(--color-g70);
+      --button-bg-color--active: var(--color-g60);
+      --button-focus-ring-color: #{color(g40, 0.2)};
+    }
+
+    &--ghost {
+      --button-text-color: var(--color-n10);
+      --button-text-color--hover: var(--color-n10);
+      --button-text-color--active: var(--color-n10);
+      --button-bg-color: transparent;
+      --button-bg-color--hover: rgba(0, 0, 0, 0.08);
+      --button-bg-color--active: rgba(0, 0, 0, 0.12);
+      --button-focus-ring-color: #{color(n0, 0.1)};
+    }
   }
 
-  &--secondary {
-    --button-bg-color: var(--color-n40);
-    --button-bg-color--hover: var(--color-n30);
-    --button-bg-color--active: var(--color-n20);
-    --button-focus-ring-color: #{color(n40, 0.3)};
+  &--dark {
+    --button-text-color--disabled: var(--color-n30);
+    --button-bg-color--disabled: var(--color-n10);
+
+    &--primary {
+      --button-text-color: var(--color-n10);
+      --button-text-color--hover: var(--color-n10);
+      --button-text-color--active: var(--color-n10);
+      --button-bg-color: var(--color-n80);
+      --button-bg-color--hover: var(--color-n70);
+      --button-bg-color--active: var(--color-n60);
+      --button-focus-ring-color: #{color(n90, 0.2)};
+    }
+    &--secondary {
+      --button-bg-color: var(--color-g10);
+      --button-bg-color--hover: var(--color-g20);
+      --button-bg-color--active: var(--color-g30);
+      --button-focus-ring-color: #{color(g40, 0.5)};
+    }
+
+    &--ghost {
+      --button-text-color: var(--color-n80);
+      --button-text-color--hover: var(--color-n80);
+      --button-text-color--active: var(--color-n80);
+      --button-bg-color: transparent;
+      --button-bg-color--hover: rgba(255, 255, 255, 0.08);
+      --button-bg-color--active: rgba(255, 255, 255, 0.12);
+      --button-focus-ring-color: #{color(n90, 0.1)};
+    }
   }
 
-  &--negative {
-    --button-bg-color: var(--color-r40);
-    --button-bg-color--hover: var(--color-r30);
-    --button-bg-color--active: var(--color-r20);
-    --button-focus-ring-color: #{color(r40, 0.3)};
+  &--small {
+    --button-min-width: 40px; // square
+    --button-border-radius: var(--radius-small);
+    --button-font-size: 0.875rem;
+    --button-line-height: 1rem;
+    --button-inset-x: 16px;
+    --button-inset-y: 12px;
   }
 
-  &--ghost-dark {
-    --button-bg-color: transparent;
-    --button-bg-color--hover: rgba(255, 255, 255, 0.05);
-    --button-bg-color--active: rgba(255, 255, 255, 0.1);
-    --button-focus-ring-color: rgba(255, 255, 255, 0.05);
-  }
-
-  &--ghost-light {
-    --button-text-color: var(--color-n20);
-    --button-text-color--hover: var(--color-n10);
-    --button-text-color--active: var(--color-n0);
-    --button-bg-color: transparent;
-    --button-bg-color--hover: rgba(0, 0, 0, 0.05);
-    --button-bg-color--active: rgba(0, 0, 0, 0.1);
-    --button-focus-ring-color: rgba(0, 0, 0, 0.05);
+  &--large {
+    --button-min-width: 64px; // square
+    --button-inset-x: 48px;
+    --button-inset-y: 20px;
   }
 }
