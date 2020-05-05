@@ -11,15 +11,13 @@ export function AppLayout({ children, title, nextRoute, previousRoute }) {
   const [menuVisible, setMenuVisible] = React.useState(false);
   return (
     <div className={cx(styles.layout, "d-flex")}>
-      <header
-        className={cx(styles.header, "bg-n0 c-n80 d-flex flx-a-c flx-j-sb")}
-      >
+      <header className={cx(styles.header, "d-flex flx-a-c flx-j-sb")}>
         <Link className="d-block px-2x py-1x" to="/">
           Untitled 200
         </Link>
         <Button
           size="small"
-          appearance="ghost-dark"
+          appearance="ghost"
           onClick={() => setMenuVisible(!menuVisible)}
           className={styles["header__menu"]}
         >
@@ -27,7 +25,7 @@ export function AppLayout({ children, title, nextRoute, previousRoute }) {
         </Button>
       </header>
       <aside
-        className={cx(styles.sidebar, "bg-n0 px-2x py-2x", {
+        className={cx(styles.sidebar, "px-2x py-2x bg-n90", {
           [styles["is-hidden-menu"]]: !menuVisible,
         })}
       >
@@ -46,14 +44,14 @@ export function AppLayout({ children, title, nextRoute, previousRoute }) {
               className="d-flex flx-a-c flx-j-sb"
               style={{
                 minHeight: "var(--layout-header-height)",
-                borderBottom: "1px solid var(--color-n60)",
+                borderBottom: "1px solid var(--color-n70)",
               }}
             >
               <h1 className="type-h3">{title}</h1>
               <nav>
                 <Button
                   size="small"
-                  appearance="ghost-light"
+                  appearance="ghost"
                   to={previousRoute || undefined}
                   disabled={!previousRoute}
                   className="mr-1x"
@@ -62,18 +60,14 @@ export function AppLayout({ children, title, nextRoute, previousRoute }) {
                 </Button>
                 <Button
                   size="small"
-                  appearance="ghost-light"
+                  appearance="ghost"
                   to={nextRoute || undefined}
                   disabled={!nextRoute}
                   className="mr-1x"
                 >
                   &rarr;
                 </Button>
-                <Button
-                  size="small"
-                  appearance="ghost-light"
-                  onClick={console.log}
-                >
+                <Button size="small" appearance="ghost" onClick={console.log}>
                   &#x22ee;
                 </Button>
               </nav>

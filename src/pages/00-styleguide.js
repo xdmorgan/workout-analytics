@@ -27,7 +27,7 @@ export default function Page() {
       <div className="container py-6x md:py-8x child-my-0">
         <h2 classname="type-h1 my-4x">Buttons</h2>
 
-        <div className="d-block mb-4x">
+        <div className="d-block mb-4x p-4x">
           <h3 classname="type-h2">Appearances</h3>
           <Grid>
             <div className="child-my-0 p-2x">
@@ -43,16 +43,36 @@ export default function Page() {
               <Label>secondary</Label>
             </div>
             <div className="child-my-0 p-2x">
-              <Button appearance="destructive">Button text</Button>
-              <Label>destructive</Label>
+              <Button appearance="ghost">Button text</Button>
+              <Label>ghost</Label>
+            </div>
+          </Grid>
+        </div>
+
+        <div className="d-block mb-4x bg-n0 c-n90 p-4x">
+          <h3 classname="type-h2">Appearances</h3>
+          <Grid>
+            <div className="child-my-0 p-2x">
+              <Button theme="dark">Button text</Button>
+              <Label>default</Label>
             </div>
             <div className="child-my-0 p-2x">
-              <Button appearance="ghost-light">Button text</Button>
-              <Label>ghost-light</Label>
+              <Button theme="dark" disabled>
+                Button text
+              </Button>
+              <Label>disabled</Label>
             </div>
-            <div className="child-my-0 p-2x bg-n0 c-n80">
-              <Button appearance="ghost-dark">Button text</Button>
-              <Label>ghost-dark</Label>
+            <div className="child-my-0 p-2x">
+              <Button theme="dark" appearance="secondary">
+                Button text
+              </Button>
+              <Label>secondary</Label>
+            </div>
+            <div className="child-my-0 p-2x">
+              <Button theme="dark" appearance="ghost">
+                Button text
+              </Button>
+              <Label>ghost</Label>
             </div>
           </Grid>
         </div>

@@ -8,8 +8,9 @@ export function Button({
   href = undefined,
   to = undefined,
   className = undefined,
-  appearance = undefined,
+  appearance = "primary",
   size = undefined,
+  theme = "light",
   ...props
 }) {
   const Element = as || (href || to ? Link : "button");
@@ -22,7 +23,8 @@ export function Button({
       className={cx(
         styles.button,
         {
-          [styles[`button--${appearance}`]]: !!appearance,
+          [styles[`button--${theme}`]]: theme,
+          [styles[`button--${theme}--${appearance}`]]: theme && appearance,
           [styles[`button--${size}`]]: !!size,
         },
         className

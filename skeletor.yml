@@ -10,33 +10,34 @@ breakpoints:
 
 colors:
   # neutral scale
-  n0: "#19191a"
-  n10: "#252729"
-  n20: "#353738"
-  n30: "#55585b"
-  n40: "#878889"
-  n50: "#aeb2b6"
-  n60: "#dfe1e2"
-  n70: "#f3f5f5"
-  n80: "#ffffff"
+  n0: "#000000"
+  n10: "#171a1c"
+  n20: "#353d44"
+  n30: "#565e65"
+  n40: "#91979d"
+  n50: "#b6babe"
+  n60: "#dadde0"
+  n70: "#ebedef"
+  n80: "#f6f6f7"
+  n90: "#ffffff"
   # greenz scale
-  g10: "#245546"
-  g20: "#188362"
-  g30: "#029b6c"
-  g40: "#00c387"
-  g50: "#67eec5"
-  g60: "#c0eee0"
-  g70: "#e0fef5"
-  g80: "#f3fffb"
+  g10: "#004441"
+  g20: "#00635e"
+  g30: "#03968d"
+  g40: "#07e9dc"
+  g50: "#86fbf4"
+  g60: "#b2fbf7"
+  g70: "#d7fcfa"
+  g80: "#edfefd"
   # reds scale
-  r10: "#552427"
-  r20: "#83181f"
-  r30: "#bc030e"
-  r40: "#f32e39"
-  r50: "#fe545e"
-  r60: "#eec0c3"
-  r70: "#fee0e2"
-  r80: "#fff3f4"
+  r10: "#5d051a"
+  r20: "#890726"
+  r30: "#d41140"
+  r40: "#ff4672"
+  r50: "#fe7291"
+  r60: "#feafc1"
+  r70: "#fedee6"
+  r80: "#fff2f5"
 
 container:
   initial:
@@ -103,5 +104,5 @@ z-indexes:
   orbit: 1000
 
 rounded-corners:
-  small: 6px
-  normal: 12px
+  small: 8px
+  normal: 18px
