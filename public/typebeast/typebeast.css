@@ -2,15 +2,15 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, figure, pre { margin-top: 1re
 
 blockquote, figure { margin-left: 0; margin-right: 0; }
 
-.type-h1-xxl { font-family: var(--font-heading); font-size: 2.625rem; line-height: 1.1; font-weight: 300; }
+.type-h1-xxl { font-family: var(--font-heading); font-size: 2.625rem; line-height: 1.1; font-weight: normal; }
 
-.type-h1-xl { font-family: var(--font-heading); font-size: 2.25rem; line-height: 1.1; font-weight: 300; }
+.type-h1-xl { font-family: var(--font-heading); font-size: 2.25rem; line-height: 1.1; font-weight: normal; }
 
-.type-h1, .wysiwyg h1 { font-family: var(--font-heading); font-size: 2rem; line-height: 1.1; font-weight: 300; }
+.type-h1, .wysiwyg h1 { font-family: var(--font-heading); font-size: 2rem; line-height: 1.1; font-weight: normal; }
 
 .type-h2, .wysiwyg h2 { font-family: var(--font-heading); font-size: 1.75rem; line-height: 1.1; font-weight: normal; }
 
-.type-h3, .wysiwyg h3 { font-family: var(--font-heading); font-size: 1.25rem; line-height: 1.1; font-weight: bold; }
+.type-h3, .wysiwyg h3 { font-family: var(--font-heading); font-size: 1.25rem; line-height: 1.1; font-weight: normal; }
 
 .type-h4, .wysiwyg h4 { font-family: var(--font-heading); font-size: 1rem; line-height: 1.2; font-weight: bold; }
 

@@ -8,7 +8,7 @@
   $size: 42,
   $style: null,
   $transform: null,
-  $weight: 300
+  $weight: normal
 ) {
   @include typebeast(
     $family,
@@ -51,7 +51,7 @@
   $size: 36,
   $style: null,
   $transform: null,
-  $weight: 300
+  $weight: normal
 ) {
   @include typebeast(
     $family,
@@ -94,7 +94,7 @@
   $size: 32,
   $style: null,
   $transform: null,
-  $weight: 300
+  $weight: normal
 ) {
   @include typebeast(
     $family,
@@ -180,7 +180,7 @@
   $size: 20,
   $style: null,
   $transform: null,
-  $weight: bold
+  $weight: normal
 ) {
   @include typebeast(
     $family,
