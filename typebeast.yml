@@ -7,7 +7,7 @@ typography:
       family: var(--font-heading)
       size: 42
       line: 46.2
-      weight: 300
+      weight: normal
     large:
       size: 80
   h1-xl:
@@ -15,7 +15,7 @@ typography:
       family: var(--font-heading)
       size: 36
       line: 39.6
-      weight: 300
+      weight: normal
     large:
       size: 64
   h1:
@@ -23,7 +23,7 @@ typography:
       family: var(--font-heading)
       size: 32
       line: 35.2
-      weight: 300
+      weight: normal
     large:
       size: 48
   h2:
@@ -39,7 +39,7 @@ typography:
       family: var(--font-heading)
       size: 20
       line: 22
-      weight: bold
+      weight: normal
     large:
       size: 24
   h4:
