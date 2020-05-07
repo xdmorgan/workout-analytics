@@ -14,7 +14,7 @@ export function AppLayout({ children, title, nextRoute, previousRoute }) {
         <LayoutHeader />
       </div>
       <main className={cx(styles.layout__main)}>
-        <div className={cx(styles.content, "container pt-6x md:pt-8x")}>
+        <div className={cx(styles.content, "container py-6x md:py-8x")}>
           <aside className={cx(styles.content__sidebar, "pb-3x md:pb-4x")}>
             <div className={styles.content__sidebar__sticky}>
               <ul className="list-reset my-0">
