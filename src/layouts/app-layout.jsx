@@ -4,51 +4,39 @@ import { Link } from "react-router-dom";
 import pages from "../pages";
 import { Button } from "../components/button";
 import styles from "./app-layout.module.scss";
-
-const YEAR = new Date().getFullYear();
+import { LayoutFooter } from "../components/layout-footer";
+import { LayoutHeader } from "../components/layout-header";
 
 export function AppLayout({ children, title, nextRoute, previousRoute }) {
-  const [menuVisible, setMenuVisible] = React.useState(false);
   return (
-    <div className={cx(styles.layout, "d-flex")}>
-      <header className={cx(styles.header, "d-flex flx-a-c flx-j-sb")}>
-        <Link className="d-block px-2x py-1x" to="/">
-          Untitled 200
-        </Link>
-        <Button
-          size="small"
-          appearance="ghost"
-          onClick={() => setMenuVisible(!menuVisible)}
-          className={styles["header__menu"]}
-        >
-          menu
-        </Button>
-      </header>
-      <aside
-        className={cx(styles.sidebar, "px-2x py-2x bg-n90", {
-          [styles["is-hidden-menu"]]: !menuVisible,
-        })}
-      >
-        <ul>
-          {Object.entries(pages).map(([name, meta]) => (
-            <li key={meta.route}>
-              <Link to={meta.route}>{meta.title}</Link>
-            </li>
-          ))}
-        </ul>
-      </aside>
-      <main className={cx(styles.main, "w-fill d-flex flx-d-c")}>
-        <article className="flx-g-1 flx-s-0">
-          <header className="container">
-            <div
-              className="d-flex flx-a-c flx-j-sb"
+    <div className={cx(styles.layout)}>
+      <div className={styles.layout__header}>
+        <LayoutHeader />
+      </div>
+      <main className={cx(styles.layout__main)}>
+        <div className={cx(styles.content, "container py-6x md:py-8x")}>
+          <aside className={cx(styles.content__sidebar, "pb-3x md:pb-4x")}>
+            <div className={styles.content__sidebar__sticky}>
+              <ul className="list-reset my-0">
+                {Object.entries(pages).map(([name, meta]) => (
+                  <li key={meta.route}>
+                    <Link className="is-stealth" to={meta.route}>
+                      {meta.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+          <article className={styles.content__main}>
+            <header
+              className="d-flex flx-a-c flx-j-sb pb-3x md:pb-4x"
               style={{
-                minHeight: "var(--layout-header-height)",
-                borderBottom: "1px solid var(--color-n70)",
+                borderBottom: "1px solid var(--color-n50)",
               }}
             >
-              <h1 className="type-h3">{title}</h1>
-              <nav>
+              <h1 className="type-h1 my-0">{title}</h1>
+              <nav className="d-none md:d-block">
                 <Button
                   size="small"
                   appearance="ghost"
@@ -71,26 +59,14 @@ export function AppLayout({ children, title, nextRoute, previousRoute }) {
                   &#x22ee;
                 </Button>
               </nav>
-            </div>
-          </header>
-          <div>{children}</div>
-        </article>
-        <footer className="flx-g-0 flx-s-0 c-n40">
-          <div className="container">
-            <div
-              className="child-my-0 py-3x md:py-4x"
-              style={{
-                borderTop: "1px solid var(--color-n60)",
-              }}
-            >
-              <p className="type-caption">
-                This project is not affiliated with Peloton in any way. All
-                rights reserved. {YEAR}
-              </p>
-            </div>
-          </div>
-        </footer>
+            </header>
+            <div>{children}</div>
+          </article>
+        </div>
       </main>
+      <div className={styles.layout__footer}>
+        <LayoutFooter />
+      </div>
     </div>
   );
 }

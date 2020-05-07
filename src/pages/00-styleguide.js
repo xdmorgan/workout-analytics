@@ -24,7 +24,7 @@ function Label({ className, ...props }) {
 export default function Page() {
   return (
     <AppLayout title="Styleguide">
-      <div className="container py-6x md:py-8x child-my-0">
+      <div className="py-6x md:py-8x child-my-0">
         <h2 classname="type-h1 my-4x">Buttons</h2>
 
         <div className="d-block mb-4x p-4x">

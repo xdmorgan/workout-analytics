@@ -41,14 +41,14 @@ export function FileLoader({
   return (
     <div
       className={cx(
-        "d-flex flx-a-c flx-j-c flx-d-c h-fill rc-normal bg-n80 c-n30",
-        isDragActive ? "bg-g80" : "bg-n80",
+        "d-flex flx-a-c flx-j-c flx-d-c h-fill rc-normal",
+        isDragActive ? "bg-g80" : "bg-g90",
         isDragActive ? "c-g20" : "c-n30"
       )}
       style={{
         borderWidth: 2,
         borderStyle: isDragActive ? "solid" : "dashed",
-        borderColor: isDragActive ? "var(--color-g60)" : "var(--color-n60)",
+        borderColor: isDragActive ? "var(--color-g50)" : "var(--color-g60)",
         minHeight: 180,
       }}
     >

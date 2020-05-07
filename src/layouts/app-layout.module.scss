@@ -1,56 +1,48 @@
 @import "../../public/skeletor/sass/skeletor.core";
 
 .layout {
-  --layout-header-height: 64px;
-  --layout-sidebar-width: 100%;
-
+  display: grid;
   min-height: 100vh;
   box-sizing: border-box;
-  padding-top: var(--layout-header-height);
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto minmax(auto, 1fr) auto;
+
+  &__header {
+    grid-area: header;
+  }
+
+  &__main {
+    grid-area: main;
+  }
+
+  &__footer {
+    grid-area: footer;
+  }
 }
 
-.header {
-  z-index: var(--layer-nav);
-  box-sizing: border-box;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: var(--layout-header-height);
-  width: var(--layout-sidebar-width);
-}
-
-.sidebar {
-  z-index: var(--layer-nav);
-  position: fixed;
-  left: 0;
-  top: var(--layout-header-height);
-  width: var(--layout-sidebar-width);
-  bottom: 0;
-  box-sizing: border-box;
-}
-
-@include max-width(breakpoint(md)) {
-  .sidebar.is-hidden-menu {
+.content {
+  &__sidebar {
     display: none;
   }
 }
 
-@include min-width(breakpoint(md)) {
-  .layout {
-    --layout-header-height: 96px;
-    --layout-sidebar-width: 240px;
+@include min-width(breakpoint(lg)) {
+  .content {
+    display: grid;
+    grid-template-areas: "sidebar content";
+    grid-template-columns: 200px 1fr;
+    grid-gap: var(--space-4x);
+    &__sidebar {
+      display: block;
 
-    padding-top: 0;
-    padding-left: var(--layout-sidebar-width);
-  }
-
-  .header__menu {
-    display: none;
-  }
-}
-
-@include min-width(breakpoint(xl)) {
-  .layout {
-    --layout-sidebar-width: 296px;
+      &__sticky {
+        position: sticky;
+        top: var(--space-6x);
+      }
+    }
   }
 }

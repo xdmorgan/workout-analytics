@@ -1,0 +1,11 @@
+@import "../../public/skeletor/sass/skeletor.core";
+
+.container {
+  min-height: 64px;
+}
+
+@include min-width(breakpoint(md)) {
+  .container {
+    min-height: 96px;
+  }
+}

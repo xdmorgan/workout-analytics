@@ -27,6 +27,9 @@ function View({ data }) {
             emptyColor="#eeeeee"
             // colors={["#61cdbb", "#97e3d5", "#e8c1a0", "#f47560"]}
             colors={[
+              "var(--color-r80)",
+              "var(--color-r70)",
+              "var(--color-r60)",
               "var(--color-r50)",
               "var(--color-r40)",
               "var(--color-r30)",

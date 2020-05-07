@@ -1,11 +1,11 @@
 import React from "react";
 import { Button } from "../components/button";
 import { FileLoader } from "../components/file-loader";
+import { LayoutFooter } from "../components/layout-footer";
+import { HorizontalRule } from "../components/horizontal-rule";
 import { WorkoutDataContext } from "../contexts/workout-data-provider";
 
 import styles from "./welcome.module.scss";
-
-const YEAR = new Date().getFullYear();
 
 export default function Page() {
   const { state, dispatch } = React.useContext(WorkoutDataContext);
@@ -20,10 +20,10 @@ export default function Page() {
             dispatch({ type: "USER_UPLOADED_CSV", payload: raw })
           }
         />
-        <HR className="container c-n70" />
+        <HorizontalRule className="container c-n50" />
         <WalkthroughAndMoreInfoSection />
       </main>
-      <FooterSection />
+      <LayoutFooter />
     </>
   );
 }
@@ -91,22 +91,23 @@ function GetStartedCTA({ onClick }) {
 
 function UploaderCTA({ protectedEntryRoute, onStartOver }) {
   return (
-    <div className="d-flex flx-a-c flx-j-c flx-d-c h-fill rc-normal c-n30 p-4x">
+    <div className="d-flex flx-a-c flx-j-c flx-d-c h-fill rc-normal bg-g10 c-n70 p-4x">
       <div>
-        <Button size="large" to={protectedEntryRoute}>
+        <Button theme="dark" size="large" to={protectedEntryRoute}>
           View workouts
         </Button>
         <Button
+          theme="dark"
           className="ml-3x"
-          appearance="secondary"
+          appearance="ghost"
           size="large"
           onClick={onStartOver}
         >
-          Reset
+          Start over
         </Button>
       </div>
       <p className="type-small mt-4x mb-0 align-c" style={{ maxWidth: 360 }}>
-        And we're done. Your data has been processed and is ready for review!
+        That's it! Your data has been processed and is ready for review.
       </p>
     </div>
   );
@@ -143,53 +144,6 @@ function WalkthroughAndMoreInfoSection() {
         </aside>
       </div>
     </section>
-  );
-}
-
-function FooterSection() {
-  return (
-    <footer className="bg-n0 c-n90 py-8x">
-      <div className="container child-my-0 mb-3x">
-        <h2 className="type-h4">Peloton Analytics</h2>
-      </div>
-      <div className="container child-my-0 mb-3x">
-        <p className="type-small c-n50 my-0" style={{ maxWidth: 480 }}>
-          This website does not store or retain workout data nor does your data
-          ever leave your local browser. The code is open-source for more
-          information, check out the{" "}
-          <a
-            className="fw-bold c-n60"
-            href="https://github.com/xdmorgan/peloton-workouts"
-          >
-            project on GitHub
-          </a>
-        </p>
-      </div>
-      <div className="container child-my-0 c-n40">
-        <p className="type-caption">
-          This project is not affiliated with Peloton in any way. All rights
-          reserved. {YEAR}
-        </p>
-      </div>
-    </footer>
-  );
-}
-
-function HR(props) {
-  return (
-    <div {...props}>
-      <hr
-        style={{
-          height: 1,
-          width: "100%",
-          background: "currentColor",
-          margin: 0,
-          padding: 0,
-          outline: "none",
-          border: "none",
-        }}
-      />
-    </div>
   );
 }
 
