@@ -54,6 +54,10 @@
   @include type-small-default;
 }
 
+.type-ui {
+  @include type-ui-default;
+}
+
 .type-caption,
 .wysiwyg figcaption {
   @include type-caption-default;
@@ -114,6 +118,10 @@
   .type-small,
   .wysiwyg small {
     @include type-small-large;
+  }
+
+  .type-ui {
+    @include type-ui-large;
   }
 
   .type-caption,

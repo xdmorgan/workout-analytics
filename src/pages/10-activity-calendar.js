@@ -24,8 +24,7 @@ function View({ data }) {
             data={entries}
             from={min}
             to={max}
-            emptyColor="#eeeeee"
-            // colors={["#61cdbb", "#97e3d5", "#e8c1a0", "#f47560"]}
+            emptyColor="var(--color-n80)"
             colors={[
               "var(--color-r80)",
               "var(--color-r70)",
@@ -63,5 +62,6 @@ function View({ data }) {
 export const meta = {
   route: "/activity-calendar",
   title: "Activity Calendar",
+  sidebar: "Activity Calendar",
   component: Page,
 };
