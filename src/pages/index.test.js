@@ -10,4 +10,27 @@ describe("pages/index", () => {
       expect(meta.sidebar).toBeDefined();
     }
   );
+
+  expect(pages).toMatchInlineSnapshot(`
+    Object {
+      "Activity Calendar": Object {
+        "component": [Function],
+        "route": "/activity-calendar",
+        "sidebar": "Activity Calendar",
+        "title": "Activity Calendar",
+      },
+      "Styleguide": Object {
+        "component": [Function],
+        "route": "/styleguide",
+        "sidebar": null,
+        "title": "Styleguide",
+      },
+      "Welcome": Object {
+        "component": [Function],
+        "route": "/",
+        "sidebar": "Start Over",
+        "title": "Welcome",
+      },
+    }
+  `);
 });

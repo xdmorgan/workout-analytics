@@ -88,7 +88,7 @@ typography:
   ui:
     default:
       size: 13
-      line: 18
+      line: 18.2
     large:
       size: 14
   caption:

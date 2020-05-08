@@ -24,7 +24,7 @@ blockquote, figure { margin-left: 0; margin-right: 0; }
 
 .type-small, .wysiwyg small { font-size: 0.875rem; line-height: 1.7; }
 
-.type-ui { font-size: 0.8125rem; line-height: 1.38462; }
+.type-ui { font-size: 0.8125rem; line-height: 1.4; }
 
 .type-caption, .wysiwyg figcaption { font-size: 0.625rem; line-height: 1.5; }
 
