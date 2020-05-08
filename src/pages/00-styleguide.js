@@ -102,5 +102,6 @@ export default function Page() {
 export const meta = {
   route: "/styleguide",
   title: "Styleguide",
+  sidebar: null,
   component: Page,
 };

@@ -150,5 +150,6 @@ function WalkthroughAndMoreInfoSection() {
 export const meta = {
   route: "/",
   title: "Welcome",
+  sidebar: "Start Over",
   component: Page,
 };

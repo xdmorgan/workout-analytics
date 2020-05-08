@@ -44,13 +44,16 @@ container:
   initial:
     min: 272px
     inset: 24px
-    max: 1400px
+    max: 1488px
   md:
     inset: 32px
-    max: 1400px
+    max: 1488px
+  lg:
+    inset: 48px
+    max: 1488px
   xl:
     inset: 64px
-    max: 1400px
+    max: 1488px
 
 dimensions:
   auto: auto

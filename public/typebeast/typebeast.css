@@ -24,6 +24,8 @@ blockquote, figure { margin-left: 0; margin-right: 0; }
 
 .type-small, .wysiwyg small { font-size: 0.875rem; line-height: 1.7; }
 
+.type-ui { font-size: 0.8125rem; line-height: 1.38462; }
+
 .type-caption, .wysiwyg figcaption { font-size: 0.625rem; line-height: 1.5; }
 
 @media screen and (min-width: 768px) { .type-h1-xxl { font-size: 5rem; }
@@ -37,6 +39,7 @@ blockquote, figure { margin-left: 0; margin-right: 0; }
   .type-lede { font-size: 1.5rem; }
   .type-para, .wysiwyg p, .wysiwyg ul, .wysiwyg ol, .wysiwyg dl, .wysiwyg blockquote { font-size: 1.125rem; }
   .type-small, .wysiwyg small { font-size: 1rem; }
+  .type-ui { font-size: 0.875rem; }
   .type-caption, .wysiwyg figcaption { font-size: 0.75rem; } }
 
 /*# sourceMappingURL=typebeast.css.map */

@@ -6,10 +6,10 @@ export function LayoutFooter() {
   return (
     <footer className="bg-n0 c-n90 py-8x">
       <div className="container child-my-0 mb-3x">
-        <h2 className="type-h4">Peloton Analytics</h2>
+        <h2 className="type-h3">Peloton Analytics</h2>
       </div>
       <div className="container child-my-0 mb-3x">
-        <p className="type-small c-n50 my-0" style={{ maxWidth: 480 }}>
+        <p className="type-ui c-n50 my-0" style={{ maxWidth: 480 }}>
           This website does not store or retain workout data nor does your data
           ever leave your local browser. The code is open-source for more
           information, check out the{" "}

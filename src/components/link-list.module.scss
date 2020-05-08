@@ -1,0 +1,34 @@
+@import "../../public/skeletor/sass/skeletor.core";
+
+.list {
+  & > *:not(:first-child) {
+    margin-top: calc(var(--space-1x) / 2);
+  }
+}
+
+.item {
+  &.is-hover,
+  &:hover {
+    background-color: var(--color-n80);
+  }
+
+  &.is-active,
+  &:active {
+    background-color: var(--color-n70);
+  }
+
+  &.is-selected {
+    color: var(--color-g10);
+    background-color: var(--color-g90);
+  }
+
+  &.is-disabled {
+    color: var(--color-n50);
+  }
+
+  &.is-focus,
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #{color(n40, 0.3)};
+  }
+}
