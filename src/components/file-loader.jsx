@@ -59,7 +59,7 @@ export function FileLoader({
       >
         <input {...getInputProps({ accept })} />
         <Button className="mt-3x" size="large" as="div">
-          Browse
+          Select file
         </Button>
         <p className="type-small mt-4x mb-0 align-c" style={{ maxWidth: 360 }}>
           Drag and drop exported CSV file here to start processing or click to

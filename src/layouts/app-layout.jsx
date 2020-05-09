@@ -8,7 +8,6 @@ import { ContentWithSidebar } from "../components/content-with-sidebar";
 import { ContentHeader } from "../components/content-header";
 
 import { LinkList } from "../components/link-list";
-
 import styles from "./app-layout.module.scss";
 
 export function AppLayout({ children, title, nextRoute, previousRoute }) {
