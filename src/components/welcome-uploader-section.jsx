@@ -18,7 +18,7 @@ export function WelcomeUploaderSection({
     <section
       {...props}
       className={cx(
-        "py-10x md:py-16x",
+        "py-12x md:py-16x",
         {
           "bg-g10": canAccessProtectedPages,
           "c-n90": canAccessProtectedPages,
@@ -29,11 +29,11 @@ export function WelcomeUploaderSection({
     >
       <div className="container child-my-0">
         <div className={styles.hero}>
-          <div className="py-8x">
+          <div className="lg:py-8x">
             {canAccessProtectedPages ? (
-              <h1 className="type-h1-xxl mb-4x">You're good to go</h1>
+              <h1 className="type-h1-xl mb-4x">You're good to go</h1>
             ) : (
-              <h1 className="type-h1-xxl mb-4x">Let's get started</h1>
+              <h1 className="type-h1-xl mb-4x">Let's get started</h1>
             )}
             <p className="type-para mb-4x md:mb-6x">
               After a recent exercise milestone, I wanted a way to analyze my
@@ -73,48 +73,78 @@ export function WelcomeUploaderSection({
 
 function GetStartedCTA({ onSelectUploadPath, onSelectDemoPath }) {
   return (
-    <div className="d-flex flx-a-c flx-j-c flx-d-c h-fill rc-normal bg-n80 c-n30 p-4x">
-      <div>
-        <Button size="large" onClick={onSelectUploadPath}>
+    <UploaderBlock
+      label="If you haven't exported your workouts yet, see below for more information and a video guide."
+      buttons={[
+        <Button key="analyze" size="large" onClick={onSelectUploadPath}>
           Analyze my workouts
-        </Button>
+        </Button>,
         <Button
+          key="demo"
           size="large"
-          className="ml-3x"
           appearance="ghost"
           onClick={onSelectDemoPath}
         >
-          See demo
-        </Button>
-      </div>
-      <p className="type-small mt-4x mb-0 align-c" style={{ maxWidth: 360 }}>
-        If you haven't exported your workouts yet, see below for more
-        information and a video guide.
-      </p>
-    </div>
+          Use demo data
+        </Button>,
+      ]}
+    />
   );
 }
 
 function UploaderCTA({ protectedEntryRoute, onReset }) {
   return (
-    <div className="d-flex flx-a-c flx-j-c flx-d-c h-fill rc-normal bg-g10 c-n70 p-4x">
-      <div>
-        <Button theme="dark" size="large" to={protectedEntryRoute}>
-          View workouts
-        </Button>
+    <UploaderBlock
+      label="That's it! Your data has been processed and is ready for review."
+      buttons={[
         <Button
+          key="workouts"
           theme="dark"
-          className="ml-3x"
+          size="large"
+          to={protectedEntryRoute}
+        >
+          Take me there
+        </Button>,
+        <Button
+          key="reset"
+          theme="dark"
           appearance="ghost"
           size="large"
           onClick={onReset}
         >
           Reset
-        </Button>
+        </Button>,
+      ]}
+    />
+  );
+}
+
+function UploaderBlock({ label, buttons, className, ...props }) {
+  return (
+    <div
+      {...props}
+      className={cx(
+        "d-flex flx-a-c flx-j-c flx-d-c h-fill rc-normal p-3x",
+        className
+      )}
+    >
+      <div className="align-c child-my-0 xl:d-flex">
+        {buttons.map((el, idx) => {
+          return (
+            <div
+              key={el.key}
+              className={cx("mb-2x xl:mb-0", { "xl:ml-2x": idx > 0 })}
+            >
+              {el}
+            </div>
+          );
+        })}
       </div>
-      <p className="type-small mt-4x mb-0 align-c" style={{ maxWidth: 360 }}>
-        That's it! Your data has been processed and is ready for review.
-      </p>
+      {label ? (
+        <p className="type-small mt-4x mb-0 align-c" style={{ maxWidth: 360 }}>
+          {label}
+        </p>
+      ) : null}
     </div>
   );
 }

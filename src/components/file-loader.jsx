@@ -17,6 +17,7 @@ export function FileLoader({
   onError = () => {},
   /** Invoked after abort of FileReader() to load file selected via dropzone */
   onAbort = () => {},
+  onCancel = () => {},
   /** See react-dropzone `accept` (mime-type) documentation */
   accept,
 }) {
@@ -46,6 +47,7 @@ export function FileLoader({
         isDragActive ? "c-g20" : "c-n30"
       )}
       style={{
+        position: "relative",
         borderWidth: 2,
         borderStyle: isDragActive ? "solid" : "dashed",
         borderColor: isDragActive ? "var(--color-g50)" : "var(--color-g60)",
@@ -58,14 +60,28 @@ export function FileLoader({
         })}
       >
         <input {...getInputProps({ accept })} />
-        <Button className="mt-3x" size="large" as="div">
-          Select file
-        </Button>
+        <div>
+          <Button size="large" as="div">
+            Select file
+          </Button>
+        </div>
         <p className="type-small mt-4x mb-0 align-c" style={{ maxWidth: 360 }}>
-          Drag and drop exported CSV file here to start processing or click to
-          browse.
+          Drag and drop your CSV or click to browse.
         </p>
       </div>
+      <Button
+        onClick={onCancel}
+        size="small"
+        appearance="ghost"
+        style={{
+          position: "absolute",
+          top: "var(--space-1x)",
+          right: "var(--space-1x)",
+        }}
+      >
+        <span className="sr-only">Cancel</span>
+        <span aria-hidden>&#10005;</span>
+      </Button>
     </div>
   );
 }
