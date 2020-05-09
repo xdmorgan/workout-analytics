@@ -2,9 +2,9 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { ResponsiveCalendar } from "@nivo/calendar";
 import { TRANSFORMED_KEYS } from "../constants";
-import { WorkoutDataContext } from "../contexts/workout-data-provider";
 import { AppLayout } from "../layouts/app-layout";
 import { SelectInput } from "../components/select-input";
+import { useProtectedPage } from "../hooks/use-protected-page";
 
 const EMPTY_COLOR = "var(--color-n80)";
 const ACTIVITY_COLORS = [
@@ -18,13 +18,10 @@ const ACTIVITY_COLORS = [
   "var(--color-r10)",
 ];
 
-export default function Page() {
-  const { state } = React.useContext(WorkoutDataContext);
-  return state.canAccessProtectedPages ? (
-    <Protected data={state.transformed} />
-  ) : (
-    <Redirect to="/" />
-  );
+export function Page() {
+  const { nope, goto, transformed } = useProtectedPage();
+  if (nope) return <Redirect to={goto} />;
+  return <Protected data={transformed} />;
 }
 
 function Protected({ data }) {
@@ -65,7 +62,7 @@ function Protected({ data }) {
               </strong>
             </p>
           </div>
-          <div>
+          <div className="mt-2x md:mt-0">
             <SelectInput value={year} onChange={(e) => setYear(e.target.value)}>
               {Object.keys(years).map((y) => (
                 <option>{y}</option>

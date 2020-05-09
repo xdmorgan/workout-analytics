@@ -1,10 +1,11 @@
 import React from "react";
-import { WorkoutDataContext } from "../contexts/workout-data";
+import { WorkoutDataContext } from "../contexts/workout-data-provider";
 
-export function useProtectedPage() {
-  const ctx = React.useContext(WorkoutDataContext);
-  console.log(ctx);
+export function useProtectedPage({ redirect = "/" } = {}) {
+  const { state } = React.useContext(WorkoutDataContext);
   return {
-    redirect: "/",
+    nope: !state.canAccessProtectedPages,
+    goto: state.canAccessProtectedPages ? null : redirect,
+    transformed: state.transformed,
   };
 }

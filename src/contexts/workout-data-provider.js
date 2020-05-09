@@ -28,7 +28,7 @@ function attemptRestoreSession() {
 }
 
 function reducer(state, action) {
-  console.log(state, action);
+  // console.log(state, action);
   const { type, payload = null } = action;
   switch (type) {
     case "USER_UPLOADED_CSV":

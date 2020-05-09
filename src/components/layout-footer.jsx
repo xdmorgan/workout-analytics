@@ -23,6 +23,14 @@ export function LayoutFooter() {
                   Found a bug?
                 </a>
               </li>
+              <li style={{ marginBottom: 2 }}>
+                <a
+                  className="is-stealth"
+                  href="//github.com/xdmorgan/peloton-workouts/tree/master/docs/CONTRIBUTING.md"
+                >
+                  Contributing
+                </a>
+              </li>
               {/* TODO: should be 025x */}
               <li style={{ marginBottom: 2 }}>
                 <a className="is-stealth" href="//twitter.com/xdanmorgan">
