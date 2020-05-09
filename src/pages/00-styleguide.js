@@ -21,7 +21,7 @@ function Label({ className, ...props }) {
   return <p {...props} className={cx("type-small", className)} />;
 }
 
-export default function Page() {
+export function Page() {
   return (
     <AppLayout title="Styleguide">
       <div className="py-6x md:py-8x child-my-0">
@@ -102,6 +102,6 @@ export default function Page() {
 export const meta = {
   route: "/styleguide",
   title: "Styleguide",
-  sidebar: "Styleguide",
+  sidebar: null,
   component: Page,
 };

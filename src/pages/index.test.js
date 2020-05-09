@@ -22,7 +22,7 @@ describe("pages/index", () => {
       "Styleguide": Object {
         "component": [Function],
         "route": "/styleguide",
-        "sidebar": "Styleguide",
+        "sidebar": null,
         "title": "Styleguide",
       },
       "Welcome": Object {
