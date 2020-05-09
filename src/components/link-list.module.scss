@@ -7,16 +7,17 @@
 }
 
 .item {
+  transition-property: color background-color;
+  transition-duration: 180ms;
+  transition-timing-function: ease-in-out;
+
   &.is-hover,
   &:hover {
     background-color: var(--color-n80);
   }
 
   &.is-active,
-  &:active {
-    background-color: var(--color-n70);
-  }
-
+  &:active,
   &.is-selected {
     color: var(--color-g10);
     background-color: var(--color-g90);

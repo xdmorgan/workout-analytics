@@ -1,6 +1,4 @@
 import dateFormat from "date-fns/format";
-import min from "date-fns/min";
-import max from "date-fns/max";
 import { RAW_KEYS } from "../constants";
 
 const format = (d, pattern = "yyyy-MM-dd") => dateFormat(d, pattern);
@@ -9,13 +7,15 @@ export default function transform({ data }) {
   const entries = data.reduce((all, entry) => {
     const day = format(new Date(entry[RAW_KEYS.WorkoutTimestamp]));
     const value = entry[RAW_KEYS.CaloriesBurned];
-    if (all[day]) {
-      all[day] = {
-        ...all[day],
-        value: all[day].value + value,
+    const year = day.slice(0, 4);
+    if (!all[year]) all[year] = {};
+    if (all[year][day]) {
+      all[year][day] = {
+        ...all[year][day],
+        value: all[year][day].value + value,
       };
     } else {
-      all[day] = {
+      all[year][day] = {
         day,
         value: value,
       };
@@ -23,11 +23,20 @@ export default function transform({ data }) {
     return all;
   }, {});
 
-  const dates = Object.keys(entries);
+  const years = Object.keys(entries).reduce(
+    (all, year) => ({
+      ...all,
+      [year]: {
+        // padded to avoid any timezone spillover
+        start: `${year}-01-02`,
+        end: `${year}-12-30`,
+      },
+    }),
+    {}
+  );
 
   return {
-    min: format(min(dates.map((d) => new Date(d)))),
-    max: format(max(dates.map((d) => new Date(d)))),
-    entries: Object.values(entries),
+    years,
+    entries,
   };
 }

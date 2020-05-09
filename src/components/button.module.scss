@@ -26,6 +26,10 @@
   transition: all 200ms ease-in-out;
   box-shadow: 0 0 0 0 transparent;
 
+  transition-property: color background-color;
+  transition-duration: 180ms;
+  transition-timing-function: ease-in-out;
+
   &:focus {
     outline: none;
     box-shadow: 0 0 0 var(--button-focus-ring-size, 3px)

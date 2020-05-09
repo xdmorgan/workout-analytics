@@ -7,42 +7,48 @@ describe("transform()", () => {
     const transformed = transformer({ data });
     expect(transformed).toMatchInlineSnapshot(`
       Object {
-        "entries": Array [
-          Object {
-            "day": "2019-02-14",
-            "value": 116,
+        "entries": Object {
+          "2019": Object {
+            "2019-02-14": Object {
+              "day": "2019-02-14",
+              "value": 116,
+            },
+            "2019-02-17": Object {
+              "day": "2019-02-17",
+              "value": 183,
+            },
+            "2019-02-19": Object {
+              "day": "2019-02-19",
+              "value": 146,
+            },
+            "2019-02-20": Object {
+              "day": "2019-02-20",
+              "value": 178,
+            },
+            "2019-02-22": Object {
+              "day": "2019-02-22",
+              "value": 228,
+            },
+            "2019-02-23": Object {
+              "day": "2019-02-23",
+              "value": 239,
+            },
+            "2019-02-24": Object {
+              "day": "2019-02-24",
+              "value": 245,
+            },
+            "2019-02-25": Object {
+              "day": "2019-02-25",
+              "value": 1,
+            },
           },
-          Object {
-            "day": "2019-02-17",
-            "value": 183,
+        },
+        "years": Object {
+          "2019": Object {
+            "end": "2019-12-30",
+            "start": "2019-01-02",
           },
-          Object {
-            "day": "2019-02-19",
-            "value": 146,
-          },
-          Object {
-            "day": "2019-02-20",
-            "value": 178,
-          },
-          Object {
-            "day": "2019-02-22",
-            "value": 228,
-          },
-          Object {
-            "day": "2019-02-23",
-            "value": 239,
-          },
-          Object {
-            "day": "2019-02-24",
-            "value": 245,
-          },
-          Object {
-            "day": "2019-02-25",
-            "value": 1,
-          },
-        ],
-        "max": "2019-02-25",
-        "min": "2019-02-14",
+        },
       }
     `);
   });
@@ -68,7 +74,7 @@ function mockData() {
       "Calories Burned": 111,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-14 19:11 (EDT)",
@@ -88,7 +94,7 @@ function mockData() {
       "Calories Burned": 5,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-17 16:15 (EDT)",
@@ -108,7 +114,7 @@ function mockData() {
       "Calories Burned": 155,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-17 16:38 (EDT)",
@@ -128,7 +134,7 @@ function mockData() {
       "Calories Burned": 28,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-19 18:51 (EDT)",
@@ -148,7 +154,7 @@ function mockData() {
       "Calories Burned": 132,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-19 19:07 (EDT)",
@@ -168,7 +174,7 @@ function mockData() {
       "Calories Burned": 14,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-20 18:16 (EDT)",
@@ -188,7 +194,7 @@ function mockData() {
       "Calories Burned": 167,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-20 18:39 (EDT)",
@@ -208,7 +214,7 @@ function mockData() {
       "Calories Burned": 11,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-22 18:32 (EDT)",
@@ -228,7 +234,7 @@ function mockData() {
       "Calories Burned": 214,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-22 19:05 (EDT)",
@@ -248,7 +254,7 @@ function mockData() {
       "Calories Burned": 14,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-23 10:04 (EDT)",
@@ -268,7 +274,7 @@ function mockData() {
       "Calories Burned": 239,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-24 09:21 (EDT)",
@@ -288,7 +294,7 @@ function mockData() {
       "Calories Burned": 245,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-25 21:11 (EDT)",
@@ -308,7 +314,7 @@ function mockData() {
       "Calories Burned": 1,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
-    },
+      "Avg. Pace (min/mi)": ""
+    }
   ];
 }
