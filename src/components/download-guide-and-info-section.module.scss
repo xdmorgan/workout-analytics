@@ -1,0 +1,19 @@
+@import "../../public/skeletor/sass/skeletor.core";
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6x);
+}
+
+@include min-width(breakpoint(md)) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@include min-width(breakpoint(lg)) {
+  .container {
+    gap: var(--space-8x);
+  }
+}

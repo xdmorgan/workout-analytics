@@ -13,19 +13,54 @@ export function LayoutHeader() {
         className={cx(styles.container, "container d-flex flx-a-c flx-j-sb")}
       >
         <Link className="is-stealth" to="/">
-          <p className="type-h4">Peloton Analytics</p>
+          <p className="type-h4">Workout Analytics</p>
         </Link>
-        <Button
-          theme="dark"
-          size="small"
-          appearance="ghost"
-          onClick={() => setMenuVisible(!menuVisible)}
-          className={styles.header__menu}
-        >
-          <span aria-label="Menu" role="img">
-            🍔
-          </span>
-        </Button>
+        <nav className="d-none lg:d-block">
+          <ul className="list-reset d-flex">
+            <li>
+              <Button
+                size="small"
+                appearance="ghost"
+                theme="dark"
+                onClick={console.log}
+              >
+                Share
+              </Button>
+            </li>
+            <li className="ml-1x xl:ml-2x">
+              <Button
+                size="small"
+                appearance="ghost"
+                theme="dark"
+                onClick={console.log}
+              >
+                GitHub
+              </Button>
+            </li>
+            <li className="ml-1x xl:ml-2x">
+              <Button
+                size="small"
+                appearance="ghost"
+                theme="dark"
+                onClick={console.log}
+              >
+                About
+              </Button>
+            </li>
+          </ul>
+        </nav>
+        <div className="lg:d-none">
+          <Button
+            theme="dark"
+            size="small"
+            appearance="ghost"
+            onClick={() => setMenuVisible(!menuVisible)}
+          >
+            <span aria-label="Menu" role="img">
+              🍔
+            </span>
+          </Button>
+        </div>
       </div>
     </header>
   );

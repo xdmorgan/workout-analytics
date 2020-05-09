@@ -10,6 +10,16 @@ export function createSavedSession(value) {
   }
 }
 
+export function clearSavedSession() {
+  if (global && global.localStorage && global.localStorage.removeItem) {
+    try {
+      global.localStorage.removeItem(LOCAL_STORAGE_KEY);
+    } catch (error) {
+      console.log("clearSavedSession()", error);
+    }
+  }
+}
+
 export function loadSavedSession() {
   if (global && global.localStorage && global.localStorage.getItem) {
     try {

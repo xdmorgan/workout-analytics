@@ -1,0 +1,41 @@
+@import "../../public/skeletor/sass/skeletor.core";
+
+.footer {
+  display: grid;
+  grid-template-areas:
+    "name"
+    "links"
+    "privacy";
+  grid-template-columns: 1fr;
+  gap: var(--space-3x);
+
+  &__name {
+    grid-area: name;
+  }
+  &__privacy {
+    grid-area: privacy;
+  }
+  &__links {
+    grid-area: links;
+  }
+  &__copyright {
+    grid-area: copyright;
+  }
+}
+
+@include min-width(breakpoint(md)) {
+  .footer {
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+      "name name"
+      "links privacy";
+    gap: var(--space-4x);
+  }
+}
+
+@include min-width(breakpoint(lg)) {
+  .footer {
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-areas: "name links privacy";
+  }
+}
