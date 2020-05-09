@@ -8,7 +8,7 @@ export function LayoutHeader() {
   const [menuVisible, setMenuVisible] = React.useState(false);
 
   return (
-    <header className="bg-g90 c-g10">
+    <header className="bg-g10 c-n90">
       <div
         className={cx(styles.container, "container d-flex flx-a-c flx-j-sb")}
       >

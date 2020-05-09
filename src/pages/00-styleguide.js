@@ -25,10 +25,10 @@ export default function Page() {
   return (
     <AppLayout title="Styleguide">
       <div className="py-6x md:py-8x child-my-0">
-        <h2 classname="type-h1 my-4x">Buttons</h2>
+        <h2 className="type-h1 my-4x">Buttons</h2>
 
         <div className="d-block mb-4x p-4x">
-          <h3 classname="type-h2">Appearances</h3>
+          <h3 className="type-h2">Appearances</h3>
           <Grid>
             <div className="child-my-0 p-2x">
               <Button>Button text</Button>
@@ -50,7 +50,7 @@ export default function Page() {
         </div>
 
         <div className="d-block mb-4x bg-n0 c-n90 p-4x">
-          <h3 classname="type-h2">Appearances</h3>
+          <h3 className="type-h2">Appearances</h3>
           <Grid>
             <div className="child-my-0 p-2x">
               <Button theme="dark">Button text</Button>
@@ -78,7 +78,7 @@ export default function Page() {
         </div>
 
         <div className="d-block mb-4x">
-          <h3 classname="type-h2">Sizes</h3>
+          <h3 className="type-h2">Sizes</h3>
           <Grid>
             <div className="child-my-0 p-2x">
               <Button size="small">Button text</Button>
@@ -102,6 +102,6 @@ export default function Page() {
 export const meta = {
   route: "/styleguide",
   title: "Styleguide",
-  sidebar: null,
+  sidebar: "Styleguide",
   component: Page,
 };

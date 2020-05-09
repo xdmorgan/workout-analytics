@@ -33,13 +33,17 @@ export function ContentHeader({
           appearance="ghost"
           to={nextRoute || undefined}
           disabled={!nextRoute}
-          className="mr-1x"
+          // className="mr-1x"
         >
           &rarr;
         </Button>
-        <Button size="small" appearance="ghost" onClick={console.log}>
+        {/* <Button
+          size="small"
+          appearance="ghost"
+          onClick={console.log}
+        >
           &#x22ee;
-        </Button>
+        </Button> */}
       </nav>
     </header>
   );
