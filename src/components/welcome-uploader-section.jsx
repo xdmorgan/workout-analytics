@@ -31,9 +31,9 @@ export function WelcomeUploaderSection({
         <div className={styles.hero}>
           <div className="lg:py-8x">
             {canAccessProtectedPages ? (
-              <h1 className="type-h1-xl mb-4x">You're good to go</h1>
+              <h1 className="type-h1-xl mb-4x">You're all set</h1>
             ) : (
-              <h1 className="type-h1-xl mb-4x">Let's get started</h1>
+              <h1 className="type-h1-xl mb-4x">Getting started</h1>
             )}
             <p className="type-para mb-4x md:mb-6x">
               After a recent exercise milestone, I wanted a way to analyze my
