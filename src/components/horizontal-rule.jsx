@@ -2,7 +2,7 @@ import React from "react";
 
 export function HorizontalRule(props) {
   return (
-    <div {...props}>
+    <div className="c-n50" {...props}>
       <hr
         style={{
           height: 1,
