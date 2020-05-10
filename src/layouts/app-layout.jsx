@@ -46,7 +46,7 @@ export function AppLayout({ children, title, nextRoute, previousRoute }) {
             {title}
           </ContentHeader>
 
-          <div>{children}</div>
+          {children}
         </ContentWithSidebar>
       </main>
       <div className={styles.layout__footer}>
@@ -55,3 +55,9 @@ export function AppLayout({ children, title, nextRoute, previousRoute }) {
     </div>
   );
 }
+
+function Content({ className, ...props }) {
+  return <div {...props} className={cx("py-4x md:py-6x", className)} />;
+}
+
+AppLayout.Content = Content;
