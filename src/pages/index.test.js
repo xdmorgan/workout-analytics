@@ -13,23 +13,37 @@ describe("pages/index", () => {
 
   expect(pages).toMatchInlineSnapshot(`
     Object {
-      "Activity Calendar": Object {
+      "/": Object {
         "component": [Function],
-        "route": "/activity-calendar",
-        "sidebar": "Activity Calendar",
-        "title": "Activity Calendar",
+        "route": "/",
+        "sidebar": null,
+        "title": "Welcome",
       },
-      "Styleguide": Object {
+      "/activity": Object {
+        "component": [Function],
+        "pagination": Object {
+          "next": null,
+          "previous": "/totals",
+        },
+        "route": "/activity",
+        "sidebar": "Activity",
+        "title": "Activity",
+      },
+      "/styleguide": Object {
         "component": [Function],
         "route": "/styleguide",
         "sidebar": null,
         "title": "Styleguide",
       },
-      "Welcome": Object {
+      "/totals": Object {
         "component": [Function],
-        "route": "/",
-        "sidebar": "Start Over",
-        "title": "Welcome",
+        "pagination": Object {
+          "next": "/activity",
+          "previous": null,
+        },
+        "route": "/totals",
+        "sidebar": "Totals",
+        "title": "Combined Totals",
       },
     }
   `);

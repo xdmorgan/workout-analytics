@@ -1,11 +1,13 @@
 import { meta as welcome } from "./00-welcome";
 import { meta as styleguide } from "./00-styleguide";
-import { meta as activityCalendar } from "./10-activity-calendar";
+import { meta as totals } from "./10-totals";
+import { meta as activity } from "./11-activity";
 
 export default {
   // anyone
-  [welcome.title]: welcome,
-  [styleguide.title]: styleguide,
+  [welcome.route]: welcome,
+  [styleguide.route]: styleguide,
   // protected
-  [activityCalendar.title]: activityCalendar,
+  [totals.route]: totals,
+  [activity.route]: activity,
 };

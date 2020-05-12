@@ -12,7 +12,7 @@ export default function Page() {
       <LayoutHeader />
       <WelcomeUploaderSection
         canAccessProtectedPages={state.canAccessProtectedPages}
-        protectedEntryRoute="/activity-calendar"
+        protectedEntryRoute="/totals"
         onRequestResetData={() => dispatch({ type: "USER_REQUESTED_RESET" })}
         onRequestDemoData={() => dispatch({ type: "USER_REQUESTED_DEMO" })}
         onRequestSetData={(raw) =>
@@ -28,6 +28,6 @@ export default function Page() {
 export const meta = {
   route: "/",
   title: "Welcome",
-  sidebar: "Start Over",
+  sidebar: null,
   component: Page,
 };

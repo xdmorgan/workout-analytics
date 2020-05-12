@@ -1,0 +1,19 @@
+@import "../../public/skeletor/sass/skeletor.core";
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--space-4x);
+}
+
+@include min-width(breakpoint(lg)) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
+
+@include min-width(breakpoint(lg)) {
+  .grid {
+    grid-template-columns: minmax(400px, 1fr) minmax(400px, 2fr);
+  }
+}
