@@ -71,6 +71,19 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
                 toMarathons(totals.distanceInMiles)
               )}
             </li>
+            <li>
+              {(([count, plural]) => `${count} lap${plural ? "s" : ""}`)(
+                toNurburgrings(totals.distanceInMiles)
+              )}{" "}
+              around the Nürburgring
+            </li>
+            <li>
+              Approximately{" "}
+              {(([count, plural]) =>
+                `${count} Tour de France${plural ? "s" : ""}`)(
+                toTourDeFrances(totals.distanceInMiles)
+              )}
+            </li>
           </ul>
         </div>
       </AppLayout.Content>
@@ -111,8 +124,16 @@ function toHours(minutes) {
   return comparison(minutes, 60);
 }
 
+function toNurburgrings(miles) {
+  return comparison(miles, 16.12);
+}
+
 function toMarathons(miles) {
   return comparison(miles, 26.2);
+}
+
+function toTourDeFrances(miles) {
+  return comparison(miles, 2200, false);
 }
 
 function toOreos(calories) {
