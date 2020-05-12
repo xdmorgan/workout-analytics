@@ -4,27 +4,16 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: var(--space-4x);
-  grid-template-areas:
-    "description"
-    "chart";
+}
 
-  &__description {
-    grid-area: description;
-  }
-  &__chart {
-    grid-area: chart;
+@include min-width(breakpoint(lg)) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
 }
 
 @include min-width(breakpoint(lg)) {
   .grid {
-    grid-template-columns: minmax(auto, 1fr) 1fr;
-    grid-template-areas: "description chart";
-  }
-}
-
-@include min-width(breakpoint(lg)) {
-  .grid {
-    grid-template-columns: minmax(auto, 1fr) 2fr;
+    grid-template-columns: minmax(400px, 1fr) minmax(400px, 2fr);
   }
 }

@@ -61,7 +61,7 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
       <AppLayout.Content>
         <div className="child-my-0">
           <h2 className="type-h2">Distance in Miles</h2>
-          <p className="type-h1-xxl mt-2x">{totals.distanceInMiles} mi.</p>
+          <p className="type-h1-xxl mt-2x">{totals.distanceInMiles}</p>
         </div>
         <div className="wysiwyg">
           <ul>
