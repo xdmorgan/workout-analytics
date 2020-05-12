@@ -7,13 +7,27 @@ const data = mockData();
 // https://jestjs.io/docs/en/getting-started
 describe("transform()", () => {
   test("Convert raw data to calculated totals", async () => {
-    expect(transformer({ data })).toMatchInlineSnapshot(`
+    const totals = transformer({ data });
+    expect(totals).toMatchInlineSnapshot(`
       Object {
-        "total": 420,
-        "types": Object {
-          "ride": 200,
-          "stretch": 205,
+        "caloriesBurned": 1336,
+        "distanceInMiles": 45,
+        "numberOfWorkouts": 13,
+        "numberOfWorkoutsByDiscipline": Object {
+          "Cycling": 8,
+          "Stretching": 5,
         },
+        "numberOfWorkoutsByDisciplinePieData": Array [
+          Object {
+            "id": "Cycling",
+            "value": 8,
+          },
+          Object {
+            "id": "Stretching",
+            "value": 5,
+          },
+        ],
+        "timeInMinutes": 264,
       }
     `);
   });
@@ -39,7 +53,7 @@ function mockData() {
       "Calories Burned": 111,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-14 19:11 (EDT)",
@@ -59,7 +73,7 @@ function mockData() {
       "Calories Burned": 5,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-17 16:15 (EDT)",
@@ -79,7 +93,7 @@ function mockData() {
       "Calories Burned": 155,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-17 16:38 (EDT)",
@@ -99,7 +113,7 @@ function mockData() {
       "Calories Burned": 28,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-19 18:51 (EDT)",
@@ -119,7 +133,7 @@ function mockData() {
       "Calories Burned": 132,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-19 19:07 (EDT)",
@@ -139,7 +153,7 @@ function mockData() {
       "Calories Burned": 14,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-20 18:16 (EDT)",
@@ -159,7 +173,7 @@ function mockData() {
       "Calories Burned": 167,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-20 18:39 (EDT)",
@@ -179,7 +193,7 @@ function mockData() {
       "Calories Burned": 11,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-22 18:32 (EDT)",
@@ -199,7 +213,7 @@ function mockData() {
       "Calories Burned": 214,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-22 19:05 (EDT)",
@@ -219,7 +233,7 @@ function mockData() {
       "Calories Burned": 14,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-23 10:04 (EDT)",
@@ -239,7 +253,7 @@ function mockData() {
       "Calories Burned": 239,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-24 09:21 (EDT)",
@@ -259,7 +273,7 @@ function mockData() {
       "Calories Burned": 245,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
+      "Avg. Pace (min/mi)": ""
     },
     {
       "Workout Timestamp": "2019-02-25 21:11 (EDT)",
@@ -279,7 +293,7 @@ function mockData() {
       "Calories Burned": 1,
       "Avg. Heartrate": "",
       "Avg. Incline": "",
-      "Avg. Pace (min/mi)": "",
-    },
+      "Avg. Pace (min/mi)": ""
+    }
   ];
 }

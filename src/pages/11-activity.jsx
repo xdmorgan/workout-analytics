@@ -1,12 +1,10 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
 import { ResponsiveCalendar } from "@nivo/calendar";
 import { TRANSFORMED_KEYS } from "../constants";
 import { AppLayout } from "../layouts/app-layout";
-import { useProtectedPage } from "../hooks/use-protected-page";
+import { ProtectedPage } from "../components/protected-page";
 import { SelectInput } from "../components/select-input";
-import { Button } from "../components/button";
-import { HorizontalRule } from "../components/horizontal-rule";
+import { Pagination } from "../components/pagination";
 
 const EMPTY_COLOR = "var(--color-n80)";
 const ACTIVITY_COLORS = [
@@ -25,23 +23,18 @@ export const meta = {
   title: "Activity",
   sidebar: "Activity",
   component: Page,
+  pagination: {
+    previous: "/totals",
+    next: null,
+  },
 };
 
 export function Page() {
-  const { nope, goto, transformed } = useProtectedPage();
-  if (nope) return <Redirect to={goto} />;
-  return (
-    <Protected
-      data={transformed}
-      title={meta.title}
-      previousRoute="/totals"
-      nextRoute={null}
-    />
-  );
+  return <ProtectedPage component={PageWithData} />;
 }
 
-function Protected({ data, title, previousRoute, nextRoute }) {
-  const { years, entries } = data[TRANSFORMED_KEYS.ActivityCalendar];
+function PageWithData({ allWorkoutData, pageMetadata }) {
+  const { years, entries } = allWorkoutData[TRANSFORMED_KEYS.ActivityCalendar];
   // const contentRef = React.useRef(null);
   // const [contentWidth, setContentWidth] = React.useState(null);
 
@@ -58,23 +51,18 @@ function Protected({ data, title, previousRoute, nextRoute }) {
 
   return (
     <AppLayout
-      title={title}
-      nextRoute={nextRoute}
-      previousRoute={previousRoute}
+      title={pageMetadata.title}
+      previousRoute={pageMetadata.pagination.previous}
+      nextRoute={pageMetadata.pagination.next}
     >
       <ActivityCalendarSection years={years} entries={entries} />
-      <HorizontalRule />
-      <AppLayout.Content>
-        <nav className="d-flex flx-a-c flx-j-sb">
-          <Button to="/" appearance="ghost">
-            <>Previous</>
-            <span className="d-none lg:d-inline">: Start over</span>
-          </Button>
-          <Button appearance="secondary" to="/">
-            <>Next</>
-            <span className="d-none lg:d-inline">: Instructors</span>
-          </Button>
-        </nav>
+      <AppLayout.Content divider="before">
+        <Pagination
+          previousRoute={pageMetadata.pagination.previous}
+          previousLabel="Totals"
+          nextRoute={pageMetadata.pagination.next}
+          nextLabel="Coming soon"
+        />
       </AppLayout.Content>
     </AppLayout>
   );

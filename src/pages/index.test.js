@@ -21,6 +21,10 @@ describe("pages/index", () => {
       },
       "/activity": Object {
         "component": [Function],
+        "pagination": Object {
+          "next": null,
+          "previous": "/totals",
+        },
         "route": "/activity",
         "sidebar": "Activity",
         "title": "Activity",
@@ -39,7 +43,7 @@ describe("pages/index", () => {
         },
         "route": "/totals",
         "sidebar": "Totals",
-        "title": "Totals",
+        "title": "Combined Totals",
       },
     }
   `);
