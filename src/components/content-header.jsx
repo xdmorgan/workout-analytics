@@ -19,31 +19,32 @@ export function ContentHeader({
     >
       <h1 className="type-h1 my-0">{children}</h1>
       <nav className="d-none md:d-block">
-        <Button
-          size="small"
-          appearance="ghost"
-          to={previousRoute || undefined}
-          disabled={!previousRoute}
-          className="mr-1x"
-        >
-          &larr;
-        </Button>
-        <Button
-          size="small"
-          appearance="ghost"
-          to={nextRoute || undefined}
-          disabled={!nextRoute}
-          // className="mr-1x"
-        >
-          &rarr;
-        </Button>
-        {/* <Button
+        <Button.Group>
+          <Button
+            size="small"
+            appearance="ghost"
+            to={previousRoute || undefined}
+            disabled={!previousRoute}
+          >
+            &larr;
+          </Button>
+          <Button
+            size="small"
+            appearance="ghost"
+            to={nextRoute || undefined}
+            disabled={!nextRoute}
+            // className="mr-1x"
+          >
+            &rarr;
+          </Button>
+          {/* <Button
           size="small"
           appearance="ghost"
           onClick={console.log}
         >
           &#x22ee;
         </Button> */}
+        </Button.Group>
       </nav>
     </header>
   );

@@ -30,20 +30,27 @@
   transition-duration: 180ms;
   transition-timing-function: ease-in-out;
 
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 var(--button-focus-ring-size, 3px)
-      var(--button-focus-ring-color, #{color(n40, 0.5)});
+  &:global {
+    &:focus,
+    &.is-focus {
+      outline: none;
+      box-shadow: 0 0 0 var(--button-focus-ring-size, 3px)
+        var(--button-focus-ring-color, #{color(n40, 0.5)});
+    }
+
+    &:hover,
+    &.is-hover {
+      color: var(--button-text-color--hover, var(--color-n90));
+      background-color: var(--button-bg-color--hover, var(--color-n20));
+    }
+
+    &:active,
+    &.is-active {
+      color: var(--button-text-color--active, var(--color-n90));
+      background-color: var(--button-bg-color--active, var(--color-n30));
+    }
   }
 
-  &:hover {
-    color: var(--button-text-color--hover, var(--color-n90));
-    background-color: var(--button-bg-color--hover, var(--color-n20));
-  }
-  &:active {
-    color: var(--button-text-color--active, var(--color-n90));
-    background-color: var(--button-bg-color--active, var(--color-n30));
-  }
   &[disabled] {
     color: var(--button-text-color--disabled, var(--color-n40));
     background-color: var(--button-bg-color--disabled, var(--color-n80));
@@ -115,5 +122,16 @@
     --button-min-width: 64px; // square
     --button-inset-x: 48px;
     --button-inset-y: 20px;
+  }
+}
+
+.group {
+  & > *:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  & > *:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 }
