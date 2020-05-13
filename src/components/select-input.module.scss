@@ -9,7 +9,7 @@
   font-weight: 700;
   color: var(--color-n0);
   line-height: 1.5;
-  padding: 11px 40px 11px var(--space-3x);
+  padding: 11px var(--space-4x) 11px var(--space-2x);
   width: 100%;
   max-width: 100%; /* useful when width is set to anything other than 100% */
   box-sizing: border-box;
@@ -30,6 +30,10 @@
   background-position: right var(--space-2x) top 50%;
   /* icon size, then gradient */
   background-size: 0.65em auto;
+
+  transition-property: color background-color;
+  transition-duration: 180ms;
+  transition-timing-function: ease-in-out;
 
   /* Hide arrow icon in IE browsers */
   &::-ms-expand {
@@ -60,7 +64,7 @@
   :root:lang(ar) &,
   :root:lang(iw) & {
     background-position: left var(--space-2x) top 50%;
-    padding: 11px var(--space-3x) 11px 40px;
+    padding: 11px var(--space-2x) 11px var(--space-4x);
   }
 
   /* Disabled styles */
@@ -70,5 +74,15 @@
     background-color: var(--select-bg-color--disabled, var(--color-n80));
     border-color: var(--select-border-color--disabled, var(--color-n60));
     background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22graytext%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  }
+
+  &--small {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: var(--radius-small);
+  }
+  &--large {
+    padding-top: 19px;
+    padding-bottom: 19px;
   }
 }

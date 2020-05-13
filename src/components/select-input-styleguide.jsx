@@ -41,6 +41,9 @@ export function SelectInputStyleguide() {
             <StyleguideLabel>disabled</StyleguideLabel>
           </StyleguideGrid.Item>
         </StyleguideGrid>
+      </div>
+      <div className="d-block mb-4x">
+        <h3 className="type-h3">RTL</h3>
         <StyleguideGrid dir="rtl">
           <StyleguideGrid.Item>
             <SelectInput
@@ -64,6 +67,46 @@ export function SelectInputStyleguide() {
               ))}
             </SelectInput>
             <StyleguideLabel>disabled</StyleguideLabel>
+          </StyleguideGrid.Item>
+        </StyleguideGrid>
+      </div>
+      <div className="d-block mb-4x">
+        <h3 className="type-h3">Sizes</h3>
+        <StyleguideGrid>
+          <StyleguideGrid.Item>
+            <SelectInput
+              size="small"
+              value={option}
+              onChange={(e) => setOption(e.target.value)}
+            >
+              {OPTIONS.map((opt) => (
+                <option key={opt}>{opt}</option>
+              ))}
+            </SelectInput>
+            <StyleguideLabel>small</StyleguideLabel>
+          </StyleguideGrid.Item>
+          <StyleguideGrid.Item>
+            <SelectInput
+              value={option}
+              onChange={(e) => setOption(e.target.value)}
+            >
+              {OPTIONS.map((opt) => (
+                <option key={opt}>{opt}</option>
+              ))}
+            </SelectInput>
+            <StyleguideLabel>default</StyleguideLabel>
+          </StyleguideGrid.Item>
+          <StyleguideGrid.Item>
+            <SelectInput
+              size="large"
+              value={option}
+              onChange={(e) => setOption(e.target.value)}
+            >
+              {OPTIONS.map((opt) => (
+                <option key={opt}>{opt}</option>
+              ))}
+            </SelectInput>
+            <StyleguideLabel>large</StyleguideLabel>
           </StyleguideGrid.Item>
         </StyleguideGrid>
       </div>
