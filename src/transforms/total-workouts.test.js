@@ -10,24 +10,70 @@ describe("transform()", () => {
     const totals = transformer({ data });
     expect(totals).toMatchInlineSnapshot(`
       Object {
-        "caloriesBurned": 1336,
-        "distanceInMiles": 45,
-        "numberOfWorkouts": 13,
-        "numberOfWorkoutsByDiscipline": Object {
-          "Cycling": 8,
-          "Stretching": 5,
+        "caloriesBurned": Object {
+          "byDiscipline": Object {
+            "Cycling": 1264,
+            "Stretching": 72,
+          },
+          "pieChart": Array [
+            Object {
+              "id": "Cycling",
+              "value": 1264,
+            },
+            Object {
+              "id": "Stretching",
+              "value": 72,
+            },
+          ],
+          "sum": 1336,
         },
-        "numberOfWorkoutsByDisciplinePieData": Array [
-          Object {
-            "id": "Cycling",
-            "value": 8,
+        "distanceInMiles": Object {
+          "byDiscipline": Object {
+            "Cycling": 44.64,
+            "Stretching": 0,
           },
-          Object {
-            "id": "Stretching",
-            "value": 5,
+          "pieChart": Array [
+            Object {
+              "id": "Cycling",
+              "value": 44.64,
+            },
+          ],
+          "sum": 44.64,
+        },
+        "numberOfWorkouts": Object {
+          "byDiscipline": Object {
+            "Cycling": 8,
+            "Stretching": 5,
           },
-        ],
-        "timeInMinutes": 264,
+          "pieChart": Array [
+            Object {
+              "id": "Cycling",
+              "value": 8,
+            },
+            Object {
+              "id": "Stretching",
+              "value": 5,
+            },
+          ],
+          "sum": 13,
+        },
+        "timeInMinutes": Object {
+          "byDiscipline": Object {
+            "Cycling": 239,
+            "Stretching": 25,
+          },
+          "pieChart": Array [
+            Object {
+              "id": "Cycling",
+              "value": 239,
+            },
+            Object {
+              "id": "Stretching",
+              "value": 25,
+            },
+          ],
+          "sum": 264,
+        },
       }
     `);
   });
