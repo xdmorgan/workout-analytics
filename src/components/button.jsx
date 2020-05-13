@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import styles from "./button.module.scss";
 
 export function Button({
-  as = undefined,
+  as = "button",
   href = undefined,
   to = undefined,
   className = undefined,
@@ -13,7 +13,9 @@ export function Button({
   theme = "light",
   ...props
 }) {
-  const Element = as || (href || to ? Link : "button");
+  let Element = as;
+  if (to) Element = Link;
+  if (href) Element = "a";
   return (
     <Element
       {...props}
@@ -32,3 +34,11 @@ export function Button({
     />
   );
 }
+
+function Group({ as: Element = "div", className, ...props }) {
+  return (
+    <Element role="group" {...props} className={cx(styles.group, className)} />
+  );
+}
+
+Button.Group = Group;

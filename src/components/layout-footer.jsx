@@ -18,7 +18,7 @@ export function LayoutFooter() {
               <li style={{ marginBottom: 2 }}>
                 <a
                   className="is-stealth"
-                  href="//github.com/xdmorgan/peloton-workouts"
+                  href="//github.com/xdmorgan/peloton-workouts/issues/new"
                 >
                   Found a bug?
                 </a>
@@ -39,7 +39,10 @@ export function LayoutFooter() {
               </li>
               {/* TODO: should be 025x */}
               <li style={{ marginBottom: 2 }}>
-                <a className="is-stealth" href="/">
+                <a
+                  className="is-stealth"
+                  href="//danny.codes/blog/workout-analytics"
+                >
                   Case study
                 </a>
               </li>
@@ -57,10 +60,7 @@ export function LayoutFooter() {
             This site does not store or retain workout data nor does your data
             ever leave your browser,{" "}
             <span className="c-n90">
-              <a
-                className="is-stealth"
-                href="//danny.codes/blog/workout-analytics/"
-              >
+              <a className="is-stealth" href="/faq">
                 see here for more information
               </a>
             </span>

@@ -32,19 +32,14 @@ export function LayoutHeader() {
                 size="small"
                 appearance="ghost"
                 theme="dark"
-                onClick={console.log}
+                href="//github.com/xdmorgan/peloton-workouts"
               >
                 GitHub
               </Button>
             </li>
             <li className="ml-1x xl:ml-2x">
-              <Button
-                size="small"
-                appearance="ghost"
-                theme="dark"
-                onClick={console.log}
-              >
-                About
+              <Button size="small" appearance="ghost" theme="dark" to="/faq">
+                FAQ
               </Button>
             </li>
           </ul>
