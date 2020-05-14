@@ -12,18 +12,19 @@ export function TotalPiechart({ data, children, ...props }) {
       <div
         className={cx(styles.grid__chart, "d-none md:d-flex flx-a-c flx-j-c")}
       >
-        <div style={{ width: 360, height: 360 }}>
+        <div style={{ width: 460, height: 360 }}>
           <ResponsivePie
             data={data}
             enableRadialLabels={false}
             innerRadius={0.5}
-            margin={{ bottom: 48 }}
+            margin={{ right: 124 }}
             legends={[
               {
-                anchor: "bottom",
-                direction: "row",
-                translateY: 48,
+                anchor: "right",
+                direction: "column",
+                translateX: 124,
                 itemWidth: 100,
+                itemsSpacing: 8,
                 itemHeight: 18,
                 itemTextColor: "var(--color-n0)",
                 symbolSize: 18,

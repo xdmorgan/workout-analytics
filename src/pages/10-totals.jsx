@@ -22,7 +22,6 @@ export function Page() {
 
 function PageWithData({ allWorkoutData, pageMetadata }) {
   const totals = allWorkoutData[TRANSFORMED_KEYS.TotalWorkouts];
-  console.log(totals, pageMetadata);
   return (
     <AppLayout
       title={pageMetadata.title}
@@ -31,8 +30,8 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
     >
       <AppLayout.Content>
         <TotalPiechart data={totals.numberOfWorkouts.pieChart}>
-          <h2 className="type-h2">Number of Workouts</h2>
           <p className="type-h1-xxl my-2x">{totals.numberOfWorkouts.sum}</p>
+          <h2 className="type-h2">Combined Workouts</h2>
           <p className="type-para my-0">
             <>Out of that, you completed workouts in </>
             {totals.numberOfWorkouts.pieChart.length}
@@ -44,8 +43,8 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
       </AppLayout.Content>
       <AppLayout.Content>
         <TotalPiechart data={totals.timeInMinutes.pieChart}>
-          <h2 className="type-h2">Time in Minutes</h2>
           <p className="type-h1-xxl my-2x">{totals.timeInMinutes.sum}</p>
+          <h2 className="type-h2">Minutes Completed</h2>
           <p className="type-para my-0">That's the equivalent of:</p>
           <div className="wysiwyg">
             <ul>
@@ -72,8 +71,8 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
       </AppLayout.Content>
       <AppLayout.Content>
         <TotalPiechart data={totals.distanceInMiles.pieChart}>
-          <h2 className="type-h2">Distance in Miles</h2>
           <p className="type-h1-xxl my-2x">{totals.distanceInMiles.sum}</p>
+          <h2 className="type-h2">Miles Covered</h2>
           <p className="type-para my-0">That's the equivalent of:</p>
           <div className="wysiwyg">
             <ul>
@@ -101,8 +100,8 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
       </AppLayout.Content>
       <AppLayout.Content>
         <TotalPiechart data={totals.caloriesBurned.pieChart}>
-          <h2 className="type-h2">Calories Burned</h2>
           <p className="type-h1-xxl my-2x">{totals.caloriesBurned.sum}</p>
+          <h2 className="type-h2">Calories Burned</h2>
           <p className="type-para my-0">That's the equivalent of:</p>
           <div className="wysiwyg">
             <ul>

@@ -24,7 +24,7 @@
     "eject": "react-scripts eject",
     "skeletor": "skeletor --output public/skeletor",
     "typebeast": "typebeast --output public/typebeast",
-    "serve": "serve -s build"
+    "serve": "serve -s build -p 3000"
   },
   "eslintConfig": {
     "extends": "react-app"
