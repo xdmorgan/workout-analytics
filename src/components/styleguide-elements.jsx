@@ -1,7 +1,7 @@
 import React from "react";
 import cx from "classnames";
 
-export function StyleguideGrid({ style = {}, ...props }) {
+function StyleguideGrid({ style = {}, ...props }) {
   return (
     <div
       {...props}
@@ -21,11 +21,11 @@ function GridItem({ className, ...props }) {
 
 StyleguideGrid.Item = GridItem;
 
-export function StyleguideLabel({ className, ...props }) {
+function StyleguideLabel({ className, ...props }) {
   return <p {...props} className={cx("type-caption", className)} />;
 }
 
-export function StyleguideSection({ className, ...props }) {
+function StyleguideSection({ className, ...props }) {
   return (
     <section
       {...props}
@@ -42,3 +42,5 @@ function SectionTitle({ className, ...props }) {
 }
 
 StyleguideSection.Title = SectionTitle;
+
+export { StyleguideGrid, StyleguideLabel, StyleguideSection };

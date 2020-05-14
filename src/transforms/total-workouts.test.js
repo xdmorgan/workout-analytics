@@ -18,10 +18,12 @@ describe("transform()", () => {
           "pieChart": Array [
             Object {
               "id": "Cycling",
+              "label": "Cycling",
               "value": 1264,
             },
             Object {
               "id": "Stretching",
+              "label": "Stretching",
               "value": 72,
             },
           ],
@@ -35,6 +37,7 @@ describe("transform()", () => {
           "pieChart": Array [
             Object {
               "id": "Cycling",
+              "label": "Cycling",
               "value": 44.64,
             },
           ],
@@ -48,10 +51,12 @@ describe("transform()", () => {
           "pieChart": Array [
             Object {
               "id": "Cycling",
+              "label": "Cycling",
               "value": 8,
             },
             Object {
               "id": "Stretching",
+              "label": "Stretching",
               "value": 5,
             },
           ],
@@ -65,10 +70,12 @@ describe("transform()", () => {
           "pieChart": Array [
             Object {
               "id": "Cycling",
+              "label": "Cycling",
               "value": 239,
             },
             Object {
               "id": "Stretching",
+              "label": "Stretching",
               "value": 25,
             },
           ],

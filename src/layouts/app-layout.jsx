@@ -59,7 +59,7 @@ export function AppLayout({ children, title, nextRoute, previousRoute }) {
 
 function Content({ className, divider, ...props }) {
   const content = (
-    <div {...props} className={cx("py-4x md:py-6x", className)} />
+    <div {...props} className={cx("my-8x md:my-12x xl:my-16x", className)} />
   );
   if (!divider) return content;
   return (

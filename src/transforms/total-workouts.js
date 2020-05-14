@@ -17,6 +17,7 @@ function numberOfWorkouts({ data }) {
     byDiscipline,
     pieChart: Object.entries(byDiscipline).map(([type, count]) => ({
       id: type,
+      label: type,
       value: count,
     })),
   };
@@ -41,6 +42,7 @@ function timeInMinutes({ data }) {
     byDiscipline,
     pieChart: Object.entries(byDiscipline).map(([type, count]) => ({
       id: type,
+      label: type,
       value: count,
     })),
   };
@@ -74,6 +76,7 @@ function distanceInMiles({ data }) {
     pieChart: Object.entries(byDiscipline)
       .map(([type, count]) => ({
         id: type,
+        label: type,
         value: count,
       }))
       .filter((entry) => entry.value > 0),
@@ -99,6 +102,7 @@ function caloriesBurned({ data }) {
     byDiscipline,
     pieChart: Object.entries(byDiscipline).map(([type, count]) => ({
       id: type,
+      label: type,
       value: count,
     })),
   };

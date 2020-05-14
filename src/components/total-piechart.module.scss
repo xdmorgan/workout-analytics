@@ -8,12 +8,6 @@
 
 @include min-width(breakpoint(lg)) {
   .grid {
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  }
-}
-
-@include min-width(breakpoint(lg)) {
-  .grid {
-    grid-template-columns: minmax(400px, 1fr) minmax(400px, 2fr);
+    grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
   }
 }
