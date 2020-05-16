@@ -58,7 +58,7 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
       <AppLayout.Pagination
         previousRoute={pageMetadata.pagination.previous}
         nextRoute={pageMetadata.pagination.next}
-        nextLabel="Top Instructors"
+        nextLabel="Favorite Instructors"
       />
     </AppLayout>
   );

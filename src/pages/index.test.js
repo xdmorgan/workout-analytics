@@ -36,8 +36,8 @@ describe("pages/index", () => {
           "previous": "/activity",
         },
         "route": "/instructors",
-        "sidebar": "Top Instructors",
-        "title": "Top Instructors",
+        "sidebar": "Favorite Instructors",
+        "title": "Favorite Instructors",
       },
       "/styleguide": Object {
         "component": [Function],
