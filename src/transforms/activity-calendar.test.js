@@ -1,10 +1,9 @@
 import transformer from "./activity-calendar";
-
-const data = mockData();
+import TEST_DATA from "../data/workouts.json";
 
 describe("transform()", () => {
   test("Convert raw data to calendar friendly format", async () => {
-    const transformed = transformer({ data });
+    const transformed = transformer({ data: TEST_DATA });
     expect(transformed).toMatchInlineSnapshot(`
       Object {
         "entries": Object {
@@ -39,7 +38,845 @@ describe("transform()", () => {
             },
             "2019-02-25": Object {
               "day": "2019-02-25",
-              "value": 1,
+              "value": 341,
+            },
+            "2019-02-26": Object {
+              "day": "2019-02-26",
+              "value": 394,
+            },
+            "2019-02-28": Object {
+              "day": "2019-02-28",
+              "value": 359,
+            },
+            "2019-03-01": Object {
+              "day": "2019-03-01",
+              "value": 314,
+            },
+            "2019-03-06": Object {
+              "day": "2019-03-06",
+              "value": 438,
+            },
+            "2019-03-07": Object {
+              "day": "2019-03-07",
+              "value": 400,
+            },
+            "2019-03-11": Object {
+              "day": "2019-03-11",
+              "value": 193,
+            },
+            "2019-03-12": Object {
+              "day": "2019-03-12",
+              "value": 280,
+            },
+            "2019-03-13": Object {
+              "day": "2019-03-13",
+              "value": 428,
+            },
+            "2019-03-16": Object {
+              "day": "2019-03-16",
+              "value": 513,
+            },
+            "2019-03-17": Object {
+              "day": "2019-03-17",
+              "value": 383,
+            },
+            "2019-03-20": Object {
+              "day": "2019-03-20",
+              "value": 460,
+            },
+            "2019-03-23": Object {
+              "day": "2019-03-23",
+              "value": 387,
+            },
+            "2019-03-25": Object {
+              "day": "2019-03-25",
+              "value": 467,
+            },
+            "2019-03-27": Object {
+              "day": "2019-03-27",
+              "value": 429,
+            },
+            "2019-03-28": Object {
+              "day": "2019-03-28",
+              "value": 631,
+            },
+            "2019-03-29": Object {
+              "day": "2019-03-29",
+              "value": 617,
+            },
+            "2019-03-31": Object {
+              "day": "2019-03-31",
+              "value": 304,
+            },
+            "2019-04-01": Object {
+              "day": "2019-04-01",
+              "value": 571,
+            },
+            "2019-04-14": Object {
+              "day": "2019-04-14",
+              "value": 163,
+            },
+            "2019-04-16": Object {
+              "day": "2019-04-16",
+              "value": 425,
+            },
+            "2019-04-19": Object {
+              "day": "2019-04-19",
+              "value": 666,
+            },
+            "2019-04-23": Object {
+              "day": "2019-04-23",
+              "value": 455,
+            },
+            "2019-04-24": Object {
+              "day": "2019-04-24",
+              "value": 0,
+            },
+            "2019-04-25": Object {
+              "day": "2019-04-25",
+              "value": 318,
+            },
+            "2019-04-27": Object {
+              "day": "2019-04-27",
+              "value": 450,
+            },
+            "2019-04-29": Object {
+              "day": "2019-04-29",
+              "value": 348,
+            },
+            "2019-05-02": Object {
+              "day": "2019-05-02",
+              "value": 316,
+            },
+            "2019-05-04": Object {
+              "day": "2019-05-04",
+              "value": 185,
+            },
+            "2019-05-05": Object {
+              "day": "2019-05-05",
+              "value": 670,
+            },
+            "2019-05-06": Object {
+              "day": "2019-05-06",
+              "value": 397,
+            },
+            "2019-05-10": Object {
+              "day": "2019-05-10",
+              "value": 473,
+            },
+            "2019-05-11": Object {
+              "day": "2019-05-11",
+              "value": 488,
+            },
+            "2019-05-13": Object {
+              "day": "2019-05-13",
+              "value": 337,
+            },
+            "2019-05-15": Object {
+              "day": "2019-05-15",
+              "value": 674,
+            },
+            "2019-05-16": Object {
+              "day": "2019-05-16",
+              "value": 464,
+            },
+            "2019-05-20": Object {
+              "day": "2019-05-20",
+              "value": 336,
+            },
+            "2019-05-21": Object {
+              "day": "2019-05-21",
+              "value": 342,
+            },
+            "2019-05-22": Object {
+              "day": "2019-05-22",
+              "value": 352,
+            },
+            "2019-05-24": Object {
+              "day": "2019-05-24",
+              "value": 493,
+            },
+            "2019-05-26": Object {
+              "day": "2019-05-26",
+              "value": 345,
+            },
+            "2019-05-29": Object {
+              "day": "2019-05-29",
+              "value": 357,
+            },
+            "2019-05-30": Object {
+              "day": "2019-05-30",
+              "value": 700,
+            },
+            "2019-05-31": Object {
+              "day": "2019-05-31",
+              "value": 268,
+            },
+            "2019-06-02": Object {
+              "day": "2019-06-02",
+              "value": 254,
+            },
+            "2019-06-03": Object {
+              "day": "2019-06-03",
+              "value": 352,
+            },
+            "2019-06-05": Object {
+              "day": "2019-06-05",
+              "value": 502,
+            },
+            "2019-06-07": Object {
+              "day": "2019-06-07",
+              "value": 509,
+            },
+            "2019-06-08": Object {
+              "day": "2019-06-08",
+              "value": 517,
+            },
+            "2019-06-11": Object {
+              "day": "2019-06-11",
+              "value": 925,
+            },
+            "2019-06-12": Object {
+              "day": "2019-06-12",
+              "value": 286,
+            },
+            "2019-06-13": Object {
+              "day": "2019-06-13",
+              "value": 501,
+            },
+            "2019-06-14": Object {
+              "day": "2019-06-14",
+              "value": 713,
+            },
+            "2019-06-15": Object {
+              "day": "2019-06-15",
+              "value": 683,
+            },
+            "2019-06-16": Object {
+              "day": "2019-06-16",
+              "value": 480,
+            },
+            "2019-06-17": Object {
+              "day": "2019-06-17",
+              "value": 275,
+            },
+            "2019-06-18": Object {
+              "day": "2019-06-18",
+              "value": 359,
+            },
+            "2019-06-19": Object {
+              "day": "2019-06-19",
+              "value": 288,
+            },
+            "2019-06-20": Object {
+              "day": "2019-06-20",
+              "value": 519,
+            },
+            "2019-06-24": Object {
+              "day": "2019-06-24",
+              "value": 231,
+            },
+            "2019-06-26": Object {
+              "day": "2019-06-26",
+              "value": 370,
+            },
+            "2019-06-27": Object {
+              "day": "2019-06-27",
+              "value": 375,
+            },
+            "2019-07-01": Object {
+              "day": "2019-07-01",
+              "value": 723,
+            },
+            "2019-07-02": Object {
+              "day": "2019-07-02",
+              "value": 737,
+            },
+            "2019-07-03": Object {
+              "day": "2019-07-03",
+              "value": 337,
+            },
+            "2019-07-04": Object {
+              "day": "2019-07-04",
+              "value": 538,
+            },
+            "2019-07-05": Object {
+              "day": "2019-07-05",
+              "value": 302,
+            },
+            "2019-07-07": Object {
+              "day": "2019-07-07",
+              "value": 193,
+            },
+            "2019-07-08": Object {
+              "day": "2019-07-08",
+              "value": 778,
+            },
+            "2019-07-10": Object {
+              "day": "2019-07-10",
+              "value": 531,
+            },
+            "2019-07-12": Object {
+              "day": "2019-07-12",
+              "value": 980,
+            },
+            "2019-07-13": Object {
+              "day": "2019-07-13",
+              "value": 293,
+            },
+            "2019-07-15": Object {
+              "day": "2019-07-15",
+              "value": 551,
+            },
+            "2019-07-17": Object {
+              "day": "2019-07-17",
+              "value": 396,
+            },
+            "2019-07-18": Object {
+              "day": "2019-07-18",
+              "value": 568,
+            },
+            "2019-07-19": Object {
+              "day": "2019-07-19",
+              "value": 794,
+            },
+            "2019-07-20": Object {
+              "day": "2019-07-20",
+              "value": 304,
+            },
+            "2019-07-22": Object {
+              "day": "2019-07-22",
+              "value": 825,
+            },
+            "2019-07-27": Object {
+              "day": "2019-07-27",
+              "value": 836,
+            },
+            "2019-07-28": Object {
+              "day": "2019-07-28",
+              "value": 575,
+            },
+            "2019-07-31": Object {
+              "day": "2019-07-31",
+              "value": 555,
+            },
+            "2019-08-01": Object {
+              "day": "2019-08-01",
+              "value": 590,
+            },
+            "2019-08-02": Object {
+              "day": "2019-08-02",
+              "value": 307,
+            },
+            "2019-08-04": Object {
+              "day": "2019-08-04",
+              "value": 383,
+            },
+            "2019-08-05": Object {
+              "day": "2019-08-05",
+              "value": 324,
+            },
+            "2019-08-07": Object {
+              "day": "2019-08-07",
+              "value": 597,
+            },
+            "2019-08-08": Object {
+              "day": "2019-08-08",
+              "value": 838,
+            },
+            "2019-08-10": Object {
+              "day": "2019-08-10",
+              "value": 1115,
+            },
+            "2019-08-12": Object {
+              "day": "2019-08-12",
+              "value": 391,
+            },
+            "2019-08-13": Object {
+              "day": "2019-08-13",
+              "value": 14,
+            },
+            "2019-08-14": Object {
+              "day": "2019-08-14",
+              "value": 357,
+            },
+            "2019-08-15": Object {
+              "day": "2019-08-15",
+              "value": 311,
+            },
+            "2019-08-16": Object {
+              "day": "2019-08-16",
+              "value": 598,
+            },
+            "2019-08-17": Object {
+              "day": "2019-08-17",
+              "value": 842,
+            },
+            "2019-08-19": Object {
+              "day": "2019-08-19",
+              "value": 398,
+            },
+            "2019-08-20": Object {
+              "day": "2019-08-20",
+              "value": 400,
+            },
+            "2019-08-21": Object {
+              "day": "2019-08-21",
+              "value": 409,
+            },
+            "2019-08-22": Object {
+              "day": "2019-08-22",
+              "value": 602,
+            },
+            "2019-08-27": Object {
+              "day": "2019-08-27",
+              "value": 14,
+            },
+            "2019-08-28": Object {
+              "day": "2019-08-28",
+              "value": 851,
+            },
+            "2019-08-29": Object {
+              "day": "2019-08-29",
+              "value": 562,
+            },
+            "2019-08-30": Object {
+              "day": "2019-08-30",
+              "value": 580,
+            },
+            "2019-09-01": Object {
+              "day": "2019-09-01",
+              "value": 606,
+            },
+            "2019-09-02": Object {
+              "day": "2019-09-02",
+              "value": 862,
+            },
+            "2019-09-03": Object {
+              "day": "2019-09-03",
+              "value": 313,
+            },
+            "2019-09-04": Object {
+              "day": "2019-09-04",
+              "value": 411,
+            },
+            "2019-09-06": Object {
+              "day": "2019-09-06",
+              "value": 315,
+            },
+            "2019-09-09": Object {
+              "day": "2019-09-09",
+              "value": 867,
+            },
+            "2019-09-10": Object {
+              "day": "2019-09-10",
+              "value": 413,
+            },
+            "2019-09-11": Object {
+              "day": "2019-09-11",
+              "value": 871,
+            },
+            "2019-09-13": Object {
+              "day": "2019-09-13",
+              "value": 611,
+            },
+            "2019-09-17": Object {
+              "day": "2019-09-17",
+              "value": 371,
+            },
+            "2019-09-18": Object {
+              "day": "2019-09-18",
+              "value": 615,
+            },
+            "2019-09-19": Object {
+              "day": "2019-09-19",
+              "value": 417,
+            },
+            "2019-09-20": Object {
+              "day": "2019-09-20",
+              "value": 883,
+            },
+            "2019-09-24": Object {
+              "day": "2019-09-24",
+              "value": 837,
+            },
+            "2019-09-25": Object {
+              "day": "2019-09-25",
+              "value": 320,
+            },
+            "2019-09-26": Object {
+              "day": "2019-09-26",
+              "value": 330,
+            },
+            "2019-09-27": Object {
+              "day": "2019-09-27",
+              "value": 623,
+            },
+            "2019-09-29": Object {
+              "day": "2019-09-29",
+              "value": 813,
+            },
+            "2019-10-01": Object {
+              "day": "2019-10-01",
+              "value": 779,
+            },
+            "2019-10-02": Object {
+              "day": "2019-10-02",
+              "value": 890,
+            },
+            "2019-10-03": Object {
+              "day": "2019-10-03",
+              "value": 632,
+            },
+            "2019-10-04": Object {
+              "day": "2019-10-04",
+              "value": 895,
+            },
+            "2019-10-06": Object {
+              "day": "2019-10-06",
+              "value": 772,
+            },
+            "2019-10-07": Object {
+              "day": "2019-10-07",
+              "value": 414,
+            },
+            "2019-10-13": Object {
+              "day": "2019-10-13",
+              "value": 229,
+            },
+            "2019-10-14": Object {
+              "day": "2019-10-14",
+              "value": 429,
+            },
+            "2019-10-15": Object {
+              "day": "2019-10-15",
+              "value": 498,
+            },
+            "2019-10-18": Object {
+              "day": "2019-10-18",
+              "value": 903,
+            },
+            "2019-10-19": Object {
+              "day": "2019-10-19",
+              "value": 14,
+            },
+            "2019-10-26": Object {
+              "day": "2019-10-26",
+              "value": 14,
+            },
+            "2019-11-01": Object {
+              "day": "2019-11-01",
+              "value": 14,
+            },
+            "2019-11-04": Object {
+              "day": "2019-11-04",
+              "value": 330,
+            },
+            "2019-11-05": Object {
+              "day": "2019-11-05",
+              "value": 432,
+            },
+            "2019-11-06": Object {
+              "day": "2019-11-06",
+              "value": 433,
+            },
+            "2019-11-07": Object {
+              "day": "2019-11-07",
+              "value": 625,
+            },
+            "2019-11-09": Object {
+              "day": "2019-11-09",
+              "value": 14,
+            },
+            "2019-11-14": Object {
+              "day": "2019-11-14",
+              "value": 425,
+            },
+            "2019-11-15": Object {
+              "day": "2019-11-15",
+              "value": 611,
+            },
+            "2019-11-16": Object {
+              "day": "2019-11-16",
+              "value": 14,
+            },
+            "2019-11-21": Object {
+              "day": "2019-11-21",
+              "value": 14,
+            },
+            "2019-12-09": Object {
+              "day": "2019-12-09",
+              "value": 14,
+            },
+            "2019-12-10": Object {
+              "day": "2019-12-10",
+              "value": 15,
+            },
+            "2019-12-11": Object {
+              "day": "2019-12-11",
+              "value": 14,
+            },
+            "2019-12-14": Object {
+              "day": "2019-12-14",
+              "value": 699,
+            },
+            "2019-12-15": Object {
+              "day": "2019-12-15",
+              "value": 788,
+            },
+            "2019-12-16": Object {
+              "day": "2019-12-16",
+              "value": 292,
+            },
+            "2019-12-18": Object {
+              "day": "2019-12-18",
+              "value": 321,
+            },
+            "2019-12-19": Object {
+              "day": "2019-12-19",
+              "value": 576,
+            },
+            "2019-12-20": Object {
+              "day": "2019-12-20",
+              "value": 15,
+            },
+            "2019-12-21": Object {
+              "day": "2019-12-21",
+              "value": 506,
+            },
+            "2019-12-24": Object {
+              "day": "2019-12-24",
+              "value": 592,
+            },
+            "2019-12-25": Object {
+              "day": "2019-12-25",
+              "value": 591,
+            },
+            "2019-12-26": Object {
+              "day": "2019-12-26",
+              "value": 821,
+            },
+            "2019-12-27": Object {
+              "day": "2019-12-27",
+              "value": 434,
+            },
+            "2019-12-28": Object {
+              "day": "2019-12-28",
+              "value": 14,
+            },
+            "2019-12-30": Object {
+              "day": "2019-12-30",
+              "value": 793,
+            },
+            "2019-12-31": Object {
+              "day": "2019-12-31",
+              "value": 331,
+            },
+          },
+          "2020": Object {
+            "2020-01-02": Object {
+              "day": "2020-01-02",
+              "value": 333,
+            },
+            "2020-01-03": Object {
+              "day": "2020-01-03",
+              "value": 28,
+            },
+            "2020-01-07": Object {
+              "day": "2020-01-07",
+              "value": 576,
+            },
+            "2020-01-10": Object {
+              "day": "2020-01-10",
+              "value": 14,
+            },
+            "2020-01-12": Object {
+              "day": "2020-01-12",
+              "value": 14,
+            },
+            "2020-01-13": Object {
+              "day": "2020-01-13",
+              "value": 14,
+            },
+            "2020-01-14": Object {
+              "day": "2020-01-14",
+              "value": 14,
+            },
+            "2020-01-15": Object {
+              "day": "2020-01-15",
+              "value": 335,
+            },
+            "2020-01-20": Object {
+              "day": "2020-01-20",
+              "value": 313,
+            },
+            "2020-01-22": Object {
+              "day": "2020-01-22",
+              "value": 424,
+            },
+            "2020-01-24": Object {
+              "day": "2020-01-24",
+              "value": 425,
+            },
+            "2020-01-28": Object {
+              "day": "2020-01-28",
+              "value": 14,
+            },
+            "2020-01-29": Object {
+              "day": "2020-01-29",
+              "value": 408,
+            },
+            "2020-01-31": Object {
+              "day": "2020-01-31",
+              "value": 431,
+            },
+            "2020-02-02": Object {
+              "day": "2020-02-02",
+              "value": 14,
+            },
+            "2020-02-04": Object {
+              "day": "2020-02-04",
+              "value": 406,
+            },
+            "2020-02-06": Object {
+              "day": "2020-02-06",
+              "value": 574,
+            },
+            "2020-02-09": Object {
+              "day": "2020-02-09",
+              "value": 14,
+            },
+            "2020-02-10": Object {
+              "day": "2020-02-10",
+              "value": 14,
+            },
+            "2020-02-11": Object {
+              "day": "2020-02-11",
+              "value": 622,
+            },
+            "2020-02-13": Object {
+              "day": "2020-02-13",
+              "value": 423,
+            },
+            "2020-02-15": Object {
+              "day": "2020-02-15",
+              "value": 14,
+            },
+            "2020-02-17": Object {
+              "day": "2020-02-17",
+              "value": 336,
+            },
+            "2020-02-18": Object {
+              "day": "2020-02-18",
+              "value": 29,
+            },
+            "2020-02-19": Object {
+              "day": "2020-02-19",
+              "value": 596,
+            },
+            "2020-02-21": Object {
+              "day": "2020-02-21",
+              "value": 585,
+            },
+            "2020-02-22": Object {
+              "day": "2020-02-22",
+              "value": 877,
+            },
+            "2020-02-24": Object {
+              "day": "2020-02-24",
+              "value": 609,
+            },
+            "2020-02-29": Object {
+              "day": "2020-02-29",
+              "value": 14,
+            },
+            "2020-03-01": Object {
+              "day": "2020-03-01",
+              "value": 14,
+            },
+            "2020-03-07": Object {
+              "day": "2020-03-07",
+              "value": 14,
+            },
+            "2020-03-10": Object {
+              "day": "2020-03-10",
+              "value": 395,
+            },
+            "2020-03-12": Object {
+              "day": "2020-03-12",
+              "value": 588,
+            },
+            "2020-03-14": Object {
+              "day": "2020-03-14",
+              "value": 14,
+            },
+            "2020-03-16": Object {
+              "day": "2020-03-16",
+              "value": 597,
+            },
+            "2020-03-18": Object {
+              "day": "2020-03-18",
+              "value": 389,
+            },
+            "2020-03-19": Object {
+              "day": "2020-03-19",
+              "value": 14,
+            },
+            "2020-03-20": Object {
+              "day": "2020-03-20",
+              "value": 601,
+            },
+            "2020-03-22": Object {
+              "day": "2020-03-22",
+              "value": 894,
+            },
+            "2020-03-23": Object {
+              "day": "2020-03-23",
+              "value": 14,
+            },
+            "2020-03-24": Object {
+              "day": "2020-03-24",
+              "value": 605,
+            },
+            "2020-03-26": Object {
+              "day": "2020-03-26",
+              "value": 604,
+            },
+            "2020-03-28": Object {
+              "day": "2020-03-28",
+              "value": 902,
+            },
+            "2020-03-30": Object {
+              "day": "2020-03-30",
+              "value": 603,
+            },
+            "2020-04-01": Object {
+              "day": "2020-04-01",
+              "value": 610,
+            },
+            "2020-04-03": Object {
+              "day": "2020-04-03",
+              "value": 605,
+            },
+            "2020-04-05": Object {
+              "day": "2020-04-05",
+              "value": 924,
+            },
+            "2020-04-07": Object {
+              "day": "2020-04-07",
+              "value": 610,
+            },
+            "2020-04-09": Object {
+              "day": "2020-04-09",
+              "value": 614,
+            },
+            "2020-04-11": Object {
+              "day": "2020-04-11",
+              "value": 885,
+            },
+            "2020-04-13": Object {
+              "day": "2020-04-13",
+              "value": 609,
             },
           },
         },
@@ -48,273 +885,12 @@ describe("transform()", () => {
             "end": "2019-12-30",
             "start": "2019-01-02",
           },
+          "2020": Object {
+            "end": "2020-12-30",
+            "start": "2020-01-02",
+          },
         },
       }
     `);
   });
 });
-
-function mockData() {
-  return [
-    {
-      "Workout Timestamp": "2019-02-14 18:34 (EDT)",
-      "Live/On-Demand": "Live",
-      "Instructor Name": "Cody Rigsby",
-      "Length (minutes)": 45,
-      "Fitness Discipline": "Cycling",
-      Type: "Theme",
-      Title: "45 min 90s Pop Ride",
-      "Class Timestamp": "2019-02-14 18:22 (EDT)",
-      "Total Output": 84,
-      "Avg. Watts": 113,
-      "Avg. Resistance": "38%",
-      "Avg. Cadence (RPM)": 79,
-      "Avg. Speed (mph)": 16.11,
-      "Distance (mi)": 3.34,
-      "Calories Burned": 111,
-      "Avg. Heartrate": "",
-      "Avg. Incline": "",
-      "Avg. Pace (min/mi)": ""
-    },
-    {
-      "Workout Timestamp": "2019-02-14 19:11 (EDT)",
-      "Live/On-Demand": "On Demand",
-      "Instructor Name": "Leanne Hainsby",
-      "Length (minutes)": 5,
-      "Fitness Discipline": "Stretching",
-      Type: "Pre & Post-Ride Stretch",
-      Title: "5 min Post-Ride Stretch",
-      "Class Timestamp": "2019-02-13 00:14 (EDT)",
-      "Total Output": "",
-      "Avg. Watts": "",
-      "Avg. Resistance": "",
-      "Avg. Cadence (RPM)": "",
-      "Avg. Speed (mph)": "",
-      "Distance (mi)": "",
-      "Calories Burned": 5,
-      "Avg. Heartrate": "",
-      "Avg. Incline": "",
-      "Avg. Pace (min/mi)": ""
-    },
-    {
-      "Workout Timestamp": "2019-02-17 16:15 (EDT)",
-      "Live/On-Demand": "On Demand",
-      "Instructor Name": "Ally Love",
-      "Length (minutes)": 20,
-      "Fitness Discipline": "Cycling",
-      Type: "Beginner",
-      Title: "20 min Beginner Ride",
-      "Class Timestamp": "2018-08-16 14:00 (EDT)",
-      "Total Output": 118,
-      "Avg. Watts": 99,
-      "Avg. Resistance": "36%",
-      "Avg. Cadence (RPM)": 85,
-      "Avg. Speed (mph)": 15.75,
-      "Distance (mi)": 5.25,
-      "Calories Burned": 155,
-      "Avg. Heartrate": "",
-      "Avg. Incline": "",
-      "Avg. Pace (min/mi)": ""
-    },
-    {
-      "Workout Timestamp": "2019-02-17 16:38 (EDT)",
-      "Live/On-Demand": "On Demand",
-      "Instructor Name": "Leanne Hainsby",
-      "Length (minutes)": 5,
-      "Fitness Discipline": "Stretching",
-      Type: "Pre & Post-Ride Stretch",
-      Title: "5 min Post-Ride Stretch",
-      "Class Timestamp": "2019-02-13 00:14 (EDT)",
-      "Total Output": "",
-      "Avg. Watts": "",
-      "Avg. Resistance": "",
-      "Avg. Cadence (RPM)": "",
-      "Avg. Speed (mph)": "",
-      "Distance (mi)": "",
-      "Calories Burned": 28,
-      "Avg. Heartrate": "",
-      "Avg. Incline": "",
-      "Avg. Pace (min/mi)": ""
-    },
-    {
-      "Workout Timestamp": "2019-02-19 18:51 (EDT)",
-      "Live/On-Demand": "On Demand",
-      "Instructor Name": "Matt Wilpers",
-      "Length (minutes)": 15,
-      "Fitness Discipline": "Cycling",
-      Type: "Low Impact",
-      Title: "15 min Warm Up Ride",
-      "Class Timestamp": "2018-07-30 14:35 (EDT)",
-      "Total Output": 100,
-      "Avg. Watts": 111,
-      "Avg. Resistance": "37%",
-      "Avg. Cadence (RPM)": 89,
-      "Avg. Speed (mph)": 16.47,
-      "Distance (mi)": 4.12,
-      "Calories Burned": 132,
-      "Avg. Heartrate": "",
-      "Avg. Incline": "",
-      "Avg. Pace (min/mi)": ""
-    },
-    {
-      "Workout Timestamp": "2019-02-19 19:07 (EDT)",
-      "Live/On-Demand": "On Demand",
-      "Instructor Name": "Matt Wilpers",
-      "Length (minutes)": 5,
-      "Fitness Discipline": "Stretching",
-      Type: "Pre & Post-Ride Stretch",
-      Title: "5 min Post-Ride Stretch",
-      "Class Timestamp": "2019-01-03 15:11 (EDT)",
-      "Total Output": "",
-      "Avg. Watts": "",
-      "Avg. Resistance": "",
-      "Avg. Cadence (RPM)": "",
-      "Avg. Speed (mph)": "",
-      "Distance (mi)": "",
-      "Calories Burned": 14,
-      "Avg. Heartrate": "",
-      "Avg. Incline": "",
-      "Avg. Pace (min/mi)": ""
-    },
-    {
-      "Workout Timestamp": "2019-02-20 18:16 (EDT)",
-      "Live/On-Demand": "On Demand",
-      "Instructor Name": "Cody Rigsby",
-      "Length (minutes)": 20,
-      "Fitness Discipline": "Cycling",
-      Type: "Theme",
-      Title: "20 min Beginner Ride",
-      "Class Timestamp": "2018-08-24 15:11 (EDT)",
-      "Total Output": 127,
-      "Avg. Watts": 106,
-      "Avg. Resistance": "35%",
-      "Avg. Cadence (RPM)": 90,
-      "Avg. Speed (mph)": 15.96,
-      "Distance (mi)": 5.31,
-      "Calories Burned": 167,
-      "Avg. Heartrate": "",
-      "Avg. Incline": "",
-      "Avg. Pace (min/mi)": ""
-    },
-    {
-      "Workout Timestamp": "2019-02-20 18:39 (EDT)",
-      "Live/On-Demand": "On Demand",
-      "Instructor Name": "Cody Rigsby",
-      "Length (minutes)": 5,
-      "Fitness Discipline": "Stretching",
-      Type: "Pre & Post-Ride Stretch",
-      Title: "5 min Post-Ride Stretch",
-      "Class Timestamp": "2019-02-07 15:10 (EDT)",
-      "Total Output": "",
-      "Avg. Watts": "",
-      "Avg. Resistance": "",
-      "Avg. Cadence (RPM)": "",
-      "Avg. Speed (mph)": "",
-      "Distance (mi)": "",
-      "Calories Burned": 11,
-      "Avg. Heartrate": "",
-      "Avg. Incline": "",
-      "Avg. Pace (min/mi)": ""
-    },
-    {
-      "Workout Timestamp": "2019-02-22 18:32 (EDT)",
-      "Live/On-Demand": "On Demand",
-      "Instructor Name": "Denis Morton",
-      "Length (minutes)": 30,
-      "Fitness Discipline": "Cycling",
-      Type: "Low Impact",
-      Title: "30 min Low Impact Ride",
-      "Class Timestamp": "2018-08-04 15:18 (EDT)",
-      "Total Output": 163,
-      "Avg. Watts": 91,
-      "Avg. Resistance": "34%",
-      "Avg. Cadence (RPM)": 86,
-      "Avg. Speed (mph)": 14.87,
-      "Distance (mi)": 7.42,
-      "Calories Burned": 214,
-      "Avg. Heartrate": "",
-      "Avg. Incline": "",
-      "Avg. Pace (min/mi)": ""
-    },
-    {
-      "Workout Timestamp": "2019-02-22 19:05 (EDT)",
-      "Live/On-Demand": "On Demand",
-      "Instructor Name": "Denis Morton",
-      "Length (minutes)": 5,
-      "Fitness Discipline": "Stretching",
-      Type: "Pre & Post-Ride Stretch",
-      Title: "5 min Post-Ride Stretch",
-      "Class Timestamp": "2019-02-15 14:26 (EDT)",
-      "Total Output": "",
-      "Avg. Watts": "",
-      "Avg. Resistance": "",
-      "Avg. Cadence (RPM)": "",
-      "Avg. Speed (mph)": "",
-      "Distance (mi)": "",
-      "Calories Burned": 14,
-      "Avg. Heartrate": "",
-      "Avg. Incline": "",
-      "Avg. Pace (min/mi)": ""
-    },
-    {
-      "Workout Timestamp": "2019-02-23 10:04 (EDT)",
-      "Live/On-Demand": "",
-      "Instructor Name": "",
-      "Length (minutes)": 44,
-      "Fitness Discipline": "Cycling",
-      Type: "",
-      Title: "44 min 31 sec Just Ride",
-      "Class Timestamp": "",
-      "Total Output": 181,
-      "Avg. Watts": 68,
-      "Avg. Resistance": "27%",
-      "Avg. Cadence (RPM)": 100,
-      "Avg. Speed (mph)": 13.61,
-      "Distance (mi)": 10.09,
-      "Calories Burned": 239,
-      "Avg. Heartrate": "",
-      "Avg. Incline": "",
-      "Avg. Pace (min/mi)": ""
-    },
-    {
-      "Workout Timestamp": "2019-02-24 09:21 (EDT)",
-      "Live/On-Demand": "",
-      "Instructor Name": "",
-      "Length (minutes)": 35,
-      "Fitness Discipline": "Cycling",
-      Type: "",
-      Title: "35 min 41 sec Just Ride",
-      "Class Timestamp": "",
-      "Total Output": 186,
-      "Avg. Watts": 87,
-      "Avg. Resistance": "28%",
-      "Avg. Cadence (RPM)": 111,
-      "Avg. Speed (mph)": 15.21,
-      "Distance (mi)": 9.05,
-      "Calories Burned": 245,
-      "Avg. Heartrate": "",
-      "Avg. Incline": "",
-      "Avg. Pace (min/mi)": ""
-    },
-    {
-      "Workout Timestamp": "2019-02-25 21:11 (EDT)",
-      "Live/On-Demand": "On Demand",
-      "Instructor Name": "",
-      "Length (minutes)": 30,
-      "Fitness Discipline": "Cycling",
-      Type: "Scenic Ride",
-      Title: "30 min Maine Scenic Ride",
-      "Class Timestamp": "",
-      "Total Output": 1,
-      "Avg. Watts": 30,
-      "Avg. Resistance": "28%",
-      "Avg. Cadence (RPM)": 47,
-      "Avg. Speed (mph)": 7.18,
-      "Distance (mi)": 0.06,
-      "Calories Burned": 1,
-      "Avg. Heartrate": "",
-      "Avg. Incline": "",
-      "Avg. Pace (min/mi)": ""
-    }
-  ];
-}
