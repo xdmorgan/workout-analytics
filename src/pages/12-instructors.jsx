@@ -28,11 +28,12 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
       previousRoute={pageMetadata.pagination.previous}
       nextRoute={pageMetadata.pagination.next}
     >
-      {Object.keys(pageWorkoutData.chartData).map((key) => (
+      {Object.keys(pageWorkoutData.chartData).map((key, idx) => (
         <BarChartSection
           key={key}
           type={key}
           data={pageWorkoutData.chartData[key]}
+          divider={idx > 0 ? "before" : undefined}
         />
       ))}
       <AppLayout.Pagination
@@ -43,9 +44,9 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
   );
 }
 
-function BarChartSection({ type, data }) {
+function BarChartSection({ type, data, divider }) {
   return (
-    <AppLayout.Content>
+    <AppLayout.Content divider={divider}>
       <h2 className="type-h2">{type}</h2>
       <div style={{ height: 420 }}>
         <ResponsiveBar

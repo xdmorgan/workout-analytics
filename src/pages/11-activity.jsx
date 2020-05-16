@@ -19,8 +19,8 @@ const ACTIVITY_COLORS = [
 
 export const meta = {
   route: "/activity",
-  title: "Activity",
-  sidebar: "Activity",
+  title: "Annual Activity",
+  sidebar: "Annual Activity",
   component: Page,
   pagination: {
     previous: "/totals",
@@ -58,7 +58,7 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
       <AppLayout.Pagination
         previousRoute={pageMetadata.pagination.previous}
         nextRoute={pageMetadata.pagination.next}
-        nextLabel="Favorite Instructors"
+        nextLabel="Instructors"
       />
     </AppLayout>
   );
