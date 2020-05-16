@@ -26,8 +26,8 @@ describe("pages/index", () => {
           "previous": "/totals",
         },
         "route": "/activity",
-        "sidebar": "Activity",
-        "title": "Activity",
+        "sidebar": "Annual Activity",
+        "title": "Annual Activity",
       },
       "/instructors": Object {
         "component": [Function],
@@ -52,7 +52,7 @@ describe("pages/index", () => {
           "previous": null,
         },
         "route": "/totals",
-        "sidebar": "Totals",
+        "sidebar": "Combined Totals",
         "title": "Combined Totals",
       },
     }
