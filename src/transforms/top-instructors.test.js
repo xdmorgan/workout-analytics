@@ -2,7 +2,7 @@ import transformer from "./top-instructors";
 import TEST_DATA from "../data/workouts.json";
 
 describe("transform()", () => {
-  test("Convert raw data to calendar friendly format", async () => {
+  test("Calculate number of classes by instructor name", async () => {
     const transformed = transformer({ data: TEST_DATA });
     expect(transformed).toMatchInlineSnapshot(`
       Object {
