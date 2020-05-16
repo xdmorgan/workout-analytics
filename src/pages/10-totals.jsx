@@ -2,7 +2,6 @@ import React from "react";
 import { AppLayout } from "../layouts/app-layout";
 import { ProtectedPage } from "../components/protected-page";
 import { TRANSFORMED_KEYS } from "../constants";
-import { Pagination } from "../components/pagination";
 import { TotalPiechart } from "../components/total-piechart";
 
 export const meta = {
@@ -28,7 +27,7 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
       previousRoute={pageMetadata.pagination.previous}
       nextRoute={pageMetadata.pagination.next}
     >
-      <AppLayout.Content>
+      <AppLayout.Content divider="after">
         <TotalPiechart data={totals.numberOfWorkouts.pieChart}>
           <p className="type-h1-xxl my-2x">{totals.numberOfWorkouts.sum}</p>
           <h2 className="type-h2">Combined Workouts</h2>
@@ -41,7 +40,7 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
           </p>
         </TotalPiechart>
       </AppLayout.Content>
-      <AppLayout.Content>
+      <AppLayout.Content divider="after">
         <TotalPiechart data={totals.timeInMinutes.pieChart}>
           <p className="type-h1-xxl my-2x">{totals.timeInMinutes.sum}</p>
           <h2 className="type-h2">Minutes Completed</h2>
@@ -69,7 +68,7 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
           </div>
         </TotalPiechart>
       </AppLayout.Content>
-      <AppLayout.Content>
+      <AppLayout.Content divider="after">
         <TotalPiechart data={totals.distanceInMiles.pieChart}>
           <p className="type-h1-xxl my-2x">{totals.distanceInMiles.sum}</p>
           <h2 className="type-h2">Miles Covered</h2>
@@ -125,13 +124,11 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
           </div>
         </TotalPiechart>
       </AppLayout.Content>
-      <AppLayout.Content divider="before">
-        <Pagination
-          previousRoute={pageMetadata.pagination.previous}
-          nextRoute={pageMetadata.pagination.next}
-          nextLabel="Activity"
-        />
-      </AppLayout.Content>
+      <AppLayout.Pagination
+        previousRoute={pageMetadata.pagination.previous}
+        nextRoute={pageMetadata.pagination.next}
+        nextLabel="Activity"
+      />
     </AppLayout>
   );
 }

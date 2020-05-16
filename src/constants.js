@@ -33,4 +33,5 @@ export const RAW_KEYS = {
 export const TRANSFORMED_KEYS = {
   TotalWorkouts: "total-workouts",
   ActivityCalendar: "activity-calendar",
+  TopInstructors: "top-instructors",
 };

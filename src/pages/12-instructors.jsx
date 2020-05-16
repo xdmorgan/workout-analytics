@@ -4,12 +4,12 @@ import { ProtectedPage } from "../components/protected-page";
 import { TRANSFORMED_KEYS } from "../constants";
 
 export const meta = {
-  route: "/example",
-  title: "Example",
-  sidebar: "Example",
+  route: "/instructors",
+  title: "Top Instructors",
+  sidebar: "Top Instructors",
   component: Page,
   pagination: {
-    previous: null,
+    previous: "/activity",
     next: null,
   },
 };
@@ -27,17 +27,7 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
       previousRoute={pageMetadata.pagination.previous}
       nextRoute={pageMetadata.pagination.next}
     >
-      <AppLayout.Content>
-        <div className="wysiwyg child-my-0">
-          <h2>Hello</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
-            reiciendis et, nesciunt quis quia eum vel inventore est debitis ab,
-            molestias ex, dolore repellendus? Beatae eos minus laudantium
-            placeat eligendi?
-          </p>
-        </div>
-      </AppLayout.Content>
+      <AppLayout.Content>asdf</AppLayout.Content>
       <AppLayout.Pagination
         previousRoute={pageMetadata.pagination.previous}
         nextRoute={pageMetadata.pagination.next}
