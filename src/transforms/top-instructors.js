@@ -1,6 +1,6 @@
 import { RAW_KEYS } from "../constants";
 
-export default function transform({ data }) {
+export function aggregateFromRawValues(data) {
   const totals = {};
   const byDiscipline = {};
 
@@ -18,5 +18,30 @@ export default function transform({ data }) {
   return {
     totals,
     byDiscipline,
+  };
+}
+
+export function convertDisciplineDataToBarChart(discipline) {
+  return Object.entries(discipline).map(([name, count]) => ({
+    id: name,
+    value: count,
+  }));
+}
+export function convertAggregateDataToBarCharts(discipline) {
+  return Object.entries(discipline).reduce(
+    (all, [name, counts]) => ({
+      ...all,
+      [name]: convertDisciplineDataToBarChart(counts),
+    }),
+    {}
+  );
+}
+
+export default function transform({ data }) {
+  const aggregated = aggregateFromRawValues(data);
+  const chartData = convertAggregateDataToBarCharts(aggregated.byDiscipline);
+  return {
+    aggregated,
+    chartData,
   };
 }

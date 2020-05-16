@@ -1,7 +1,5 @@
 import React from "react";
 import { AppLayout } from "../layouts/app-layout";
-import { Button } from "../components/button";
-import { HorizontalRule } from "../components/horizontal-rule";
 import { ProtectedPage } from "../components/protected-page";
 import { TRANSFORMED_KEYS } from "../constants";
 
@@ -21,27 +19,29 @@ export function Page() {
 }
 
 function PageWithData({ allWorkoutData, pageMetadata }) {
-  const pageWorkoutData = allWorkoutData[TRANSFORMED_KEYS.TotalWorkouts];
+  const pageWorkoutData = allWorkoutData[TRANSFORMED_KEYS.TopInstructors];
+  console.log(pageWorkoutData, pageMetadata);
   return (
     <AppLayout
       title={pageMetadata.title}
-      previousRoute={pageMetadata.previousRoute}
-      nextRoute={pageMetadata.nextRoute}
+      previousRoute={pageMetadata.pagination.previous}
+      nextRoute={pageMetadata.pagination.next}
     >
-      <AppLayout.Content>{pageWorkoutData.total}</AppLayout.Content>
-      <HorizontalRule />
       <AppLayout.Content>
-        <nav className="d-flex flx-a-c flx-j-sb">
-          <Button to={pageMetadata.previousRoute} appearance="ghost">
-            <>Previous</>
-            <span className="d-none lg:d-inline">: Start over</span>
-          </Button>
-          <Button appearance="secondary" to={pageMetadata.nextRoute}>
-            <>Next</>
-            <span className="d-none lg:d-inline">: Instructors</span>
-          </Button>
-        </nav>
+        <div className="wysiwyg child-my-0">
+          <h2>Hello</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
+            reiciendis et, nesciunt quis quia eum vel inventore est debitis ab,
+            molestias ex, dolore repellendus? Beatae eos minus laudantium
+            placeat eligendi?
+          </p>
+        </div>
       </AppLayout.Content>
+      <AppLayout.Pagination
+        previousRoute={pageMetadata.pagination.previous}
+        nextRoute={pageMetadata.pagination.next}
+      />
     </AppLayout>
   );
 }

@@ -2,13 +2,14 @@ import React from "react";
 import { AppLayout } from "../layouts/app-layout";
 import { ProtectedPage } from "../components/protected-page";
 import { TRANSFORMED_KEYS } from "../constants";
-import { Pagination } from "../components/pagination";
 import { TotalPiechart } from "../components/total-piechart";
+import { ListWithIcon } from "../components/list-with-icon";
+import { IconCheckmark } from "../components/icon-checkmark";
 
 export const meta = {
   route: "/totals",
   title: "Combined Totals",
-  sidebar: "Totals",
+  sidebar: "Combined Totals",
   component: Page,
   pagination: {
     previous: null,
@@ -28,7 +29,7 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
       previousRoute={pageMetadata.pagination.previous}
       nextRoute={pageMetadata.pagination.next}
     >
-      <AppLayout.Content>
+      <AppLayout.Content divider="after">
         <TotalPiechart data={totals.numberOfWorkouts.pieChart}>
           <p className="type-h1-xxl my-2x">{totals.numberOfWorkouts.sum}</p>
           <h2 className="type-h2">Combined Workouts</h2>
@@ -41,61 +42,57 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
           </p>
         </TotalPiechart>
       </AppLayout.Content>
-      <AppLayout.Content>
+      <AppLayout.Content divider="after">
         <TotalPiechart data={totals.timeInMinutes.pieChart}>
           <p className="type-h1-xxl my-2x">{totals.timeInMinutes.sum}</p>
           <h2 className="type-h2">Minutes Completed</h2>
           <p className="type-para my-0">That's the equivalent of:</p>
-          <div className="wysiwyg">
-            <ul>
-              <li>
-                {(([count, plural]) => `${count} hour${plural ? "s" : ""}`)(
-                  toHours(totals.timeInMinutes.sum)
-                )}
-              </li>
-              <li>
-                {(([count, plural]) =>
-                  `${count} episode${plural ? "s" : ""} of The Office`)(
-                  toOfficeEpisodes(totals.timeInMinutes.sum)
-                )}
-              </li>
-              <li>
-                {(([count, plural]) =>
-                  `${count} time${plural ? "s" : ""} watching Titanic`)(
-                  toTitanicMovies(totals.timeInMinutes.sum)
-                )}
-              </li>
-            </ul>
-          </div>
+          <ListWithIcon>
+            <ListWithIcon.Item icon={<>⏱</>}>
+              {(([count, plural]) => `${count} hour${plural ? "s" : ""}`)(
+                toHours(totals.timeInMinutes.sum)
+              )}
+            </ListWithIcon.Item>
+            <ListWithIcon.Item icon={<>🏢</>}>
+              {(([count, plural]) =>
+                `${count} episode${plural ? "s" : ""} of The Office`)(
+                toOfficeEpisodes(totals.timeInMinutes.sum)
+              )}
+            </ListWithIcon.Item>
+            <ListWithIcon.Item icon={<>🚢</>}>
+              {(([count, plural]) =>
+                `${count} time${plural ? "s" : ""} watching Titanic`)(
+                toTitanicMovies(totals.timeInMinutes.sum)
+              )}
+            </ListWithIcon.Item>
+          </ListWithIcon>
         </TotalPiechart>
       </AppLayout.Content>
-      <AppLayout.Content>
+      <AppLayout.Content divider="after">
         <TotalPiechart data={totals.distanceInMiles.pieChart}>
           <p className="type-h1-xxl my-2x">{totals.distanceInMiles.sum}</p>
           <h2 className="type-h2">Miles Covered</h2>
           <p className="type-para my-0">That's the equivalent of:</p>
-          <div className="wysiwyg">
-            <ul>
-              <li>
-                {(([count, plural]) => `${count} marathon${plural ? "s" : ""}`)(
-                  toMarathons(totals.distanceInMiles.sum)
-                )}
-              </li>
-              <li>
-                {(([count, plural]) => `${count} lap${plural ? "s" : ""}`)(
-                  toNurburgrings(totals.distanceInMiles.sum)
-                )}{" "}
-                around the Nürburgring
-              </li>
-              <li>
-                Approximately{" "}
-                {(([count, plural]) =>
-                  `${count} Tour de France${plural ? "s" : ""}`)(
-                  toTourDeFrances(totals.distanceInMiles.sum)
-                )}
-              </li>
-            </ul>
-          </div>
+          <ListWithIcon>
+            <ListWithIcon.Item icon={<>🏃‍♀️</>}>
+              {(([count, plural]) => `${count} marathon${plural ? "s" : ""}`)(
+                toMarathons(totals.distanceInMiles.sum)
+              )}
+            </ListWithIcon.Item>
+            <ListWithIcon.Item icon={<>🏎</>}>
+              {(([count, plural]) => `${count} lap${plural ? "s" : ""}`)(
+                toNurburgrings(totals.distanceInMiles.sum)
+              )}{" "}
+              around the Nürburgring
+            </ListWithIcon.Item>
+            <ListWithIcon.Item icon={<>🚴‍♀️</>}>
+              Approximately{" "}
+              {(([count, plural]) =>
+                `${count} Tour de France${plural ? "s" : ""}`)(
+                toTourDeFrances(totals.distanceInMiles.sum)
+              )}
+            </ListWithIcon.Item>
+          </ListWithIcon>
         </TotalPiechart>
       </AppLayout.Content>
       <AppLayout.Content>
@@ -103,35 +100,30 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
           <p className="type-h1-xxl my-2x">{totals.caloriesBurned.sum}</p>
           <h2 className="type-h2">Calories Burned</h2>
           <p className="type-para my-0">That's the equivalent of:</p>
-          <div className="wysiwyg">
-            <ul>
-              <li>
-                {(([count, plural]) => `${count} Oreo${plural ? "s" : ""}`)(
-                  toOreos(totals.caloriesBurned.sum)
-                )}
-              </li>
-              <li>
-                {(([count, plural]) => `${count} Big Mac${plural ? "s" : ""}`)(
-                  toBigMacs(totals.caloriesBurned.sum)
-                )}
-              </li>
-              <li>
-                {(([count, plural]) =>
-                  `${count} Vermonster${plural ? "s" : ""}`)(
-                  toVermonsters(totals.caloriesBurned.sum)
-                )}
-              </li>
-            </ul>
-          </div>
+          <ListWithIcon>
+            <ListWithIcon.Item icon={<>🍪</>}>
+              {(([count, plural]) => `${count} Oreo${plural ? "s" : ""}`)(
+                toOreos(totals.caloriesBurned.sum)
+              )}
+            </ListWithIcon.Item>
+            <ListWithIcon.Item icon={<>🍔</>}>
+              {(([count, plural]) => `${count} Big Mac${plural ? "s" : ""}`)(
+                toBigMacs(totals.caloriesBurned.sum)
+              )}
+            </ListWithIcon.Item>
+            <ListWithIcon.Item icon={<>🍨</>}>
+              {(([count, plural]) => `${count} Vermonster${plural ? "s" : ""}`)(
+                toVermonsters(totals.caloriesBurned.sum)
+              )}
+            </ListWithIcon.Item>
+          </ListWithIcon>
         </TotalPiechart>
       </AppLayout.Content>
-      <AppLayout.Content divider="before">
-        <Pagination
-          previousRoute={pageMetadata.pagination.previous}
-          nextRoute={pageMetadata.pagination.next}
-          nextLabel="Activity"
-        />
-      </AppLayout.Content>
+      <AppLayout.Pagination
+        previousRoute={pageMetadata.pagination.previous}
+        nextRoute={pageMetadata.pagination.next}
+        nextLabel="Activity"
+      />
     </AppLayout>
   );
 }

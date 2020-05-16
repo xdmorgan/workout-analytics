@@ -4,7 +4,6 @@ import { TRANSFORMED_KEYS } from "../constants";
 import { AppLayout } from "../layouts/app-layout";
 import { ProtectedPage } from "../components/protected-page";
 import { SelectInput } from "../components/select-input";
-import { Pagination } from "../components/pagination";
 
 const EMPTY_COLOR = "var(--color-n80)";
 const ACTIVITY_COLORS = [
@@ -20,12 +19,12 @@ const ACTIVITY_COLORS = [
 
 export const meta = {
   route: "/activity",
-  title: "Activity",
-  sidebar: "Activity",
+  title: "Annual Activity",
+  sidebar: "Annual Activity",
   component: Page,
   pagination: {
     previous: "/totals",
-    next: null,
+    next: "/instructors",
   },
 };
 
@@ -56,14 +55,11 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
       nextRoute={pageMetadata.pagination.next}
     >
       <ActivityCalendarSection years={years} entries={entries} />
-      <AppLayout.Content divider="before">
-        <Pagination
-          previousRoute={pageMetadata.pagination.previous}
-          previousLabel="Totals"
-          nextRoute={pageMetadata.pagination.next}
-          nextLabel="Coming soon"
-        />
-      </AppLayout.Content>
+      <AppLayout.Pagination
+        previousRoute={pageMetadata.pagination.previous}
+        nextRoute={pageMetadata.pagination.next}
+        nextLabel="Instructors"
+      />
     </AppLayout>
   );
 }
