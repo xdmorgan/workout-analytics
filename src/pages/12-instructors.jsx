@@ -11,7 +11,7 @@ export const meta = {
   component: Page,
   pagination: {
     previous: "/activity",
-    next: null,
+    next: "/outputs",
   },
 };
 
@@ -21,7 +21,6 @@ export function Page() {
 
 function PageWithData({ allWorkoutData, pageMetadata }) {
   const pageWorkoutData = allWorkoutData[TRANSFORMED_KEYS.TopInstructors];
-  console.log(pageWorkoutData, pageMetadata);
   return (
     <AppLayout
       title={pageMetadata.title}

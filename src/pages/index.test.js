@@ -32,12 +32,22 @@ describe("pages/index", () => {
       "/instructors": Object {
         "component": [Function],
         "pagination": Object {
-          "next": null,
+          "next": "/outputs",
           "previous": "/activity",
         },
         "route": "/instructors",
         "sidebar": "Favorite Instructors",
         "title": "Favorite Instructors",
+      },
+      "/outputs": Object {
+        "component": [Function],
+        "pagination": Object {
+          "next": null,
+          "previous": "/instructors",
+        },
+        "route": "/outputs",
+        "sidebar": "Average Outputs",
+        "title": "Average Outputs",
       },
       "/styleguide": Object {
         "component": [Function],
