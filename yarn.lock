@@ -1417,10 +1417,10 @@
   resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.3.tgz#5405ee8e444ed212db44e79351f0c70a582aae25"
   integrity sha512-DetpxZw1fzPD5xUBrIAoplLChO2VB8DlL5Gg+I1IR9b2wPqYIca2WSUxL5g1vLeR4MsQq1NeWriXAVffV+U1Fw==
 
-"@skeletor/css@^0.13.0":
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/@skeletor/css/-/css-0.13.0.tgz#9381b1e6939240a925fbdd0796ed8ac77b6103ff"
-  integrity sha512-Lx4pntnc0GhnO9CyMPtW3BRx/f+neXbvOUbguDuN/NleOdWzLJ47J8aF+7PxeJsQO2K0c8u+TZ9smbwNcI32KA==
+"@skeletor/css@^0.14.0":
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/@skeletor/css/-/css-0.14.0.tgz#793d42111f75e4547ffbe0f951c4ee61ccd8cfe0"
+  integrity sha512-sKx1KgOZMt8+qaL15WaK+D+/HAfS4Kf8qJSRzNjgwXcBjYEtLeGtzM/FkfMmXuVxUrPUczNNdHH+Dz4IYuWpVw==
   dependencies:
     fs-extra "^8.1.0"
     json-to-scss "^1.5.0"
