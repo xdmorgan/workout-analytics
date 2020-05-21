@@ -6,8 +6,8 @@ import { TRANSFORMED_KEYS } from "../constants";
 
 export const meta = {
   route: "/outputs",
-  title: "Average Outputs",
-  sidebar: "Average Outputs",
+  title: "Cycling Outputs",
+  sidebar: "Cycling Outputs",
   component: Page,
   pagination: {
     previous: "/instructors",
@@ -20,7 +20,7 @@ export function Page() {
 }
 
 function PageWithData({ allWorkoutData, pageMetadata }) {
-  const pageWorkoutData = allWorkoutData[TRANSFORMED_KEYS.AverageOutputs];
+  const pageWorkoutData = allWorkoutData[TRANSFORMED_KEYS.CyclingOutputs];
   console.log(pageWorkoutData, pageMetadata);
   return (
     <AppLayout

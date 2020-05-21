@@ -1,4 +1,4 @@
-import transformer from "./average-outputs";
+import transformer from "./cycling-outputs";
 import TEST_DATA from "../data/workouts.json";
 
 describe("transform()", () => {

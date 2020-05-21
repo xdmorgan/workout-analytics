@@ -5,6 +5,17 @@ import { DownloadGuideAndInfoSection } from "../components/download-guide-and-in
 import { WorkoutDataContext } from "../contexts/workout-data-provider";
 import { WelcomeUploaderSection } from "../components/welcome-uploader-section";
 
+export const meta = {
+  route: "/",
+  title: "Welcome",
+  sidebar: null,
+  component: Page,
+  pagination: {
+    previous: null,
+    next: null,
+  },
+};
+
 export default function Page() {
   const { state, dispatch } = React.useContext(WorkoutDataContext);
   return (
@@ -24,10 +35,3 @@ export default function Page() {
     </>
   );
 }
-
-export const meta = {
-  route: "/",
-  title: "Welcome",
-  sidebar: null,
-  component: Page,
-};

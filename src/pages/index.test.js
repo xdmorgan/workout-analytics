@@ -7,6 +7,9 @@ describe("pages/index", () => {
       expect(typeof meta.route).toEqual("string");
       expect(typeof meta.title).toEqual("string");
       expect(typeof meta.component).toEqual("function");
+      expect(typeof meta.pagination).toEqual("object");
+      expect(typeof meta.pagination.previous).toBeDefined();
+      expect(typeof meta.pagination.next).toBeDefined();
       expect(meta.sidebar).toBeDefined();
     }
   );
@@ -15,6 +18,10 @@ describe("pages/index", () => {
     Object {
       "/": Object {
         "component": [Function],
+        "pagination": Object {
+          "next": null,
+          "previous": null,
+        },
         "route": "/",
         "sidebar": null,
         "title": "Welcome",
@@ -46,11 +53,15 @@ describe("pages/index", () => {
           "previous": "/instructors",
         },
         "route": "/outputs",
-        "sidebar": "Average Outputs",
-        "title": "Average Outputs",
+        "sidebar": "Cycling Outputs",
+        "title": "Cycling Outputs",
       },
       "/styleguide": Object {
         "component": [Function],
+        "pagination": Object {
+          "next": null,
+          "previous": null,
+        },
         "route": "/styleguide",
         "sidebar": null,
         "title": "Styleguide",
