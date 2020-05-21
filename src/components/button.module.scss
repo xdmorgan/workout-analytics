@@ -32,6 +32,7 @@
   &:global {
     &:focus,
     &.is-focus {
+      z-index: var(--layer-over);
       outline: none;
       box-shadow: 0 0 0 var(--button-focus-ring-size, 3px)
         var(--button-focus-ring-color, #{color(n40, 0.5)});

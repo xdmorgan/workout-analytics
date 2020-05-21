@@ -13,54 +13,44 @@ const INCREMENTS = {
 };
 
 function computeFromRawValues(data) {
-  const byDiscipline = {};
+  const byRideLength = {};
 
   for (const workout of data) {
     const length = workout[RAW_KEYS.LengthInMinutes];
     if (!length) continue;
     const discipline = workout[RAW_KEYS.FitnessDiscipline];
     if (discipline !== "Cycling") continue;
-    if (!byDiscipline[discipline]) {
-      byDiscipline[discipline] = {};
-    }
     if (!INCREMENTS[length]) continue;
-    if (!byDiscipline[discipline][length]) {
-      byDiscipline[discipline][length] = {};
+    if (!byRideLength[length]) {
+      byRideLength[length] = {};
     }
-    byDiscipline[discipline][length][workout[RAW_KEYS.WorkoutTimestamp]] =
+    byRideLength[length][workout[RAW_KEYS.WorkoutTimestamp]] =
       workout[RAW_KEYS.TotalOutput];
   }
   return {
-    byDiscipline,
+    byRideLength,
   };
 }
 
-function convertToChartDataStructure(obj) {
-  // key value pairs of {'timestamp': output}
-  return Object.entries(obj).map(([timestamp, output]) => ({
-    x: timestamp.split(" ")[0],
-    y: output,
-  }));
-}
-
-function chartDataByDiscipline(values) {
-  const groups = Object.keys(values);
-  return groups.map((group) => ({
-    id: group,
-    data: convertToChartDataStructure(values[group]),
-  }));
+function chartDataByRideLength(byRideLength) {
+  return Object.entries(byRideLength).reduce(
+    (all, [name, values]) => ({
+      ...all,
+      [name]: {
+        id: name,
+        data: Object.entries(values).map(([timestamp, output]) => ({
+          x: timestamp.split(" ")[0],
+          y: output,
+        })),
+      },
+    }),
+    {}
+  );
 }
 
 export default function transform({ data }) {
   const computed = computeFromRawValues(data);
-  const chartData = Object.entries(computed.byDiscipline).reduce(
-    (all, [name, values]) => ({
-      ...all,
-      [name]: chartDataByDiscipline(values),
-    }),
-    {}
-  );
   return {
-    chartData,
+    byRideLength: chartDataByRideLength(computed.byRideLength),
   };
 }

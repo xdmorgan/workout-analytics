@@ -28,6 +28,8 @@ export function Button({
           [styles[`button--${theme}`]]: theme,
           [styles[`button--${theme}--${appearance}`]]: theme && appearance,
           [styles[`button--${size}`]]: !!size,
+          [styles[`button--${size}`]]: !!size,
+          "is-active": !!props["aria-pressed"],
         },
         className
       )}
