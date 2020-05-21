@@ -11,7 +11,7 @@ export const meta = {
   component: Page,
   pagination: {
     previous: "/activity",
-    next: null,
+    next: "/outputs",
   },
 };
 
@@ -21,7 +21,6 @@ export function Page() {
 
 function PageWithData({ allWorkoutData, pageMetadata }) {
   const pageWorkoutData = allWorkoutData[TRANSFORMED_KEYS.TopInstructors];
-  console.log(pageWorkoutData, pageMetadata);
   return (
     <AppLayout
       title={pageMetadata.title}
@@ -56,7 +55,7 @@ function BarChartSection({ type, data, divider }) {
           borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
           axisTop={null}
           axisRight={null}
-          colors={["var(--color-r40)"]}
+          // colors={["var(--color-r40)"]}
           axisBottom={{
             tickSize: 5,
             tickPadding: 5,

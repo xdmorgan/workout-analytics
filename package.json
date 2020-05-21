@@ -5,7 +5,9 @@
   "dependencies": {
     "@nivo/bar": "^0.61.1",
     "@nivo/calendar": "^0.61.1",
+    "@nivo/line": "^0.61.1",
     "@nivo/pie": "^0.61.1",
+    "@nivo/scatterplot": "^0.61.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -43,7 +45,7 @@
     ]
   },
   "devDependencies": {
-    "@skeletor/css": "^0.13.0",
+    "@skeletor/css": "^0.14.0",
     "serve": "^11.3.0",
     "typebeast": "^0.1.3"
   },

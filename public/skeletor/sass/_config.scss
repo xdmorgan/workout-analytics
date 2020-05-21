@@ -1,99 +1,99 @@
 $skeletor: (
-  normalize: true,
-  displays: true,
-  flex: true,
-  breakpoints: (
-    sm: 420px,
-    md: 768px,
-    lg: 1024px,
-    xl: 1280px
+  "normalize": true,
+  "displays": true,
+  "flex": true,
+  "breakpoints": (
+    "sm": 420px,
+    "md": 768px,
+    "lg": 1024px,
+    "xl": 1280px
   ),
-  colors: (
-    n0: #000000,
-    n10: #171a1c,
-    n20: #353d44,
-    n30: #565e65,
-    n40: #91979d,
-    n50: #b6babe,
-    n60: #dadde0,
-    n70: #ebedef,
-    n80: #f6f6f7,
-    n90: #ffffff,
-    g10: #003b38,
-    g20: #015651,
-    g30: #017a73,
-    g40: #05aea4,
-    g50: #03dccf,
-    g60: #71faf2,
-    g70: #b3fdf8,
-    g80: #d6fdfb,
-    g90: #e5fefc,
-    r10: #5d051a,
-    r20: #890726,
-    r30: #d41140,
-    r40: #ff4672,
-    r50: #fe7291,
-    r60: #feafc1,
-    r70: #fedee6,
-    r80: #fff2f5
+  "colors": (
+    "n0": #000000,
+    "n10": #171a1c,
+    "n20": #353d44,
+    "n30": #565e65,
+    "n40": #91979d,
+    "n50": #b6babe,
+    "n60": #dadde0,
+    "n70": #ebedef,
+    "n80": #f6f6f7,
+    "n90": #ffffff,
+    "g10": #003b38,
+    "g20": #015651,
+    "g30": #017a73,
+    "g40": #05aea4,
+    "g50": #03dccf,
+    "g60": #71faf2,
+    "g70": #b3fdf8,
+    "g80": #d6fdfb,
+    "g90": #e5fefc,
+    "r10": #5d051a,
+    "r20": #890726,
+    "r30": #d41140,
+    "r40": #ff4672,
+    "r50": #fe7291,
+    "r60": #feafc1,
+    "r70": #fedee6,
+    "r80": #fff2f5
   ),
-  container: (
-    initial: (
-      min: 272px,
-      inset: 24px,
-      max: 1488px
+  "container": (
+    "initial": (
+      "min": 272px,
+      "inset": 24px,
+      "max": 1488px
     ),
-    md: (
-      inset: 32px,
-      max: 1488px
+    "md": (
+      "inset": 32px,
+      "max": 1488px
     ),
-    lg: (
-      inset: 48px,
-      max: 1488px
+    "lg": (
+      "inset": 48px,
+      "max": 1488px
     ),
-    xl: (
-      inset: 64px,
-      max: 1488px
+    "xl": (
+      "inset": 64px,
+      "max": 1488px
     )
   ),
-  dimensions: (
-    auto: auto,
-    none: none,
-    fill: 100%
+  "dimensions": (
+    "auto": auto,
+    "none": none,
+    "fill": 100%
   ),
-  font-families: (
-    heading: (Poppins, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif),
-    body: (-apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif)
+  "font-families": (
+    "heading": (Poppins, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif),
+    "body": (-apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif)
   ),
-  font-weights: (
-    normal: 400,
-    bold: 700
+  "font-weights": (
+    "normal": 400,
+    "bold": 700
   ),
-  line-heights: (
-    compact: 1.1,
-    default: 1.5,
-    spacious: 1.7
+  "line-heights": (
+    "compact": 1.1,
+    "default": 1.5,
+    "spacious": 1.7
   ),
-  spacings: (
-    0: 0,
-    05x: 4px,
-    1x: 8px,
-    2x: 16px,
-    3x: 24px,
-    4x: 32px,
-    6x: 48px,
-    8x: 64px,
-    10x: 80px,
-    12x: 96px,
-    16x: 128px
+  "spacings": (
+    "0": 0,
+    "05x": 4px,
+    "1x": 8px,
+    "2x": 16px,
+    "3x": 24px,
+    "4x": 32px,
+    "6x": 48px,
+    "8x": 64px,
+    "10x": 80px,
+    "12x": 96px,
+    "16x": 128px
   ),
-  z-indexes: (
-    over: 1,
-    nav: 100,
-    orbit: 1000
+  "z-indexes": (
+    "over": 1,
+    "nav": 100,
+    "orbit": 1000
   ),
-  rounded-corners: (
-    small: 8px,
-    normal: 18px
+  "rounded-corners": (
+    "small": 8px,
+    "normal": 18px
   )
 );

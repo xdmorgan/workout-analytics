@@ -4,7 +4,6 @@ import { ProtectedPage } from "../components/protected-page";
 import { TRANSFORMED_KEYS } from "../constants";
 import { TotalPiechart } from "../components/total-piechart";
 import { ListWithIcon } from "../components/list-with-icon";
-import { IconCheckmark } from "../components/icon-checkmark";
 
 export const meta = {
   route: "/totals",

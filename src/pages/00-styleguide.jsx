@@ -8,6 +8,10 @@ export const meta = {
   title: "Styleguide",
   sidebar: null,
   component: Page,
+  pagination: {
+    previous: null,
+    next: null,
+  },
 };
 
 export function Page() {

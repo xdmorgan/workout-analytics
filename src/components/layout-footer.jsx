@@ -14,8 +14,7 @@ export function LayoutFooter() {
         <div className={cx(styles.footer__links, "child-my-0")}>
           <nav>
             <ul className="list-reset m-0 type-small">
-              {/* TODO: should be 025x */}
-              <li style={{ marginBottom: 2 }}>
+              <li className="mb-05x">
                 <a
                   className="is-stealth"
                   href="//github.com/xdmorgan/peloton-workouts/issues/new"
@@ -23,7 +22,7 @@ export function LayoutFooter() {
                   Found a bug?
                 </a>
               </li>
-              <li style={{ marginBottom: 2 }}>
+              <li className="mb-05x">
                 <a
                   className="is-stealth"
                   href="//github.com/xdmorgan/peloton-workouts/tree/master/docs/CONTRIBUTING.md"
@@ -31,14 +30,12 @@ export function LayoutFooter() {
                   Contributing
                 </a>
               </li>
-              {/* TODO: should be 025x */}
-              <li style={{ marginBottom: 2 }}>
+              <li className="mb-05x">
                 <a className="is-stealth" href="//twitter.com/xdanmorgan">
                   Share feedback
                 </a>
               </li>
-              {/* TODO: should be 025x */}
-              <li style={{ marginBottom: 2 }}>
+              <li className="mb-05x">
                 <a
                   className="is-stealth"
                   href="//danny.codes/blog/workout-analytics"
@@ -46,8 +43,7 @@ export function LayoutFooter() {
                   Case study
                 </a>
               </li>
-              {/* TODO: should be 025x */}
-              <li style={{ marginBottom: 2 }}>
+              <li className="mb-05x">
                 <a className="is-stealth" href="/styleguide">
                   UI styleguide
                 </a>
