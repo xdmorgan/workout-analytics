@@ -4,6 +4,7 @@ import { AppLayout } from "../layouts/app-layout";
 import { Button } from "../components/button";
 import { ProtectedPage } from "../components/protected-page";
 import { SelectInput } from "../components/select-input";
+import { ContentHeader } from "../components/content-header";
 import { TRANSFORMED_KEYS } from "../constants";
 
 export const meta = {
@@ -25,11 +26,7 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
   const pageWorkoutData = allWorkoutData[TRANSFORMED_KEYS.CyclingOutputs];
   console.log(pageWorkoutData, pageMetadata);
   return (
-    <AppLayout
-      title={pageMetadata.title}
-      previousRoute={pageMetadata.pagination.previous}
-      nextRoute={pageMetadata.pagination.next}
-    >
+    <>
       {/* {Object.keys(pageWorkoutData.chartData).map((key, idx) => (
         <ScatterPlotSection
           key={key}
@@ -38,6 +35,12 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
           divider={idx > 0 ? "before" : undefined}
         />
       ))} */}
+      <ContentHeader
+        previousRoute={pageMetadata.pagination.previous}
+        nextRoute={pageMetadata.pagination.next}
+      >
+        {pageMetadata.title}
+      </ContentHeader>
       <ResponsiveLineSection
         data={Object.values(pageWorkoutData.byRideLength)}
         defaultSelected={Object.keys(pageWorkoutData.byRideLength).reduce(
@@ -50,7 +53,7 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
         previousRoute={pageMetadata.pagination.previous}
         nextRoute={pageMetadata.pagination.next}
       />
-    </AppLayout>
+    </>
   );
 }
 
@@ -67,14 +70,14 @@ const toggleReducer = (state, action) => {
 };
 
 const TIME_OPTIONS = ["This month", "This year", "Last year", "All-time"];
-function ResponsiveLineSection({ type, data, divider, defaultSelected }) {
+function ResponsiveLineSection({ type, data, defaultSelected }) {
   const [option, setOption] = React.useState(TIME_OPTIONS.slice(-1)[0]);
   const [toggleState, dispatchToggle] = React.useReducer(
     toggleReducer,
     defaultSelected
   );
   return (
-    <AppLayout.Content divider={divider}>
+    <AppLayout.Content>
       <h2 className="type-h2">{type}</h2>
       <div className="lg:d-flex mb-2x">
         <div className="flx-g-1 lg:pr-2x">

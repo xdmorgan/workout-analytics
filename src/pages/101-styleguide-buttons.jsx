@@ -1,16 +1,37 @@
 import React from "react";
-import { Button } from "./button";
+import { ContentHeader } from "../components/content-header";
+import { Button } from "../components/button";
 import {
   StyleguideGrid,
   StyleguideLabel,
   StyleguideSection,
-} from "./styleguide-elements";
+} from "../components/styleguide-elements";
 
-export function ButtonStyleguide() {
+export const meta = {
+  route: "/styleguide/buttons",
+  title: "Buttons",
+  sidebar: null,
+  component: Page,
+  pagination: {
+    previous: "/styleguide",
+    next: null,
+  },
+};
+
+export function Page() {
+  return (
+    <>
+      <ContentHeader previousRoute={meta.pagination.previous}>
+        {meta.title}
+      </ContentHeader>
+      <ButtonStyleguide />
+    </>
+  );
+}
+
+function ButtonStyleguide() {
   return (
     <StyleguideSection>
-      <StyleguideSection.Title>Buttons</StyleguideSection.Title>
-
       <div className="d-block mb-4x p-4x">
         <h3 className="type-h3">Appearances</h3>
         <StyleguideGrid>

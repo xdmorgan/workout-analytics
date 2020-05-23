@@ -23,7 +23,7 @@ describe("pages/index", () => {
           "previous": null,
         },
         "route": "/",
-        "sidebar": null,
+        "sidebar": "Get Started",
         "title": "Welcome",
       },
       "/activity": Object {
@@ -66,11 +66,21 @@ describe("pages/index", () => {
         "sidebar": null,
         "title": "Styleguide",
       },
+      "/styleguide/buttons": Object {
+        "component": [Function],
+        "pagination": Object {
+          "next": null,
+          "previous": "/styleguide",
+        },
+        "route": "/styleguide/buttons",
+        "sidebar": null,
+        "title": "Buttons",
+      },
       "/totals": Object {
         "component": [Function],
         "pagination": Object {
           "next": "/activity",
-          "previous": null,
+          "previous": "/",
         },
         "route": "/totals",
         "sidebar": "Combined Totals",

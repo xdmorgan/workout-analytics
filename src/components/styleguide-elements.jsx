@@ -29,7 +29,7 @@ function StyleguideSection({ className, ...props }) {
   return (
     <section
       {...props}
-      className={cx(className, "py-6x md:py-8x child-my-0")}
+      className={cx(className, "container py-6x md:py-8x child-my-0")}
     />
   );
 }

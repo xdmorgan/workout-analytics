@@ -4,6 +4,7 @@ import { TRANSFORMED_KEYS } from "../constants";
 import { AppLayout } from "../layouts/app-layout";
 import { ProtectedPage } from "../components/protected-page";
 import { SelectInput } from "../components/select-input";
+import { ContentHeader } from "../components/content-header";
 
 const EMPTY_COLOR = "var(--color-n80)";
 const ACTIVITY_COLORS = [
@@ -49,18 +50,20 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
   // });
 
   return (
-    <AppLayout
-      title={pageMetadata.title}
-      previousRoute={pageMetadata.pagination.previous}
-      nextRoute={pageMetadata.pagination.next}
-    >
+    <>
+      <ContentHeader
+        previousRoute={pageMetadata.pagination.previous}
+        nextRoute={pageMetadata.pagination.next}
+      >
+        {pageMetadata.title}
+      </ContentHeader>
       <ActivityCalendarSection years={years} entries={entries} />
       <AppLayout.Pagination
         previousRoute={pageMetadata.pagination.previous}
         nextRoute={pageMetadata.pagination.next}
         nextLabel="Instructors"
       />
-    </AppLayout>
+    </>
   );
 }
 

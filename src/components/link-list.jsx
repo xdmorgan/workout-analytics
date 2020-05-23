@@ -16,7 +16,7 @@ function Item({ children, className, active, ...props }) {
         {...props}
         className={cx(
           styles.item,
-          "type-ui d-block fw-bold py-1x px-2x rc-small is-stealth",
+          "type-small d-block py-05x px-1x rc-small is-stealth",
           {
             [styles["is-selected"]]: !!active,
           },

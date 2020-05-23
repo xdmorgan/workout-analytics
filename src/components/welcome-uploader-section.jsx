@@ -15,57 +15,30 @@ export function WelcomeUploaderSection({
 }) {
   const [showFileUpload, setShowFileUpload] = React.useState(false);
   return (
-    <section
-      {...props}
-      className={cx(
-        "py-12x md:py-16x",
-        {
-          "bg-g10": canAccessProtectedPages,
-          "c-n90": canAccessProtectedPages,
-          "bg-n80": !canAccessProtectedPages,
-        },
-        className
-      )}
-    >
-      <div className="container child-my-0">
-        <div className={styles.hero}>
-          <div className="lg:py-8x">
-            {canAccessProtectedPages ? (
-              <h1 className="type-h1-xl mb-4x">You're all set</h1>
-            ) : (
-              <h1 className="type-h1-xl mb-4x">Getting started</h1>
-            )}
-            <p className="type-para mb-4x md:mb-6x">
-              After a recent exercise milestone, I wanted a way to analyze my
-              fitness journey so I built this tool to visualize Peloton workout
-              data and help celebrate those hard-earned victories.
-            </p>
-          </div>
-          <div>
-            {showFileUpload ? (
-              <FileLoader
-                accept=".csv"
-                onLoad={(...args) => {
-                  setShowFileUpload(false);
-                  onRequestSetData(...args);
-                }}
-                onError={console.error}
-                onAbort={console.error}
-                onCancel={() => setShowFileUpload(false)}
-              />
-            ) : canAccessProtectedPages ? (
-              <UploaderCTA
-                protectedEntryRoute={protectedEntryRoute}
-                onReset={onRequestResetData}
-              />
-            ) : (
-              <GetStartedCTA
-                onSelectUploadPath={() => setShowFileUpload(true)}
-                onSelectDemoPath={onRequestDemoData}
-              />
-            )}
-          </div>
-        </div>
+    <section {...props} className={cx("container", className)}>
+      <div className={cx(styles.hero, "pt-4x")}>
+        {showFileUpload ? (
+          <FileLoader
+            accept=".csv"
+            onLoad={(...args) => {
+              setShowFileUpload(false);
+              onRequestSetData(...args);
+            }}
+            onError={console.error}
+            onAbort={console.error}
+            onCancel={() => setShowFileUpload(false)}
+          />
+        ) : canAccessProtectedPages ? (
+          <UploaderCTA
+            protectedEntryRoute={protectedEntryRoute}
+            onReset={onRequestResetData}
+          />
+        ) : (
+          <GetStartedCTA
+            onSelectUploadPath={() => setShowFileUpload(true)}
+            onSelectDemoPath={onRequestDemoData}
+          />
+        )}
       </div>
     </section>
   );
@@ -74,18 +47,26 @@ export function WelcomeUploaderSection({
 function GetStartedCTA({ onSelectUploadPath, onSelectDemoPath }) {
   return (
     <UploaderBlock
-      label="If you haven't exported your workouts yet, see below for more information and a video guide."
+      className="bg-n80"
+      heading="Start here"
+      label="If you haven't exported your workouts yet, see below for more info and the how-to guide."
       buttons={[
-        <Button key="analyze" size="large" onClick={onSelectUploadPath}>
-          Analyze my workouts
-        </Button>,
         <Button
           key="demo"
           size="large"
           appearance="ghost"
           onClick={onSelectDemoPath}
         >
-          Use demo data
+          See demo
+        </Button>,
+        <Button
+          key="analyze"
+          theme="dark"
+          size="large"
+          appearance="secondary"
+          onClick={onSelectUploadPath}
+        >
+          Analyze my workouts
         </Button>,
       ]}
     />
@@ -95,16 +76,10 @@ function GetStartedCTA({ onSelectUploadPath, onSelectDemoPath }) {
 function UploaderCTA({ protectedEntryRoute, onReset }) {
   return (
     <UploaderBlock
-      label="That's it! Your data has been processed and is ready for review."
+      className="bg-g10 c-n90"
+      heading="You're all set!"
+      label="Your wourkout data was successfully processed and is now ready for review."
       buttons={[
-        <Button
-          key="workouts"
-          theme="dark"
-          size="large"
-          to={protectedEntryRoute}
-        >
-          Take me there
-        </Button>,
         <Button
           key="reset"
           theme="dark"
@@ -112,14 +87,22 @@ function UploaderCTA({ protectedEntryRoute, onReset }) {
           size="large"
           onClick={onReset}
         >
-          Reset
+          Start over
+        </Button>,
+        <Button
+          key="workouts"
+          theme="dark"
+          size="large"
+          to={protectedEntryRoute}
+        >
+          Let's go!
         </Button>,
       ]}
     />
   );
 }
 
-function UploaderBlock({ label, buttons, className, ...props }) {
+function UploaderBlock({ label, buttons, heading, className, ...props }) {
   return (
     <div
       {...props}
@@ -128,6 +111,7 @@ function UploaderBlock({ label, buttons, className, ...props }) {
         className
       )}
     >
+      <h1 className="type-h1-xxl mt-0 mb-4x">{heading}</h1>
       <div className="align-c child-my-0 xl:d-flex">
         {buttons.map((el, idx) => {
           return (

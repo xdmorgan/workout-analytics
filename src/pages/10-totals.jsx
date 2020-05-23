@@ -4,6 +4,7 @@ import { ProtectedPage } from "../components/protected-page";
 import { TRANSFORMED_KEYS } from "../constants";
 import { TotalPiechart } from "../components/total-piechart";
 import { ListWithIcon } from "../components/list-with-icon";
+import { ContentHeader } from "../components/content-header";
 
 export const meta = {
   route: "/totals",
@@ -11,7 +12,7 @@ export const meta = {
   sidebar: "Combined Totals",
   component: Page,
   pagination: {
-    previous: null,
+    previous: "/",
     next: "/activity",
   },
 };
@@ -23,11 +24,13 @@ export function Page() {
 function PageWithData({ allWorkoutData, pageMetadata }) {
   const totals = allWorkoutData[TRANSFORMED_KEYS.TotalWorkouts];
   return (
-    <AppLayout
-      title={pageMetadata.title}
-      previousRoute={pageMetadata.pagination.previous}
-      nextRoute={pageMetadata.pagination.next}
-    >
+    <>
+      <ContentHeader
+        previousRoute={pageMetadata.pagination.previous}
+        nextRoute={pageMetadata.pagination.next}
+      >
+        {pageMetadata.title}
+      </ContentHeader>
       <AppLayout.Content divider="after">
         <TotalPiechart data={totals.numberOfWorkouts.pieChart}>
           <p className="type-h1-xxl my-2x">{totals.numberOfWorkouts.sum}</p>
@@ -123,7 +126,7 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
         nextRoute={pageMetadata.pagination.next}
         nextLabel="Activity"
       />
-    </AppLayout>
+    </>
   );
 }
 
