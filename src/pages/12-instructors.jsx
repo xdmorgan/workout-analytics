@@ -2,6 +2,7 @@ import React from "react";
 import { ResponsiveBar } from "@nivo/bar";
 import { AppLayout } from "../layouts/app-layout";
 import { ProtectedPage } from "../components/protected-page";
+import { ContentHeader } from "../components/content-header";
 import { TRANSFORMED_KEYS } from "../constants";
 
 export const meta = {
@@ -22,11 +23,13 @@ export function Page() {
 function PageWithData({ allWorkoutData, pageMetadata }) {
   const pageWorkoutData = allWorkoutData[TRANSFORMED_KEYS.TopInstructors];
   return (
-    <AppLayout
-      title={pageMetadata.title}
-      previousRoute={pageMetadata.pagination.previous}
-      nextRoute={pageMetadata.pagination.next}
-    >
+    <>
+      <ContentHeader
+        previousRoute={pageMetadata.pagination.previous}
+        nextRoute={pageMetadata.pagination.next}
+      >
+        {pageMetadata.title}
+      </ContentHeader>
       {Object.keys(pageWorkoutData.chartData).map((key, idx) => (
         <BarChartSection
           key={key}
@@ -39,7 +42,7 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
         previousRoute={pageMetadata.pagination.previous}
         nextRoute={pageMetadata.pagination.next}
       />
-    </AppLayout>
+    </>
   );
 }
 

@@ -44,7 +44,7 @@ export function FileLoader({
       className={cx(
         "d-flex flx-a-c flx-j-c flx-d-c h-fill rc-normal",
         isDragActive ? "bg-g80" : "bg-g90",
-        isDragActive ? "c-g20" : "c-n30"
+        isDragActive ? "c-g20" : "c-n10"
       )}
       style={{
         position: "relative",
@@ -60,13 +60,15 @@ export function FileLoader({
         })}
       >
         <input {...getInputProps({ accept })} />
+        <h1 className="type-h1-xxl mt-0 mb-4x">Add data</h1>
         <div>
           <Button size="large" as="div">
             Select file
           </Button>
         </div>
         <p className="type-small mt-4x mb-0 align-c" style={{ maxWidth: 360 }}>
-          Drag and drop your CSV or click to browse.
+          Drag and drop your CSV or click to browse and select from your hard
+          drive.
         </p>
       </div>
       <Button

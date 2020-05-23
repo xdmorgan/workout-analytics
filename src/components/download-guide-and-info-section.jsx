@@ -6,7 +6,7 @@ import styles from "./download-guide-and-info-section.module.scss";
 
 export function DownloadGuideAndInfoSection() {
   return (
-    <section className="py-8x md:py-12x lg:py-16x">
+    <section className="py-6x md:py-8x lg:py-10x">
       <div className={cx("container", styles.container)}>
         <div>
           <h2 className="type-h2 mt-0 mb-3x">How do I export my&nbsp;data?</h2>

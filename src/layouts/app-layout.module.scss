@@ -1,25 +1,42 @@
 @import "../../public/skeletor/sass/skeletor.core";
 
 .layout {
-  display: grid;
-  min-height: 100vh;
-  box-sizing: border-box;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
-  grid-template-columns: 1fr;
-  grid-template-rows: auto minmax(auto, 1fr) auto;
-
-  &__header {
-    grid-area: header;
+  padding-left: 224px;
+  &__navigation {
+    // outline: 1px solid rgba(255, 0, 0, 0.25);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 224px;
   }
-
-  &__main {
-    grid-area: main;
-  }
-
-  &__footer {
-    grid-area: footer;
+  &__content {
+    padding-top: 1px; // css is awesome
+    margin-top: -1px; // prevent margin from leaking
+    // outline: 1px solid rgba(0, 255, 0, 0.25);
   }
 }
+
+// .layout {
+//   display: grid;
+//   min-height: 100vh;
+//   box-sizing: border-box;
+//   grid-template-areas:
+//     "header"
+//     "main"
+//     "footer";
+//   grid-template-columns: 1fr;
+//   grid-template-rows: auto minmax(auto, 1fr) auto;
+
+//   &__header {
+//     grid-area: header;
+//   }
+
+//   &__main {
+//     grid-area: main;
+//   }
+
+//   &__footer {
+//     grid-area: footer;
+//   }
+// }
