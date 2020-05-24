@@ -52,14 +52,6 @@ function GetStartedCTA({ onSelectUploadPath, onSelectDemoPath }) {
       label="If you haven't exported your workouts yet, see below for more info and the how-to guide."
       buttons={[
         <Button
-          key="demo"
-          size="large"
-          appearance="ghost"
-          onClick={onSelectDemoPath}
-        >
-          See demo
-        </Button>,
-        <Button
           key="analyze"
           theme="dark"
           size="large"
@@ -67,6 +59,14 @@ function GetStartedCTA({ onSelectUploadPath, onSelectDemoPath }) {
           onClick={onSelectUploadPath}
         >
           Analyze my workouts
+        </Button>,
+        <Button
+          key="demo"
+          size="large"
+          appearance="ghost"
+          onClick={onSelectDemoPath}
+        >
+          See demo
         </Button>,
       ]}
     />
@@ -81,6 +81,14 @@ function UploaderCTA({ protectedEntryRoute, onReset }) {
       label="Your wourkout data was successfully processed and is now ready for review."
       buttons={[
         <Button
+          key="workouts"
+          theme="dark"
+          size="large"
+          to={protectedEntryRoute}
+        >
+          Let's go!
+        </Button>,
+        <Button
           key="reset"
           theme="dark"
           appearance="ghost"
@@ -88,14 +96,6 @@ function UploaderCTA({ protectedEntryRoute, onReset }) {
           onClick={onReset}
         >
           Start over
-        </Button>,
-        <Button
-          key="workouts"
-          theme="dark"
-          size="large"
-          to={protectedEntryRoute}
-        >
-          Let's go!
         </Button>,
       ]}
     />
