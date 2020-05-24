@@ -1,7 +1,6 @@
 import React from "react";
 import { ResponsiveBar } from "@nivo/bar";
 import { AppLayout } from "../layouts/app-layout";
-import { ProtectedPage } from "../components/protected-page";
 import { ContentHeader } from "../components/content-header";
 import { TRANSFORMED_KEYS } from "../constants";
 
@@ -10,17 +9,14 @@ export const meta = {
   title: "Favorite Instructors",
   sidebar: "Favorite Instructors",
   component: Page,
+  protected: true,
   pagination: {
     previous: "/activity",
     next: "/outputs",
   },
 };
 
-export function Page() {
-  return <ProtectedPage component={PageWithData} />;
-}
-
-function PageWithData({ allWorkoutData, pageMetadata }) {
+export function Page({ allWorkoutData, pageMetadata }) {
   const pageWorkoutData = allWorkoutData[TRANSFORMED_KEYS.TopInstructors];
   return (
     <>

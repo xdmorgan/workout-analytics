@@ -8,6 +8,7 @@ export const meta = {
   title: "Welcome",
   sidebar: "Get Started",
   component: Page,
+  protected: false,
   pagination: {
     previous: null,
     next: null,

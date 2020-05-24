@@ -113,14 +113,14 @@ function Sidebar() {
               Leave feedback
             </a>
           </li>
-          <li className="mb-05x">
+          {/* <li className="mb-05x">
             <a
               className="is-stealth"
               href="//danny.codes/blog/workout-analytics"
             >
               Read case study
             </a>
-          </li>
+          </li> */}
           <li className="mb-05x">
             <a className="is-stealth" href="/styleguide">
               View styleguide

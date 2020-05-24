@@ -2,7 +2,6 @@ import React from "react";
 import { ResponsiveLine } from "@nivo/line";
 import { AppLayout } from "../layouts/app-layout";
 import { Button } from "../components/button";
-import { ProtectedPage } from "../components/protected-page";
 import { SelectInput } from "../components/select-input";
 import { ContentHeader } from "../components/content-header";
 import { TRANSFORMED_KEYS } from "../constants";
@@ -12,17 +11,14 @@ export const meta = {
   title: "Cycling Outputs",
   sidebar: "Cycling Outputs",
   component: Page,
+  protected: true,
   pagination: {
     previous: "/instructors",
     next: null,
   },
 };
 
-export function Page() {
-  return <ProtectedPage component={PageWithData} />;
-}
-
-function PageWithData({ allWorkoutData, pageMetadata }) {
+export function Page({ allWorkoutData, pageMetadata }) {
   const pageWorkoutData = allWorkoutData[TRANSFORMED_KEYS.CyclingOutputs];
   console.log(pageWorkoutData, pageMetadata);
   return (

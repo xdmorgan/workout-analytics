@@ -12,6 +12,7 @@ export const meta = {
   title: "Buttons",
   sidebar: null,
   component: Page,
+  protected: false,
   pagination: {
     previous: "/styleguide",
     next: null,

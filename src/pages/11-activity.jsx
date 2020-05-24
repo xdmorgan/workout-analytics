@@ -2,7 +2,6 @@ import React from "react";
 import { ResponsiveCalendar } from "@nivo/calendar";
 import { TRANSFORMED_KEYS } from "../constants";
 import { AppLayout } from "../layouts/app-layout";
-import { ProtectedPage } from "../components/protected-page";
 import { SelectInput } from "../components/select-input";
 import { ContentHeader } from "../components/content-header";
 
@@ -23,17 +22,14 @@ export const meta = {
   title: "Annual Activity",
   sidebar: "Annual Activity",
   component: Page,
+  protected: true,
   pagination: {
     previous: "/totals",
     next: "/instructors",
   },
 };
 
-export function Page() {
-  return <ProtectedPage component={PageWithData} />;
-}
-
-function PageWithData({ allWorkoutData, pageMetadata }) {
+export function Page({ allWorkoutData, pageMetadata }) {
   const { years, entries } = allWorkoutData[TRANSFORMED_KEYS.ActivityCalendar];
   // const contentRef = React.useRef(null);
   // const [contentWidth, setContentWidth] = React.useState(null);

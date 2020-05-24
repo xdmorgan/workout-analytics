@@ -1,6 +1,5 @@
 import React from "react";
 import { AppLayout } from "../layouts/app-layout";
-import { ProtectedPage } from "../components/protected-page";
 import { TRANSFORMED_KEYS } from "../constants";
 import { TotalPiechart } from "../components/total-piechart";
 import { ListWithIcon } from "../components/list-with-icon";
@@ -11,17 +10,14 @@ export const meta = {
   title: "Combined Totals",
   sidebar: "Combined Totals",
   component: Page,
+  protected: true,
   pagination: {
     previous: "/",
     next: "/activity",
   },
 };
 
-export function Page() {
-  return <ProtectedPage component={PageWithData} />;
-}
-
-function PageWithData({ allWorkoutData, pageMetadata }) {
+export function Page({ allWorkoutData, pageMetadata }) {
   const totals = allWorkoutData[TRANSFORMED_KEYS.TotalWorkouts];
   return (
     <>

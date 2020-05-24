@@ -7,6 +7,7 @@ export const meta = {
   title: "Styleguide",
   sidebar: null,
   component: Page,
+  protected: false,
   pagination: {
     previous: null,
     next: null,
