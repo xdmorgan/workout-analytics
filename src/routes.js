@@ -4,10 +4,11 @@ import { AppLayout } from "./layouts/app-layout";
 import pages from "./pages";
 import { useProtectedPage } from "./hooks/use-protected-page";
 import { usePageMeta } from "./hooks/use-page-meta";
+import { Sidebar } from "./components/sidebar-navigation";
 
 export default function RouterViews() {
   return (
-    <AppLayout>
+    <AppLayout sidebar={<Sidebar />}>
       <Switch>
         {Object.entries(pages).map(([name, meta]) => {
           const RouteElement = meta.protected ? ProtectedRoute : Route;

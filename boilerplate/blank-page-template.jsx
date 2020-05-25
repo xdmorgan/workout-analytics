@@ -1,6 +1,7 @@
 import React from "react";
-import { AppLayout } from "../layouts/app-layout";
-import { ProtectedPage } from "../components/protected-page";
+import { ContentHeader } from "../components/content-header";
+import { ContentSection } from "../components/content-section";
+import { Pagination } from "../components/pagination";
 import { TRANSFORMED_KEYS } from "../constants";
 
 export const meta = {
@@ -8,26 +9,25 @@ export const meta = {
   title: "Example",
   sidebar: "Example",
   component: Page,
+  protected: true,
   pagination: {
     previous: null,
     next: null,
   },
 };
 
-export function Page() {
-  return <ProtectedPage component={PageWithData} />;
-}
-
-function PageWithData({ allWorkoutData, pageMetadata }) {
+export function Page({ allWorkoutData, pageMetadata }) {
   const pageWorkoutData = allWorkoutData[TRANSFORMED_KEYS.TopInstructors];
   console.log(pageWorkoutData, pageMetadata);
   return (
-    <AppLayout
-      title={pageMetadata.title}
-      previousRoute={pageMetadata.pagination.previous}
-      nextRoute={pageMetadata.pagination.next}
-    >
-      <AppLayout.Content>
+    <>
+      <ContentHeader
+        previousRoute={pageMetadata.pagination.previous}
+        nextRoute={pageMetadata.pagination.next}
+      >
+        {pageMetadata.title}
+      </ContentHeader>
+      <ContentSection>
         <div className="wysiwyg child-my-0">
           <h2>Hello</h2>
           <p>
@@ -37,11 +37,11 @@ function PageWithData({ allWorkoutData, pageMetadata }) {
             placeat eligendi?
           </p>
         </div>
-      </AppLayout.Content>
-      <AppLayout.Pagination
+      </ContentSection>
+      <Pagination
         previousRoute={pageMetadata.pagination.previous}
         nextRoute={pageMetadata.pagination.next}
       />
-    </AppLayout>
+    </>
   );
 }

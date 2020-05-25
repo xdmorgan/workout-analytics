@@ -1,9 +1,10 @@
 import React from "react";
 import { ResponsiveCalendar } from "@nivo/calendar";
 import { TRANSFORMED_KEYS } from "../constants";
-import { AppLayout } from "../layouts/app-layout";
 import { SelectInput } from "../components/select-input";
 import { ContentHeader } from "../components/content-header";
+import { ContentSection } from "../components/content-section";
+import { Pagination } from "../components/pagination";
 
 const EMPTY_COLOR = "var(--color-n80)";
 const ACTIVITY_COLORS = [
@@ -54,10 +55,9 @@ export function Page({ allWorkoutData, pageMetadata }) {
         {pageMetadata.title}
       </ContentHeader>
       <ActivityCalendarSection years={years} entries={entries} />
-      <AppLayout.Pagination
+      <Pagination
         previousRoute={pageMetadata.pagination.previous}
         nextRoute={pageMetadata.pagination.next}
-        nextLabel="Instructors"
       />
     </>
   );
@@ -69,7 +69,7 @@ function ActivityCalendarSection({ years, entries }) {
   const arr = Object.values(entries[year]);
   const [wpw, wpy] = [3, 214];
   return (
-    <AppLayout.Content>
+    <ContentSection>
       <header className="md:d-flex flx-a-fe flx-j-sb mb-2x mb-4x">
         <div className="wysiwyg child-my-0 md:pr-4x">
           <h2>By year</h2>
@@ -119,6 +119,6 @@ function ActivityCalendarSection({ years, entries }) {
           ]}
         />
       </div>
-    </AppLayout.Content>
+    </ContentSection>
   );
 }

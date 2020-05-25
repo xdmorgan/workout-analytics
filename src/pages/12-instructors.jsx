@@ -1,8 +1,9 @@
 import React from "react";
 import { ResponsiveBar } from "@nivo/bar";
-import { AppLayout } from "../layouts/app-layout";
-import { ContentHeader } from "../components/content-header";
 import { TRANSFORMED_KEYS } from "../constants";
+import { ContentHeader } from "../components/content-header";
+import { ContentSection } from "../components/content-section";
+import { Pagination } from "../components/pagination";
 
 export const meta = {
   route: "/instructors",
@@ -34,7 +35,7 @@ export function Page({ allWorkoutData, pageMetadata }) {
           divider={idx > 0 ? "before" : undefined}
         />
       ))}
-      <AppLayout.Pagination
+      <Pagination
         previousRoute={pageMetadata.pagination.previous}
         nextRoute={pageMetadata.pagination.next}
       />
@@ -44,7 +45,7 @@ export function Page({ allWorkoutData, pageMetadata }) {
 
 function BarChartSection({ type, data, divider }) {
   return (
-    <AppLayout.Content divider={divider}>
+    <ContentSection divider={divider}>
       <h2 className="type-h2">{type}</h2>
       <div style={{ height: 420 }}>
         <ResponsiveBar
@@ -69,6 +70,6 @@ function BarChartSection({ type, data, divider }) {
           labelSkipHeight={12}
         />
       </div>
-    </AppLayout.Content>
+    </ContentSection>
   );
 }

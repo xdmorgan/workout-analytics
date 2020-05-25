@@ -111,7 +111,7 @@ function UploaderBlock({ label, buttons, heading, className, ...props }) {
         className
       )}
     >
-      <h1 className="type-h1-xxl mt-0 mb-4x">{heading}</h1>
+      <h1 className="type-h1-xxl mt-0 mb-4x align-c">{heading}</h1>
       <div className="align-c child-my-0 xl:d-flex">
         {buttons.map((el, idx) => {
           return (

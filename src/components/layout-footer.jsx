@@ -17,7 +17,7 @@ export function LayoutFooter() {
               <li className="mb-05x">
                 <a
                   className="is-stealth"
-                  href="//github.com/xdmorgan/peloton-workouts/issues/new"
+                  href="//github.com/xdmorgan/workout-analytics/issues/new"
                 >
                   Found a bug?
                 </a>
@@ -25,7 +25,7 @@ export function LayoutFooter() {
               <li className="mb-05x">
                 <a
                   className="is-stealth"
-                  href="//github.com/xdmorgan/peloton-workouts/tree/master/docs/CONTRIBUTING.md"
+                  href="//github.com/xdmorgan/workout-analytics/tree/master/docs/CONTRIBUTING.md"
                 >
                   Contributing
                 </a>

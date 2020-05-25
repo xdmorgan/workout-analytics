@@ -5,6 +5,8 @@ import { Button } from "../components/button";
 import { SelectInput } from "../components/select-input";
 import { ContentHeader } from "../components/content-header";
 import { TRANSFORMED_KEYS } from "../constants";
+import { ContentSection } from "../components/content-section";
+import { Pagination } from "../components/pagination";
 
 export const meta = {
   route: "/outputs",
@@ -45,7 +47,7 @@ export function Page({ allWorkoutData, pageMetadata }) {
         )}
         divider="before"
       />
-      <AppLayout.Pagination
+      <Pagination
         previousRoute={pageMetadata.pagination.previous}
         nextRoute={pageMetadata.pagination.next}
       />
@@ -73,7 +75,7 @@ function ResponsiveLineSection({ type, data, defaultSelected }) {
     defaultSelected
   );
   return (
-    <AppLayout.Content>
+    <ContentSection>
       <h2 className="type-h2">{type}</h2>
       <div className="lg:d-flex mb-2x">
         <div className="flx-g-1 lg:pr-2x">
@@ -168,6 +170,6 @@ function ResponsiveLineSection({ type, data, defaultSelected }) {
           }}
         />
       </div>
-    </AppLayout.Content>
+    </ContentSection>
   );
 }
