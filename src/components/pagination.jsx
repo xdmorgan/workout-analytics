@@ -8,7 +8,7 @@ export function Pagination({
   nextLabel,
 }) {
   return (
-    <nav className="d-flex flx-a-c flx-j-sb">
+    <nav className="container py-4x md:py-6x d-flex flx-a-c flx-j-sb">
       <div>
         <Button to={previousRoute} appearance="ghost" disabled={!previousRoute}>
           <>Previous</>

@@ -32,7 +32,7 @@ export function LayoutHeader() {
                 size="small"
                 appearance="ghost"
                 theme="dark"
-                href="//github.com/xdmorgan/peloton-workouts"
+                href="//github.com/xdmorgan/workout-analytics"
               >
                 GitHub
               </Button>
