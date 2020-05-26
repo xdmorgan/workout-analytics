@@ -1,6 +1,5 @@
 import React from "react";
 import { ResponsiveLine } from "@nivo/line";
-import { AppLayout } from "../layouts/app-layout";
 import { Button } from "../components/button";
 import { SelectInput } from "../components/select-input";
 import { ContentHeader } from "../components/content-header";
