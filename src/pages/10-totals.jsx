@@ -28,7 +28,7 @@ export function Page({ allWorkoutData, pageMetadata }) {
       >
         {pageMetadata.title}
       </ContentHeader>
-      <ContentSection divider="after">
+      <ContentSection>
         <TotalPiechart data={totals.numberOfWorkouts.pieChart}>
           <p className="type-h1-xxl my-2x">{totals.numberOfWorkouts.sum}</p>
           <h2 className="type-h2">Combined Workouts</h2>
@@ -41,7 +41,7 @@ export function Page({ allWorkoutData, pageMetadata }) {
           </p>
         </TotalPiechart>
       </ContentSection>
-      <ContentSection divider="after">
+      <ContentSection>
         <TotalPiechart data={totals.timeInMinutes.pieChart}>
           <p className="type-h1-xxl my-2x">{totals.timeInMinutes.sum}</p>
           <h2 className="type-h2">Minutes Completed</h2>
@@ -67,7 +67,7 @@ export function Page({ allWorkoutData, pageMetadata }) {
           </ListWithIcon>
         </TotalPiechart>
       </ContentSection>
-      <ContentSection divider="after">
+      <ContentSection>
         <TotalPiechart data={totals.distanceInMiles.pieChart}>
           <p className="type-h1-xxl my-2x">{totals.distanceInMiles.sum}</p>
           <h2 className="type-h2">Miles Covered</h2>
