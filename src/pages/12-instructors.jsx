@@ -32,7 +32,6 @@ export function Page({ allWorkoutData, pageMetadata }) {
           key={key}
           type={key}
           data={pageWorkoutData.chartData[key]}
-          divider={idx > 0 ? "before" : undefined}
         />
       ))}
       <Pagination
@@ -43,9 +42,9 @@ export function Page({ allWorkoutData, pageMetadata }) {
   );
 }
 
-function BarChartSection({ type, data, divider }) {
+function BarChartSection({ type, data }) {
   return (
-    <ContentSection divider={divider}>
+    <ContentSection>
       <h2 className="type-h2">{type}</h2>
       <div style={{ height: 420 }}>
         <ResponsiveBar

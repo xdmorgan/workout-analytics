@@ -29,7 +29,6 @@ export function Page({ allWorkoutData, pageMetadata }) {
           key={key}
           type={key}
           data={pageWorkoutData.chartData[key]}
-          divider={idx > 0 ? "before" : undefined}
         />
       ))} */}
       <ContentHeader
@@ -44,7 +43,6 @@ export function Page({ allWorkoutData, pageMetadata }) {
           (acc, cur) => ({ ...acc, [cur]: true }),
           {}
         )}
-        divider="before"
       />
       <Pagination
         previousRoute={pageMetadata.pagination.previous}
