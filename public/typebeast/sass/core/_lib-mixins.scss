@@ -2,7 +2,7 @@
 // ----------------------------------
 
 @function to-rem($px) {
-  @return ($px / $REM_BASE) * 1rem;
+  @return ($px / $TYPEBEAST_REM_BASE) * 1rem;
 }
 
 // base mixin
@@ -18,7 +18,7 @@
   $weight: null
 ) {
   font-family: $family;
-  @if $CALCULATE_REM {
+  @if $TYPEBEAST_CALCULATE_REM {
     @if $size {
       font-size: to-rem($size);
     }

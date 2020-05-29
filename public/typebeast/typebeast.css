@@ -42,4 +42,6 @@ blockquote, figure { margin-left: 0; margin-right: 0; }
   .type-ui { font-size: 0.875rem; }
   .type-caption, .wysiwyg figcaption { font-size: 0.75rem; } }
 
+a.is-stealth { text-decoration: none; color: inherit; }
+
 /*# sourceMappingURL=typebeast.css.map */
