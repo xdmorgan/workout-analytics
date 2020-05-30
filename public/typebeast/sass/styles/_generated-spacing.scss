@@ -1,0 +1,28 @@
+// vertical-rhythm
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+blockquote,
+figure,
+pre {
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+}
+
+// horizontal-reset
+blockquote,
+figure,
+dd {
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+@media screen and (min-width: 768px) {
+}

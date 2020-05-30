@@ -1,0 +1,18 @@
+// rem conversions
+// ----------------------------------
+
+@function typebeast-safe-map-get($map, $key) {
+  $val: map-get($map, $key);
+  @if (type-of($val) == 'null') {
+    @error 'Key `#{$key}` not found in provided map: `#{$map}`';
+  }
+  @return $val;
+}
+
+@function typebeast-setting($key) {
+  @return typebeast-safe-map-get($TYPEBEAST_SETTINGS, $key);
+}
+
+@function typebeast-to-rem($px) {
+  @return ($px / typebeast-setting('rem-base')) * 1rem;
+}

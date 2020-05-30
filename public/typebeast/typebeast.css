@@ -1,6 +1,6 @@
-h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, figure, pre { margin-top: 1rem; margin-bottom: 1rem; }
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, figure, pre { margin-block-start: 1rem; margin-block-end: 1rem; }
 
-blockquote, figure { margin-left: 0; margin-right: 0; }
+blockquote, figure, dd { margin-inline-start: 0; margin-inline-end: 0; }
 
 .type-h1-xxl { font-family: var(--font-heading); font-size: 2.625rem; line-height: 1.1; font-weight: normal; }
 
