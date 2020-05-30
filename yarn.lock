@@ -7191,6 +7191,11 @@ lodash._reinterpolate@^3.0.0:
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
   integrity sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=
 
+lodash.clonedeep@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
+  integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
+
 lodash.get@^4.4.2:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
@@ -11446,12 +11451,13 @@ type@^2.0.0:
   resolved "https://registry.yarnpkg.com/type/-/type-2.0.0.tgz#5f16ff6ef2eb44f260494dae271033b29c09a9c3"
   integrity sha512-KBt58xCHry4Cejnc2ISQAF7QY+ORngsWfxezO68+12hKV6lQY8P/psIkcbjeHWn7MqcgciWJyCCevFMJdIXpow==
 
-typebeast@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/typebeast/-/typebeast-0.2.1.tgz#1a376e248f8fc2a6e2c88f53e960fff8d03578bb"
-  integrity sha512-xLzEYkm9RwXi+ZBB4b30babaRNfvQf3hW3Gw5C6vAnFkMfZ7Bq339KyoQIuFjT0T0n7mhaEYPrVds46tGt7Pkw==
+typebeast@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/typebeast/-/typebeast-0.3.0.tgz#eee7a1b2fbe1bd98e8715af58927fbb6594d254b"
+  integrity sha512-Qdgsqh44REHLrQm3Rwmhbg2W6PwMe9HLrwDxrFAnqtIAeOJbw7k+d0ZSi8u1jrQ97nn0JJKaxcUKIvVsaVaYZg==
   dependencies:
     fs-extra "^9.0.0"
+    lodash.clonedeep "^4.5.0"
     lodash.merge "^4.6.2"
     meow "^6.1.0"
     node-sass "^4.13.1"

@@ -1,3 +1,9 @@
+format-version: 1
+
+settings:
+  calculate-rem-size: true
+  include-utility-classes: true
+
 breakpoints:
   large: 768px
 
@@ -122,3 +128,31 @@ wysiwyg:
     large:
       before: 24px
       after: 24px
+
+spacing:
+  vertical-rhythm:
+    include:
+      - h1
+      - h2
+      - h3
+      - h4
+      - h5
+      - h6
+      - p
+      - ul
+      - ol
+      - dl
+      - blockquote
+      - figure
+      - pre
+    breakpoints:
+      default:
+        block: 1rem
+  horizontal-reset:
+    include:
+      - blockquote
+      - figure
+      - dd
+    breakpoints:
+      default:
+        inline: 0
