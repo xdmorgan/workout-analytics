@@ -1,4 +1,9 @@
-a.is-stealth {
-  text-decoration: none;
-  color: inherit;
+@if typebeast-setting('include-utility-classes') {
+  a.is-stealth,
+  a.no-underline:not(:hover):not(:active):not(:focus) {
+    text-decoration: none;
+  }
+  a.is-stealth {
+    color: inherit;
+  }
 }

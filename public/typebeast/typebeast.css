@@ -42,6 +42,8 @@ blockquote, figure, dd { margin-inline-start: 0; margin-inline-end: 0; }
   .type-ui { font-size: 0.875rem; }
   .type-caption, .wysiwyg figcaption { font-size: 0.75rem; } }
 
-a.is-stealth { text-decoration: none; color: inherit; }
+a.is-stealth, a.no-underline:not(:hover):not(:active):not(:focus) { text-decoration: none; }
+
+a.is-stealth { color: inherit; }
 
 /*# sourceMappingURL=typebeast.css.map */
