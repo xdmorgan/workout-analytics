@@ -18,7 +18,7 @@ blockquote, figure, dd { margin-inline-start: 0; margin-inline-end: 0; }
 
 .type-h6, .wysiwyg h6 { font-family: var(--font-heading); font-size: 0.625rem; line-height: 1.2; font-weight: bold; text-transform: uppercase; }
 
-.type-lede { font-size: 1.125rem; line-height: 1.5; }
+.type-lede, .wysiwyg.with-lede p:first-child { font-size: 1.125rem; line-height: 1.5; }
 
 .type-para, .wysiwyg p, .wysiwyg ul, .wysiwyg ol, .wysiwyg dl, .wysiwyg blockquote { font-size: 1rem; line-height: 1.7; }
 
@@ -36,11 +36,13 @@ blockquote, figure, dd { margin-inline-start: 0; margin-inline-end: 0; }
   .type-h4, .wysiwyg h4 { font-size: 1.25rem; }
   .type-h5, .wysiwyg h5 { font-size: 1rem; }
   .type-h6, .wysiwyg h6 { font-size: 0.75rem; }
-  .type-lede { font-size: 1.5rem; }
+  .type-lede, .wysiwyg.with-lede p:first-child { font-size: 1.5rem; }
   .type-para, .wysiwyg p, .wysiwyg ul, .wysiwyg ol, .wysiwyg dl, .wysiwyg blockquote { font-size: 1.125rem; }
   .type-small, .wysiwyg small { font-size: 1rem; }
   .type-ui { font-size: 0.875rem; }
   .type-caption, .wysiwyg figcaption { font-size: 0.75rem; } }
+
+@media screen and (min-width: 1280px) { .type-h1-xxl { font-size: 6.25rem; } }
 
 a.is-stealth, a.no-underline:not(:hover):not(:active):not(:focus) { text-decoration: none; }
 

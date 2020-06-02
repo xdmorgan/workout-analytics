@@ -36,7 +36,8 @@
   @include type-h6-default;
 }
 
-.type-lede {
+.type-lede,
+.wysiwyg.with-lede p:first-child {
   @include type-lede-default;
 }
 
@@ -102,7 +103,8 @@
     @include type-h6-large;
   }
 
-  .type-lede {
+  .type-lede,
+  .wysiwyg.with-lede p:first-child {
     @include type-lede-large;
   }
 
@@ -127,5 +129,11 @@
   .type-caption,
   .wysiwyg figcaption {
     @include type-caption-large;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .type-h1-xxl {
+    @include type-h1-xxl-xlarge;
   }
 }

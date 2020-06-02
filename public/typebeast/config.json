@@ -13,6 +13,7 @@
       "h4": "h4",
       "h5": "h5",
       "h6": "h6",
+      "lede": "&.with-lede p:first-child",
       "para": [
         "p",
         "ul",
@@ -42,7 +43,8 @@
   },
   "format-version": 1,
   "breakpoints": {
-    "large": "768px"
+    "large": "768px",
+    "xlarge": "1280px"
   },
   "typography": {
     "h1-xxl": {
@@ -54,6 +56,9 @@
       },
       "large": {
         "size": 80
+      },
+      "xlarge": {
+        "size": 100
       }
     },
     "h1-xl": {
