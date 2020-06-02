@@ -41,6 +41,26 @@
   );
 }
 
+@mixin type-h1-xxl-xlarge(
+  $family: null,
+  $letter: null,
+  $line: null,
+  $size: 100,
+  $style: null,
+  $transform: null,
+  $weight: null
+) {
+  @include typebeast(
+    $family,
+    $letter,
+    $line,
+    $size,
+    $style,
+    $transform,
+    $weight
+  );
+}
+
 // h1-xl
 // ---------------------------------------------------------
 
