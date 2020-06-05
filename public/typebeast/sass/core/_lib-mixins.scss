@@ -1,6 +1,19 @@
 // base mixin
 //----------------------------------
 
+@mixin typebeast-break-min($size) {
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin typebeast-break-max($size) {
+  // prevent min and max width overlap pixel
+  @media screen and (max-width: ($size - 1)) {
+    @content;
+  }
+}
+
 @mixin typebeast(
   $family: null,
   $letter: null,
