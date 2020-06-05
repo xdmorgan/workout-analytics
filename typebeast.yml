@@ -125,13 +125,6 @@ wysiwyg:
       - blockquote
     small: small
     caption: figcaption
-  rhythm:
-    default:
-      before: 16px
-      after: 16px
-    large:
-      before: 24px
-      after: 24px
 
 spacing:
   vertical-rhythm:
