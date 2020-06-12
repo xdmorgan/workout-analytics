@@ -107,6 +107,34 @@ typography:
     large:
       size: 12
 
+spacing:
+  vertical-reset:
+    include:
+      - h1
+      - h2
+      - h3
+      - h4
+      - h5
+      - h6
+      - p
+      - ul
+      - ol
+      - dl
+      - blockquote
+      - figure
+      - pre
+    breakpoints:
+      default:
+        block: 0
+  horizontal-reset:
+    include:
+      - blockquote
+      - figure
+      - dd
+    breakpoints:
+      default:
+        inline: 0
+
 wysiwyg:
   scope: "wysiwyg"
   elements:
@@ -125,31 +153,53 @@ wysiwyg:
       - blockquote
     small: small
     caption: figcaption
-
-spacing:
-  vertical-rhythm:
-    include:
-      - h1
-      - h2
-      - h3
-      - h4
-      - h5
-      - h6
-      - p
-      - ul
-      - ol
-      - dl
-      - blockquote
-      - figure
-      - pre
-    breakpoints:
-      default:
-        block: 1rem
-  horizontal-reset:
-    include:
-      - blockquote
-      - figure
-      - dd
-    breakpoints:
-      default:
-        inline: 0
+  spacing:
+    vertical-rhythm:
+      include:
+        - h1
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+        - p
+        - ul
+        - ol
+        - dl
+      breakpoints:
+        default:
+          block: 1rem
+        large:
+          block: 1.5rem
+    larger-headings:
+      include:
+        - h1
+        - h2
+      breakpoints:
+        default:
+          block-start: 3rem
+        large:
+          block-start: 4rem
+    smaller-headings:
+      include:
+        - h3
+        - h4
+        - h5
+        - h6
+      breakpoints:
+        default:
+          block-start: 2rem
+        large:
+          block-start: 3rem
+    other-content:
+      include:
+        - pre
+        - iframe
+        - figure
+        - "& > img"
+        - blockquote
+      breakpoints:
+        default:
+          block: 3rem
+        large:
+          block: 4rem

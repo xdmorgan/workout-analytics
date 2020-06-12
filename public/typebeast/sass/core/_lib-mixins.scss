@@ -40,3 +40,53 @@
   letter-spacing: $letter;
   text-transform: $transform;
 }
+
+@mixin typebeast-link-style(
+  $color: null,
+  $hover: null,
+  $active: null,
+  $visited: null,
+  $style: null
+) {
+  color: $color;
+  text-decoration-style: $style;
+  &:hover {
+    color: $hover;
+  }
+  &:active {
+    color: $color;
+  }
+}
+
+@mixin typebeast-code-style(
+  $color: null,
+  $background: null,
+  $radius: null,
+  $size: null,
+  $inset: null
+) {
+  color: $color;
+  background-color: $background;
+  border-radius: $radius;
+  font-size: $size;
+  padding: $inset;
+}
+
+@mixin typebeast-kbd-style(
+  $color: null,
+  $background: null,
+  $border: null,
+  $radius: null,
+  $size: null,
+  $inset: null
+) {
+  position: relative; // layering rquirement
+  font-size: $size;
+  color: $color;
+  background-color: $background;
+  border-radius: $radius;
+  padding: $inset;
+  // these colors matching creates the key cap effect
+  border: 1px solid $border;
+  box-shadow: 0 0.15em 0 0 $border;
+}

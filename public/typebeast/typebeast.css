@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, figure, pre { margin-block-start: 1rem; margin-block-end: 1rem; }
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, figure, pre { margin-block-start: 0; margin-block-end: 0; }
 
 blockquote, figure, dd { margin-inline-start: 0; margin-inline-end: 0; }
 
@@ -43,6 +43,19 @@ blockquote, figure, dd { margin-inline-start: 0; margin-inline-end: 0; }
   .type-caption, .wysiwyg figcaption { font-size: 0.75rem; } }
 
 @media screen and (min-width: 1280px) { .type-h1-xxl { font-size: 6.25rem; } }
+
+.wysiwyg h1, .wysiwyg h2, .wysiwyg h3, .wysiwyg h4, .wysiwyg h5, .wysiwyg h6, .wysiwyg p, .wysiwyg ul, .wysiwyg ol, .wysiwyg dl { margin-block-start: 1rem; margin-block-end: 1rem; }
+
+.wysiwyg h1, .wysiwyg h2 { margin-block-start: 3rem; }
+
+.wysiwyg h3, .wysiwyg h4, .wysiwyg h5, .wysiwyg h6 { margin-block-start: 2rem; }
+
+.wysiwyg pre, .wysiwyg iframe, .wysiwyg figure, .wysiwyg > img, .wysiwyg blockquote { margin-block-start: 3rem; margin-block-end: 3rem; }
+
+@media screen and (min-width: 768px) { .wysiwyg h1, .wysiwyg h2, .wysiwyg h3, .wysiwyg h4, .wysiwyg h5, .wysiwyg h6, .wysiwyg p, .wysiwyg ul, .wysiwyg ol, .wysiwyg dl { margin-block-start: 1.5rem; margin-block-end: 1.5rem; }
+  .wysiwyg h1, .wysiwyg h2 { margin-block-start: 4rem; }
+  .wysiwyg h3, .wysiwyg h4, .wysiwyg h5, .wysiwyg h6 { margin-block-start: 3rem; }
+  .wysiwyg pre, .wysiwyg iframe, .wysiwyg figure, .wysiwyg > img, .wysiwyg blockquote { margin-block-start: 4rem; margin-block-end: 4rem; } }
 
 a.is-stealth, a.no-underline:not(:hover):not(:active):not(:focus) { text-decoration: none; }
 

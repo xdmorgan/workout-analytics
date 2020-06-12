@@ -1,4 +1,4 @@
-// vertical-rhythm
+// vertical-reset
 h1,
 h2,
 h3,
@@ -12,8 +12,8 @@ dl,
 blockquote,
 figure,
 pre {
-  margin-block-start: 1rem;
-  margin-block-end: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 // horizontal-reset

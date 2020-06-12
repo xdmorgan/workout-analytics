@@ -9,7 +9,10 @@
   @return $val;
 }
 
-@function typebeast-setting($key) {
+@function typebeast-setting($key, $nullable: false) {
+  @if ($nullable) {
+    @return map-get($TYPEBEAST_SETTINGS, $key);
+  }
   @return typebeast-safe-map-get($TYPEBEAST_SETTINGS, $key);
 }
 
