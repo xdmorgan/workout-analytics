@@ -11451,10 +11451,10 @@ type@^2.0.0:
   resolved "https://registry.yarnpkg.com/type/-/type-2.0.0.tgz#5f16ff6ef2eb44f260494dae271033b29c09a9c3"
   integrity sha512-KBt58xCHry4Cejnc2ISQAF7QY+ORngsWfxezO68+12hKV6lQY8P/psIkcbjeHWn7MqcgciWJyCCevFMJdIXpow==
 
-typebeast@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/typebeast/-/typebeast-0.5.2.tgz#5d77290576ea770d0b8aef67aa257e39e20ff00e"
-  integrity sha512-BOSBlDl3qcymrPcGj3FAy03FGIAXC6aBNeUpXfLdDkE12TlYSqRNCV2SaTTk54j667qath1H7hqtCvhfQvH/GA==
+typebeast@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/typebeast/-/typebeast-0.7.0.tgz#02f159c8565087d7d85807ae1008afb9b252f7e6"
+  integrity sha512-OFnU4DtF8+NLoXl7/ZWiYr6WNMMYpDaCSET3FRDCJABnF2yDPVhOR+T5ssZJCDq9vFqfNK9a6190/a26CISUfg==
   dependencies:
     fs-extra "^9.0.0"
     lodash.clonedeep "^4.5.0"

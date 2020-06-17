@@ -50,7 +50,7 @@
   "devDependencies": {
     "@skeletor/css": "^0.14.0",
     "serve": "^11.3.0",
-    "typebeast": "^0.5.2"
+    "typebeast": "^0.7.0"
   },
   "jest": {
     "globalSetup": "<rootDir>/jest.setup.js"
