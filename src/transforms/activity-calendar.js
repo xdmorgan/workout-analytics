@@ -1,7 +1,5 @@
-import dateFormat from "date-fns/format";
 import { RAW_KEYS } from "../constants";
-
-const format = (d, pattern = "yyyy-MM-dd") => dateFormat(d, pattern);
+import { format } from "../utils/date-format";
 
 export default function transform({ data }) {
   const entries = data.reduce((all, entry) => {
