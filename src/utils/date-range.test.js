@@ -1,4 +1,4 @@
-import { getRangeEnd, isInRange } from "./date-range";
+import { getMinimumDate, isInRange, subtractDays } from "./date-range";
 
 describe("isInRange()", () => {
   const hindsight = { start: "2020-01-01", end: "2020-12-31" };
@@ -25,3 +25,33 @@ describe("isInRange()", () => {
     expect(isInRange(hindsight, "2021-12-32")).toBe(false);
   });
 });
+
+describe("subtractDays()", () => {
+  test("subtracts days innit", async () => {
+    expect(subtractDays("2020-01-31", 10)).toBe("2020-01-21");
+    expect(subtractDays("2020-01-31", 30)).toBe("2020-01-01");
+    expect(subtractDays("2020-01-31", 365)).toBe("2019-01-31");
+  });
+});
+
+describe("subtractDays()", () => {
+  test("subtracts days innit", async () => {
+    expect(subtractDays("2020-01-31", 10)).toBe("2020-01-21");
+  });
+});
+
+describe("getMinimumDate()", () => {
+  test("finds minimum in arrayy", async () => {
+    expect(
+      getMinimumDate(["2020-01-31", "2020-01-30", "2020-02-28", "2020-03-31"])
+    ).toBe("2020-01-30");
+  });
+});
+
+// from an array of 'dates' (probs via object.keys), an 'end' date, and a 'range'
+// e.g. dates = ["2020-01-31", "2020-01-30", "2020-02-28", "2020-03-31"] & end = "2020-09-10" & range = RANGE_TYPES.ninetyDays
+// getMinimumDate() in dates (historyStart: "2020-01-30")
+// if range is 'all', use the earliest date in `dates` (rangeStart: historyStart)
+// else 'rangeStart' = subtractDays('end', 'range')
+// next, getMinimumDate(['historyStart', 'rangeStart']) then keep the one that _isn't_ the minimum (the max) as 'start'
+// now, with the 'start' and 'end' of the range calculated, `filter()` the `dates` by `isInRange`
