@@ -22,7 +22,6 @@ export function getMinimumDate(dates) {
 }
 
 export function filterByRange({ dates, from, length, clampRange = false }) {
-  console.log(dates);
   // from an array of 'dates' (probs via object.keys), an 'end' date, and a 'range'
   // e.g. dates = ["2020-01-31", "2020-01-30", "2020-02-28", "2020-03-31"]
   // & end = "2020-09-10" & range = RANGE_TYPES.ninetyDays
