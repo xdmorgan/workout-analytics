@@ -21,16 +21,8 @@ export const meta = {
 
 export function Page({ allWorkoutData, pageMetadata }) {
   const pageWorkoutData = allWorkoutData[TRANSFORMED_KEYS.CyclingOutputs];
-  console.log(pageWorkoutData, pageMetadata);
   return (
     <>
-      {/* {Object.keys(pageWorkoutData.chartData).map((key, idx) => (
-        <ScatterPlotSection
-          key={key}
-          type={key}
-          data={pageWorkoutData.chartData[key]}
-        />
-      ))} */}
       <ContentHeader
         previousRoute={pageMetadata.pagination.previous}
         nextRoute={pageMetadata.pagination.next}
