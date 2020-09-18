@@ -2,9 +2,11 @@ import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import pages from "../pages";
 import { LinkList } from "../components/link-list";
+import { useProtectedPage } from "../hooks/use-protected-page";
 
 export function Sidebar() {
   const location = useLocation();
+  const { nope } = useProtectedPage();
   return (
     <div className="d-flex flx-d-c h-fill" style={{ overflow: "scroll" }}>
       <header>
@@ -18,7 +20,8 @@ export function Sidebar() {
       <div className="px-2x pb-3x flx-g-1">
         <LinkList>
           {Object.values(pages)
-            .filter(({ sidebar }) => !!sidebar)
+            .filter((meta) => !!meta.sidebar)
+            .filter((meta) => !(nope && meta.protected))
             .map((meta) => (
               <LinkList.Item
                 key={meta.route}
