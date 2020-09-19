@@ -21,17 +21,18 @@ export default function transform({ data }) {
   };
 }
 
-// Remove this once its been copied to an adjacent test file
-/*
-import transformer from "./top-instructors";
+/**
+ * Copy the remainder of this file to a sibling [example].test.js
+ */
+
+import transformer from "./example";
 import TEST_DATA from "../data/workouts.json";
 
 describe("transform()", () => {
   test("Calculate number of classes by instructor name", async () => {
     const transformed = transformer({ data: TEST_DATA });
-    console.log(transformed) // Useful while iterating, remove when results look correct
-    expect(true).toBe(true) // Useful while iterating, remove when results look correct
+    console.log(transformed); // Useful while iterating, remove when results look correct
+    expect(true).toBe(true); // Useful while iterating, remove when results look correct
     // expect(transformed).toMatchInlineSnapshot(); // Enable this once transformer is working as expected to protect against regression
   });
 });
-*/
