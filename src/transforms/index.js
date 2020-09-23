@@ -2,6 +2,7 @@ import totalWorkouts from "./total-workouts";
 import activityCalendar from "./activity-calendar";
 import topInstructors from "./top-instructors";
 import cyclingOutputs from "./cycling-outputs";
+import averageMetrics from "./average-metrics";
 
 /**
  * Given raw workout data as a json object and a collection of transformers (as name: function pairs),
@@ -32,4 +33,5 @@ export default {
   "activity-calendar": activityCalendar,
   "top-instructors": topInstructors,
   "cycling-outputs": cyclingOutputs,
+  "average-metrics": averageMetrics,
 };

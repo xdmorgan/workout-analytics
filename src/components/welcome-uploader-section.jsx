@@ -78,7 +78,7 @@ function UploaderCTA({ protectedEntryRoute, onReset }) {
     <UploaderBlock
       className="bg-g10 c-n90"
       heading="You're all set!"
-      label="Your wourkout data was successfully processed and is now ready for review."
+      label="Your workout data was successfully processed and is now ready for review."
       buttons={[
         <Button
           key="workouts"

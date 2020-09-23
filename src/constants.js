@@ -35,4 +35,5 @@ export const TRANSFORMED_KEYS = {
   ActivityCalendar: "activity-calendar",
   TopInstructors: "top-instructors",
   CyclingOutputs: "cycling-outputs",
+  AverageMetrics: "average-metrics",
 };
