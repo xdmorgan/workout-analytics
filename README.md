@@ -8,6 +8,8 @@ A React application to visualize workout data. For more information, see [this b
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6edc21c6-07e8-4bb5-978b-7674ee04ddd5/deploy-status)](https://app.netlify.com/sites/workout-analytics/deploys)
 
+![Build status](https://github.com/xdmorgan/workout-analytics/workflows/.github/workflows/nodejs.yml/badge.svg)
+
 ## 🏃‍♂️ Scripts
 
 - `yarn` &mdash; Install dependencies
