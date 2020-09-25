@@ -5,7 +5,7 @@ import cx from "classnames";
 import { Button } from "./button";
 
 async function convertCSVToJSON(str) {
-  const json = await csv({ checkType: true }).fromString(str);
+  const json = await csv({ checkType: true, flatKeys: true }).fromString(str);
   return json;
 }
 

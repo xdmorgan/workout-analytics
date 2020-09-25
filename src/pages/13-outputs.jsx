@@ -15,7 +15,7 @@ export const meta = {
   protected: true,
   pagination: {
     previous: "/instructors",
-    next: null,
+    next: "/average-metrics",
   },
 };
 
