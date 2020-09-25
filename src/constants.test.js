@@ -29,6 +29,7 @@ describe("constants", () => {
     expect(TRANSFORMED_KEYS).toMatchInlineSnapshot(`
       Object {
         "ActivityCalendar": "activity-calendar",
+        "AverageMetrics": "average-metrics",
         "CyclingOutputs": "cycling-outputs",
         "TopInstructors": "top-instructors",
         "TotalWorkouts": "total-workouts",

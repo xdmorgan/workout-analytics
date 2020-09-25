@@ -40,6 +40,17 @@ describe("Page data config", () => {
           "sidebar": "Annual Activity",
           "title": "Annual Activity",
         },
+        "/average-metrics": Object {
+          "component": [Function],
+          "pagination": Object {
+            "next": null,
+            "previous": "/outputs",
+          },
+          "protected": true,
+          "route": "/average-metrics",
+          "sidebar": "Average Metrics",
+          "title": "Average Metrics",
+        },
         "/instructors": Object {
           "component": [Function],
           "pagination": Object {
@@ -54,7 +65,7 @@ describe("Page data config", () => {
         "/outputs": Object {
           "component": [Function],
           "pagination": Object {
-            "next": null,
+            "next": "/average-metrics",
             "previous": "/instructors",
           },
           "protected": true,
