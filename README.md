@@ -1,14 +1,12 @@
 # 📈 Workout Analytics
 
-A React application to visualize workout data. For more information, see [this blog post](https://danny.codes/blog/workout-analytics).
+A React application to visualize workout data.
 
 **URL**: https://workout-analytics.netlify.app
 
 ## 🔥 Status
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6edc21c6-07e8-4bb5-978b-7674ee04ddd5/deploy-status)](https://app.netlify.com/sites/workout-analytics/deploys)
-
-![Build status](https://github.com/xdmorgan/workout-analytics/workflows/Main/badge.svg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6edc21c6-07e8-4bb5-978b-7674ee04ddd5/deploy-status)](https://app.netlify.com/sites/workout-analytics/deploys) ![Build status](https://github.com/xdmorgan/workout-analytics/workflows/Main/badge.svg)
 
 ## 🏃‍♂️ Scripts
 
