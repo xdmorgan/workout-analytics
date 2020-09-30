@@ -48,7 +48,7 @@
     "node": ">=12.0.0"
   },
   "devDependencies": {
-    "@skeletor/css": "^0.14.0",
+    "@skeletor/css": "^0.15.0",
     "serve": "^11.3.0",
     "typebeast": "^0.7.0"
   },
