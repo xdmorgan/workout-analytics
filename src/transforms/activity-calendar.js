@@ -1,9 +1,10 @@
+import parseISO from "date-fns/parseISO";
 import { RAW_KEYS } from "../constants";
 import { format } from "../utils/date-format";
 
 export default function transform({ data }) {
   const entries = data.reduce((all, entry) => {
-    const day = format(new Date(entry[RAW_KEYS.WorkoutTimestamp]));
+    const day = format(new Date(parseISO(entry[RAW_KEYS.WorkoutTimestamp])));
     const value = entry[RAW_KEYS.CaloriesBurned];
     const year = day.slice(0, 4);
     if (!all[year]) all[year] = {};
