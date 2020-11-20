@@ -51,7 +51,7 @@ export function Sidebar() {
           <li className="mb-05x">
             <a
               className="is-stealth"
-              href="//github.com/xdmorgan/workout-analytics/tree/master/docs/CONTRIBUTING.md"
+              href="//github.com/xdmorgan/workout-analytics/tree/main/docs/CONTRIBUTING.md"
             >
               Contribution Guidelines
             </a>

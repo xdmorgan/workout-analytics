@@ -25,7 +25,7 @@ export function LayoutFooter() {
               <li className="mb-05x">
                 <a
                   className="is-stealth"
-                  href="//github.com/xdmorgan/workout-analytics/tree/master/docs/CONTRIBUTING.md"
+                  href="//github.com/xdmorgan/workout-analytics/tree/main/docs/CONTRIBUTING.md"
                 >
                   Contributing
                 </a>
@@ -35,7 +35,7 @@ export function LayoutFooter() {
                   Share feedback
                 </a>
               </li>
-              <li className="mb-05x">
+              <li className="mb-05x d-none">
                 <a
                   className="is-stealth"
                   href="//danny.codes/blog/workout-analytics"
