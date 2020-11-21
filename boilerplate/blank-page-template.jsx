@@ -10,10 +10,6 @@ export const meta = {
   sidebar: "Example",
   component: Page,
   protected: true,
-  pagination: {
-    previous: null,
-    next: null,
-  },
 };
 
 export function Page({ allWorkoutData, pageMetadata }) {

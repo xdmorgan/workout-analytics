@@ -53,6 +53,11 @@
     "typebeast": "^0.7.0"
   },
   "jest": {
-    "globalSetup": "<rootDir>/jest.setup.js"
+    "globalSetup": "<rootDir>/jest.setup.js",
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ]
   }
 }
