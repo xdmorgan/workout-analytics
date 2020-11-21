@@ -7,15 +7,13 @@ import { meta as averageMetrics } from "./14-average-metrics";
 import { meta as styleguide } from "./100-styleguide";
 import { meta as styleguideButtons } from "./101-styleguide-buttons";
 
+const appViews = [totals, activity, instructors, outputs, averageMetrics];
+
 export default {
   // anyone
   [welcome.route]: welcome,
   // protected
-  [totals.route]: totals,
-  [activity.route]: activity,
-  [instructors.route]: instructors,
-  [outputs.route]: outputs,
-  [averageMetrics.route]: averageMetrics,
+  ...appViews.reduce((obj, view, idx) => ({ ...obj, [view.route]: view }), {}),
   // supporting pages
   [styleguide.route]: styleguide,
   [styleguideButtons.route]: styleguideButtons,
