@@ -8,10 +8,6 @@ export const meta = {
   sidebar: null,
   component: Page,
   protected: false,
-  pagination: {
-    previous: null,
-    next: null,
-  },
 };
 
 export function Page() {

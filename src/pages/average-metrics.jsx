@@ -14,10 +14,6 @@ export const meta = {
   sidebar: "Average Metrics",
   component: Page,
   protected: true,
-  pagination: {
-    previous: "/outputs",
-    next: null,
-  },
 };
 
 const OPTIONS = [AverageResistance, AverageCadenceRPM, AverageWatts, "All"];

@@ -13,10 +13,6 @@ export const meta = {
   sidebar: "Cycling Outputs",
   component: Page,
   protected: true,
-  pagination: {
-    previous: "/instructors",
-    next: "/average-metrics",
-  },
 };
 
 export function Page({ allWorkoutData, pageMetadata }) {

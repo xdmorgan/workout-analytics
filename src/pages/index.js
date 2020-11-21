@@ -1,21 +1,33 @@
-import { meta as welcome } from "./00-welcome";
-import { meta as totals } from "./10-totals";
-import { meta as activity } from "./11-activity";
-import { meta as instructors } from "./12-instructors";
-import { meta as outputs } from "./13-outputs";
-import { meta as averageMetrics } from "./14-average-metrics";
-import { meta as styleguide } from "./100-styleguide";
-import { meta as styleguideButtons } from "./101-styleguide-buttons";
+import { meta as welcome } from "./welcome";
+import { meta as totals } from "./totals";
+import { meta as activity } from "./activity";
+import { meta as instructors } from "./instructors";
+import { meta as outputs } from "./outputs";
+import { meta as averageMetrics } from "./average-metrics";
+import { meta as styleguide } from "./styleguide";
+import { meta as styleguideButtons } from "./styleguide-buttons";
+
+const appViews = [totals, activity, instructors, outputs, averageMetrics];
 
 export default {
   // anyone
   [welcome.route]: welcome,
   // protected
-  [totals.route]: totals,
-  [activity.route]: activity,
-  [instructors.route]: instructors,
-  [outputs.route]: outputs,
-  [averageMetrics.route]: averageMetrics,
+  ...appViews.reduce(
+    (obj, view, idx) => ({
+      ...obj,
+      [view.route]: {
+        ...view,
+        pagination: {
+          // previous app view or back home
+          previous: appViews[idx - 1] ? appViews[idx - 1].route : "/",
+          // next app view or null (to disable next button). Later, share page
+          next: appViews[idx + 1] ? appViews[idx + 1].route : null,
+        },
+      },
+    }),
+    {}
+  ),
   // supporting pages
   [styleguide.route]: styleguide,
   [styleguideButtons.route]: styleguideButtons,

@@ -11,10 +11,6 @@ export const meta = {
   sidebar: "Favorite Instructors",
   component: Page,
   protected: true,
-  pagination: {
-    previous: "/activity",
-    next: "/outputs",
-  },
 };
 
 export function Page({ allWorkoutData, pageMetadata }) {

@@ -9,10 +9,6 @@ export const meta = {
   sidebar: "Get Started",
   component: Page,
   protected: false,
-  pagination: {
-    previous: null,
-    next: null,
-  },
 };
 
 export default function Page() {

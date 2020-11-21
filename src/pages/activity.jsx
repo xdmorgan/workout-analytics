@@ -24,10 +24,6 @@ export const meta = {
   sidebar: "Annual Activity",
   component: Page,
   protected: true,
-  pagination: {
-    previous: "/totals",
-    next: "/instructors",
-  },
 };
 
 export function Page({ allWorkoutData, pageMetadata }) {
