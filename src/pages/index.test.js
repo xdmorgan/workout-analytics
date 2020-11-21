@@ -8,9 +8,11 @@ describe("Page data config", () => {
       expect(typeof meta.title).toEqual("string");
       expect(typeof meta.component).toEqual("function");
       expect(typeof meta.protected).toEqual("boolean");
-      expect(typeof meta.pagination).toEqual("object");
-      expect(typeof meta.pagination.previous).toBeDefined();
-      expect(typeof meta.pagination.next).toBeDefined();
+      if (meta.pagination) {
+        expect(typeof meta.pagination).toEqual("object");
+        expect(typeof meta.pagination.previous).toBeDefined();
+        expect(typeof meta.pagination.next).toBeDefined();
+      }
       expect(meta.sidebar).toBeDefined();
     }
   );
@@ -20,10 +22,6 @@ describe("Page data config", () => {
       Object {
         "/": Object {
           "component": [Function],
-          "pagination": Object {
-            "next": null,
-            "previous": null,
-          },
           "protected": false,
           "route": "/",
           "sidebar": "Get Started",
@@ -75,10 +73,6 @@ describe("Page data config", () => {
         },
         "/styleguide": Object {
           "component": [Function],
-          "pagination": Object {
-            "next": null,
-            "previous": null,
-          },
           "protected": false,
           "route": "/styleguide",
           "sidebar": null,
@@ -86,10 +80,6 @@ describe("Page data config", () => {
         },
         "/styleguide/buttons": Object {
           "component": [Function],
-          "pagination": Object {
-            "next": null,
-            "previous": "/styleguide",
-          },
           "protected": false,
           "route": "/styleguide/buttons",
           "sidebar": null,

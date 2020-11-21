@@ -13,10 +13,6 @@ export const meta = {
   sidebar: null,
   component: Page,
   protected: false,
-  pagination: {
-    previous: "/styleguide",
-    next: null,
-  },
 };
 
 export function Page() {

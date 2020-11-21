@@ -12,10 +12,6 @@ export const meta = {
   sidebar: "Combined Totals",
   component: Page,
   protected: true,
-  pagination: {
-    previous: "/",
-    next: "/activity",
-  },
 };
 
 export function Page({ allWorkoutData, pageMetadata }) {
