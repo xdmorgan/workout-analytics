@@ -1,4 +1,4 @@
 // see also 'setupTests' coz thats a diff file, apparently
-export default () => {
+module.exports = () => {
   process.env.TZ = "UTC";
 };
