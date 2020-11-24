@@ -28,10 +28,12 @@ export function transform({ data, transformers }) {
  * which can be done immediately after converting the user's workout data csv to json. That way,
  * any expensive calculations are done once and ready for immediate use while navigating the app.
  */
-export default {
+const data = {
   "total-workouts": totalWorkouts,
   "activity-calendar": activityCalendar,
   "top-instructors": topInstructors,
   "cycling-outputs": cyclingOutputs,
   "average-metrics": averageMetrics,
 };
+
+export default data;

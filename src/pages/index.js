@@ -9,7 +9,7 @@ import { meta as styleguideButtons } from "./styleguide-buttons";
 
 const appViews = [totals, activity, instructors, outputs, averageMetrics];
 
-export default {
+const routes = {
   // anyone
   [welcome.route]: welcome,
   // protected
@@ -32,3 +32,5 @@ export default {
   [styleguide.route]: styleguide,
   [styleguideButtons.route]: styleguideButtons,
 };
+
+export default routes;

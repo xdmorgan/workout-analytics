@@ -10,35 +10,35 @@ breakpoints:
 
 colors:
   # neutral scale
-  n0: "#000000"
-  n10: "#171a1c"
-  n20: "#353d44"
-  n30: "#565e65"
-  n40: "#91979d"
-  n50: "#b6babe"
-  n60: "#dadde0"
-  n70: "#ebedef"
-  n80: "#f6f6f7"
-  n90: "#ffffff"
+  n0: '#000000'
+  n10: '#171a1c'
+  n20: '#353d44'
+  n30: '#565e65'
+  n40: '#91979d'
+  n50: '#b6babe'
+  n60: '#dadde0'
+  n70: '#ebedef'
+  n80: '#f6f6f7'
+  n90: '#ffffff'
   # greenz scale
-  g10: "#003b38"
-  g20: "#015651"
-  g30: "#017a73"
-  g40: "#05aea4"
-  g50: "#03dccf"
-  g60: "#71faf2"
-  g70: "#b3fdf8"
-  g80: "#d6fdfb"
-  g90: "#e5fefc"
+  g10: '#003b38'
+  g20: '#015651'
+  g30: '#017a73'
+  g40: '#05aea4'
+  g50: '#03dccf'
+  g60: '#71faf2'
+  g70: '#b3fdf8'
+  g80: '#d6fdfb'
+  g90: '#e5fefc'
   # reds scale
-  r10: "#5d051a"
-  r20: "#890726"
-  r30: "#d41140"
-  r40: "#ff4672"
-  r50: "#fe7291"
-  r60: "#feafc1"
-  r70: "#fedee6"
-  r80: "#fff2f5"
+  r10: '#5d051a'
+  r20: '#890726'
+  r30: '#d41140'
+  r40: '#ff4672'
+  r50: '#fe7291'
+  r60: '#feafc1'
+  r70: '#fedee6'
+  r80: '#fff2f5'
 
 container:
   initial:

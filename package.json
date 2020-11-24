@@ -1,36 +1,48 @@
 {
   "name": "peloton-workouts",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "@nivo/bar": "^0.61.1",
-    "@nivo/calendar": "^0.61.1",
-    "@nivo/line": "^0.61.1",
-    "@nivo/pie": "^0.61.1",
-    "@nivo/scatterplot": "^0.61.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+    "@nivo/bar": "^0.65.1",
+    "@nivo/calendar": "^0.65.1",
+    "@nivo/core": "^0.65.0",
+    "@nivo/line": "^0.65.1",
+    "@nivo/pie": "^0.65.1",
+    "@nivo/scatterplot": "^0.65.1",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
     "classnames": "^2.2.6",
     "csvtojson": "^2.0.10",
-    "date-fns": "^2.12.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-dropzone": "^11.0.1",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1"
+    "date-fns": "^2.16.1",
+    "node-sass": "^4.14.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-dropzone": "^11.2.4",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "typescript": "^4.0.3",
+    "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "skeletor": "skeletor --output public/skeletor",
-    "typebeast": "typebeast --output public/typebeast",
+    "skeletor": "skeletor --output public/skeletor --no-sourcemap",
+    "typebeast": "typebeast --output public/typebeast --no-sourcemap",
     "serve": "serve -s build -p 3000"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -48,9 +60,9 @@
     "node": ">=12.0.0"
   },
   "devDependencies": {
-    "@skeletor/css": "^0.15.0",
-    "serve": "^11.3.0",
-    "typebeast": "^0.7.0"
+    "@skeletor/css": "^0.17.1",
+    "serve": "^11.3.2",
+    "typebeast": "^0.7.4"
   },
   "jest": {
     "globalSetup": "<rootDir>/jest.setup.js",

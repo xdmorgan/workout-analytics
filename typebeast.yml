@@ -136,7 +136,7 @@ spacing:
         inline: 0
 
 wysiwyg:
-  scope: "wysiwyg"
+  scope: 'wysiwyg'
   elements:
     h1: h1
     h2: h2
@@ -144,7 +144,7 @@ wysiwyg:
     h4: h4
     h5: h5
     h6: h6
-    lede: "&.with-lede p:first-child"
+    lede: '&.with-lede p:first-child'
     para:
       - p
       - ul
@@ -196,7 +196,7 @@ wysiwyg:
         - pre
         - iframe
         - figure
-        - "& > img"
+        - '& > img'
         - blockquote
       breakpoints:
         default:
