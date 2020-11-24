@@ -1,5 +1,5 @@
 {
-  "name": "peloton-workouts",
+  "name": "peloton-workouts-ts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,17 +9,24 @@
     "@nivo/line": "^0.65.1",
     "@nivo/pie": "^0.65.1",
     "@nivo/scatterplot": "^0.65.1",
-    "@testing-library/jest-dom": "^5.11.6",
-    "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.2.2",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
     "classnames": "^2.2.6",
     "csvtojson": "^2.0.10",
     "date-fns": "^2.16.1",
+    "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-dropzone": "^11.2.4",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.1",
+    "react-scripts": "4.0.1",
+    "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -32,7 +39,10 @@
     "serve": "serve -s build -p 3000"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [

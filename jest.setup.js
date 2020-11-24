@@ -1,4 +1,4 @@
 // see also 'setupTests' coz thats a diff file, apparently
-module.exports = () => {
-  process.env.TZ = "UTC";
+module.exports = function setup() {
+  process.env.TZ = 'UTC';
 };

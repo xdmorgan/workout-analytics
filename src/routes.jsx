@@ -1,10 +1,10 @@
-import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
-import { AppLayout } from "./layouts/app-layout";
-import pages from "./pages";
-import { useProtectedPage } from "./hooks/use-protected-page";
-import { usePageMeta } from "./hooks/use-page-meta";
-import { Sidebar } from "./components/sidebar-navigation";
+import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { AppLayout } from './layouts/app-layout';
+import pages from './pages';
+import { useProtectedPage } from './hooks/use-protected-page';
+import { usePageMeta } from './hooks/use-page-meta';
+import { Sidebar } from './components/sidebar-navigation';
 
 export default function RouterViews() {
   return (
