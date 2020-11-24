@@ -5,7 +5,7 @@ import styles from "./app-layout.module.scss";
 export function AppLayout({ children, sidebar }) {
   return (
     <div className={cx(styles.layout)}>
-      <div className={cx(styles.layout__navigation)}>{sidebar}</div>
+      <aside className={cx(styles.layout__navigation)}>{sidebar}</aside>
       <main className={cx(styles.layout__content)}>{children}</main>
     </div>
   );
