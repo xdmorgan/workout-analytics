@@ -1,15 +1,15 @@
-import { RAW_KEYS } from "../constants";
+import * as RAW_KEYS from '../data/keys';
 
 const INCREMENTS = {
-  "5": true,
-  "10": true,
-  "15": true,
-  "20": true,
-  "30": true,
-  "45": true,
-  "60": true,
-  "75": true,
-  "90": true,
+  '5': true,
+  '10': true,
+  '15': true,
+  '20': true,
+  '30': true,
+  '45': true,
+  '60': true,
+  '75': true,
+  '90': true,
 };
 
 function computeFromRawValues(data) {
@@ -19,7 +19,7 @@ function computeFromRawValues(data) {
     const length = workout[RAW_KEYS.LengthInMinutes];
     if (!length) continue;
     const discipline = workout[RAW_KEYS.FitnessDiscipline];
-    if (discipline !== "Cycling") continue;
+    if (discipline !== 'Cycling') continue;
     if (!INCREMENTS[length]) continue;
     if (!byRideLength[length]) {
       byRideLength[length] = {};
@@ -39,7 +39,7 @@ function chartDataByRideLength(byRideLength) {
       [name]: {
         id: name,
         data: Object.entries(values).map(([timestamp, output]) => ({
-          x: timestamp.split(" ")[0],
+          x: timestamp.split(' ')[0],
           y: output,
         })),
       },

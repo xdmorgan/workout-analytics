@@ -1,4 +1,4 @@
-import { RAW_KEYS } from "../constants";
+import * as RAW_KEYS from '../data/keys';
 
 const {
   AverageResistance,
@@ -12,7 +12,7 @@ function computeFromRawValues(data) {
   const workouts = {};
   for (const workout of data) {
     const discipline = workout[FitnessDiscipline];
-    if (discipline !== "Cycling") continue;
+    if (discipline !== 'Cycling') continue;
 
     workouts[workout[WorkoutTimestamp]] = {
       [AverageCadenceRPM]: workout[AverageCadenceRPM],
@@ -29,21 +29,21 @@ function chartDataByMetric(workouts) {
     {
       id: AverageCadenceRPM,
       data: Object.entries(workouts).map(([timestamp, val]) => ({
-        x: timestamp.split(" ")[0],
+        x: timestamp.split(' ')[0],
         y: val[AverageCadenceRPM],
       })),
     },
     {
       id: AverageResistance,
       data: Object.entries(workouts).map(([timestamp, val]) => ({
-        x: timestamp.split(" ")[0],
+        x: timestamp.split(' ')[0],
         y: val[AverageResistance],
       })),
     },
     {
       id: AverageWatts,
       data: Object.entries(workouts).map(([timestamp, val]) => ({
-        x: timestamp.split(" ")[0],
+        x: timestamp.split(' ')[0],
         y: val[AverageWatts],
       })),
     },

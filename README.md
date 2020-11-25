@@ -10,13 +10,13 @@ A React application to visualize workout data.
 
 ## 🏃‍♂️ Scripts
 
-- `yarn` &mdash; Install dependencies
-- `yarn start` &mdash; Start create-react-app server
-- `yarn test` &mdash; Run jests test (add `--watch` flag, if desired)
-- `yarn build` &mdash; Create production ready build
-- `yarn serve` &mdash; Start a local server for `yarn build` output
-- `yarn skeletor` &mdash; Build Skeletor styles
-- `yarn typebeast` &mdash; Build Typebeast styles
+- `yarn` : Install dependencies
+- `yarn start` : Start [create-react-app server](http://localhost:3000)
+- `yarn test` : Run jest tests
+- `yarn build` : Create production ready build
+- `yarn serve` : Start a [local server](http://localhost:3000) to preview the production build
+- `yarn skeletor` : Generate Skeletor styles
+- `yarn typebeast` : Generate Typebeast styles
 
 ## 🎨 Built with
 

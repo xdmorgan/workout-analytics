@@ -3,7 +3,7 @@ import { ResponsiveLine } from "@nivo/line";
 import { Button } from "../components/button";
 import { SelectInput } from "../components/select-input";
 import { ContentHeader } from "../components/content-header";
-import { TRANSFORMED_KEYS } from "../constants";
+import * as TRANSFORMED_KEYS from "../transforms/keys";
 import { ContentSection } from "../components/content-section";
 import { Pagination } from "../components/pagination";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { TRANSFORMED_KEYS } from "../constants";
+import * as TRANSFORMED_KEYS from "../transforms/keys";
 import { TotalPiechart } from "../components/total-piechart";
 import { ListWithIcon } from "../components/list-with-icon";
 import { ContentHeader } from "../components/content-header";

@@ -3,7 +3,8 @@ import { ResponsiveLine } from "@nivo/line";
 import { ContentHeader } from "../components/content-header";
 import { ContentSection } from "../components/content-section";
 import { Pagination } from "../components/pagination";
-import { RAW_KEYS, TRANSFORMED_KEYS } from "../constants";
+import * as RAW_KEYS from '../data/keys';
+import * as TRANSFORMED_KEYS from "../transforms/keys";
 import { SelectInput } from "../components/select-input";
 
 const { AverageResistance, AverageCadenceRPM, AverageWatts } = RAW_KEYS;

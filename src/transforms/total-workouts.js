@@ -1,5 +1,5 @@
-import { RAW_KEYS } from "../constants";
-import { toDecimalPlaces } from "../utils/decimal-rounding";
+import * as RAW_KEYS from '../data/keys';
+import { toDecimalPlaces } from '../utils/decimal-rounding';
 
 function numberOfWorkouts({ data }) {
   const byDiscipline = {};
@@ -79,7 +79,7 @@ function distanceInMiles({ data }) {
         label: type,
         value: count,
       }))
-      .filter((entry) => entry.value > 0),
+      .filter(entry => entry.value > 0),
   };
 }
 

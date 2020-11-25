@@ -1,4 +1,4 @@
-import { RAW_KEYS } from "../constants";
+import * as RAW_KEYS from '../data/keys';
 
 /**
  * ## What is it?
@@ -17,7 +17,7 @@ import { RAW_KEYS } from "../constants";
 export default function transform({ data }) {
   console.log(data[0][RAW_KEYS.FitnessDiscipline]);
   return {
-    example: "response",
+    example: 'response',
   };
 }
 
@@ -25,11 +25,11 @@ export default function transform({ data }) {
  * Copy the remainder of this file to a sibling [example].test.js
  */
 
-import transform from "./example";
-import TEST_DATA from "../data/workouts.json";
+import transform from './example';
+import TEST_DATA from '../data/workouts.json';
 
-describe("transform()", () => {
-  test("It transforms innit", async () => {
+describe('transform()', () => {
+  test('It transforms innit', async () => {
     const transformed = transform({ data: TEST_DATA });
     console.log(transformed); // Useful while iterating, remove when results look correct
     expect(true).toBe(true); // Useful while iterating, remove when results look correct

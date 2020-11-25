@@ -1,4 +1,4 @@
-import { RAW_KEYS } from "../constants";
+import * as RAW_KEYS from '../data/keys';
 
 export function computeFromRawValues(data) {
   const totals = {};
