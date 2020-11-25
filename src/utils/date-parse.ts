@@ -1,9 +1,9 @@
-import parse from "date-fns/parse";
+import parse from 'date-fns/parse';
 
 export const parseCSVDate = (
-  input,
-  format = "yyyy-MM-dd kk:mm",
-  reference = new Date()
+  input: string,
+  format: string = 'yyyy-MM-dd kk:mm',
+  reference: Date = new Date()
 ) => {
   // plan
   // parseDate() the date to JS Date in whatever format this is

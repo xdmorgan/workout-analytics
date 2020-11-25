@@ -1,6 +1,6 @@
 import React from "react";
 import { ResponsiveBar } from "@nivo/bar";
-import { TRANSFORMED_KEYS } from "../constants";
+import { TRANSFORMED_KEYS } from "../transforms/types";
 import { ContentHeader } from "../components/content-header";
 import { ContentSection } from "../components/content-section";
 import { Pagination } from "../components/pagination";

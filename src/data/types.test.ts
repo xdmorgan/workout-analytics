@@ -1,7 +1,7 @@
-import { RAW_KEYS, TRANSFORMED_KEYS } from "./constants";
+import * as RAW_KEYS from './keys';
 
-describe("constants", () => {
-  test("RAW_KEYS have not changed", () => {
+describe('constants', () => {
+  test('RAW_KEYS have not changed', () => {
     expect(RAW_KEYS).toMatchInlineSnapshot(`
       Object {
         "AverageCadenceRPM": "Avg. Cadence (RPM)",
@@ -22,17 +22,6 @@ describe("constants", () => {
         "TotalOutput": "Total Output",
         "Type": "Type",
         "WorkoutTimestamp": "Workout Timestamp",
-      }
-    `);
-  });
-  test("TRANSFORMED_KEYS have not changed", () => {
-    expect(TRANSFORMED_KEYS).toMatchInlineSnapshot(`
-      Object {
-        "ActivityCalendar": "activity-calendar",
-        "AverageMetrics": "average-metrics",
-        "CyclingOutputs": "cycling-outputs",
-        "TopInstructors": "top-instructors",
-        "TotalWorkouts": "total-workouts",
       }
     `);
   });

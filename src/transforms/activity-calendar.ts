@@ -1,9 +1,19 @@
-import { RAW_KEYS } from "../constants";
-import { format } from "../utils/date-format";
-import { parseCSVDate } from "../utils/date-parse";
+import * as RAW_KEYS from '../data/keys';
+import { RawData } from '../data/types';
+import { format } from '../utils/date-format';
+import { parseCSVDate } from '../utils/date-parse';
 
-export default function transform({ data }) {
-  const entries = data.reduce((all, entry) => {
+type CaloriesBurnedByDay = {
+  [year: string]: {
+    [day: string]: {
+      day: string;
+      value: number;
+    };
+  };
+};
+
+export default function transform({ data }: { data: RawData }) {
+  const entries = data.reduce((all: CaloriesBurnedByDay, entry) => {
     const day = format(parseCSVDate(entry[RAW_KEYS.WorkoutTimestamp]));
     const value = entry[RAW_KEYS.CaloriesBurned];
     const year = day.slice(0, 4);
@@ -39,3 +49,5 @@ export default function transform({ data }) {
     entries,
   };
 }
+
+export const key = 'activity-calendar';

@@ -1,6 +1,6 @@
 import React from "react";
 import { ResponsiveCalendar } from "@nivo/calendar";
-import { TRANSFORMED_KEYS } from "../constants";
+import { TRANSFORMED_KEYS } from "../transforms/types";
 import { SelectInput } from "../components/select-input";
 import { ContentHeader } from "../components/content-header";
 import { ContentSection } from "../components/content-section";
