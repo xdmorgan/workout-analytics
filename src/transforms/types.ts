@@ -44,15 +44,6 @@ export type Transformers = {
   [AverageMetrics]: Transformer;
 };
 
-// all transform functions
-export type Transformed = {
-  [TotalWorkouts]: ReturnType<typeof totalWorkouts>;
-  [ActivityCalendar]: ReturnType<typeof activityCalendar>;
-  [TopInstructors]: ReturnType<typeof topInstructors>;
-  [CyclingOutputs]: ReturnType<typeof cyclingOutputs>;
-  [AverageMetrics]: ReturnType<typeof averageMetrics>;
-};
-
 /**
  * Create a key value mapping of a data transformer to reference name (could match a route slug)
  * each of these functions will get called with the raw workout data json object and should
@@ -67,6 +58,15 @@ const all = {
   [TopInstructors]: topInstructors,
   [CyclingOutputs]: cyclingOutputs,
   [AverageMetrics]: averageMetrics,
+};
+
+// all transform functions
+export type Transformed = {
+  [TotalWorkouts]: ReturnType<typeof totalWorkouts>;
+  [ActivityCalendar]: ReturnType<typeof activityCalendar>;
+  [TopInstructors]: ReturnType<typeof topInstructors>;
+  [CyclingOutputs]: ReturnType<typeof cyclingOutputs>;
+  [AverageMetrics]: ReturnType<typeof averageMetrics>;
 };
 
 export default all;

@@ -25,6 +25,7 @@ export function transform({
   data: RawData;
   transformers: Transformers;
 }): Transformed {
+  // @ts-ignore
   return Object.entries(transformers).reduce(
     (acc, [name, func]) => ({
       ...acc,
