@@ -1,4 +1,4 @@
-import { TRANSFORMED_KEYS } from './types';
+import * as TRANSFORMED_KEYS from './keys';
 
 describe('constants', () => {
   test('TRANSFORMED_KEYS have not changed', () => {

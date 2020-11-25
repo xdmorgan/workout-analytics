@@ -116,5 +116,3 @@ export default function transform({ data }) {
     caloriesBurned: caloriesBurned({ data }),
   };
 }
-
-export const key = 'total-workouts';

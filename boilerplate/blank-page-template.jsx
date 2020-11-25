@@ -2,7 +2,7 @@ import React from "react";
 import { ContentHeader } from "../components/content-header";
 import { ContentSection } from "../components/content-section";
 import { Pagination } from "../components/pagination";
-import { TRANSFORMED_KEYS } from "../transforms/types";
+import * as TRANSFORMED_KEYS from "../transforms/keys";
 
 export const meta = {
   route: "/example",

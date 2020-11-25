@@ -54,5 +54,3 @@ export default function transform({ data }) {
     byRideLength: chartDataByRideLength(computed.byRideLength),
   };
 }
-
-export const key = 'cycling-outputs';

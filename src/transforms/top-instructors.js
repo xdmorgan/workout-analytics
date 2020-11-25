@@ -44,5 +44,3 @@ export default function transform({ data }) {
     chartData,
   };
 }
-
-export const key = 'top-instructors';

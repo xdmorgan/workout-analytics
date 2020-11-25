@@ -49,5 +49,3 @@ export default function transform({ data }: { data: RawData }) {
     entries,
   };
 }
-
-export const key = 'activity-calendar';

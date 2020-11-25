@@ -54,5 +54,3 @@ export default function transform({ data }) {
   const { workouts } = computeFromRawValues(data);
   return chartDataByMetric(workouts);
 }
-
-export const key = 'average-metrics';
