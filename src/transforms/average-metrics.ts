@@ -1,3 +1,4 @@
+import { CYCLING_DISCIPLINE } from '../constants';
 import * as RAW_KEYS from '../data/keys';
 import { RawData } from '../data/types';
 
@@ -21,7 +22,7 @@ function computeFromRawValues(data: RawData) {
   const workouts: AverageCyclingMetrics = {};
   for (const workout of data) {
     const discipline = workout[FitnessDiscipline];
-    if (discipline !== 'Cycling') continue;
+    if (discipline !== CYCLING_DISCIPLINE) continue;
 
     workouts[workout[WorkoutTimestamp]] = {
       [AverageCadenceRPM]: workout[AverageCadenceRPM],
