@@ -1,4 +1,5 @@
 import * as RAW_KEYS from '../data/keys';
+import { RawData } from '../data/types';
 
 const {
   AverageResistance,
@@ -8,8 +9,16 @@ const {
   FitnessDiscipline,
 } = RAW_KEYS;
 
-function computeFromRawValues(data) {
-  const workouts = {};
+type AverageCyclingMetrics = {
+  [date: string]: {
+    [AverageCadenceRPM]: number;
+    [AverageResistance]: string;
+    [AverageWatts]: number;
+  };
+};
+
+function computeFromRawValues(data: RawData) {
+  const workouts: AverageCyclingMetrics = {};
   for (const workout of data) {
     const discipline = workout[FitnessDiscipline];
     if (discipline !== 'Cycling') continue;
@@ -24,7 +33,7 @@ function computeFromRawValues(data) {
     workouts,
   };
 }
-function chartDataByMetric(workouts) {
+function chartDataByMetric(workouts: AverageCyclingMetrics) {
   return [
     {
       id: AverageCadenceRPM,
@@ -50,7 +59,7 @@ function chartDataByMetric(workouts) {
   ];
 }
 
-export default function transform({ data }) {
+export default function transform({ data }: { data: RawData }) {
   const { workouts } = computeFromRawValues(data);
   return chartDataByMetric(workouts);
 }
