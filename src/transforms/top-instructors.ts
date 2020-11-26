@@ -1,8 +1,12 @@
 import * as RAW_KEYS from '../data/keys';
+import { RawData } from '../data/types';
 
-export function computeFromRawValues(data) {
-  const totals = {};
-  const byDiscipline = {};
+type WorkoutsByInstructorName = { [instructor: string]: number };
+type WorkoutsByDiscipline = { [discipline: string]: WorkoutsByInstructorName };
+
+export function computeFromRawValues(data: RawData) {
+  const totals: WorkoutsByInstructorName = {};
+  const byDiscipline: WorkoutsByDiscipline = {};
 
   for (const workout of data) {
     const name = workout[RAW_KEYS.InstructorName];
@@ -21,13 +25,17 @@ export function computeFromRawValues(data) {
   };
 }
 
-export function convertDisciplineDataToBarChart(discipline) {
-  return Object.entries(discipline).map(([name, count]) => ({
+export function convertDisciplineDataToBarChart(
+  instructor: WorkoutsByInstructorName
+) {
+  return Object.entries(instructor).map(([name, count]) => ({
     id: name,
     value: count,
   }));
 }
-export function convertAggregateDataToBarCharts(discipline) {
+export function convertAggregateDataToBarCharts(
+  discipline: WorkoutsByDiscipline
+) {
   return Object.entries(discipline).reduce(
     (all, [name, counts]) => ({
       ...all,
@@ -37,7 +45,7 @@ export function convertAggregateDataToBarCharts(discipline) {
   );
 }
 
-export default function transform({ data }) {
+export default function transform({ data }: { data: RawData }) {
   const computed = computeFromRawValues(data);
   const chartData = convertAggregateDataToBarCharts(computed.byDiscipline);
   return {
