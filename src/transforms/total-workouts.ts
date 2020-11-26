@@ -1,8 +1,14 @@
 import * as RAW_KEYS from '../data/keys';
+import { RawData } from '../data/types';
 import { toDecimalPlaces } from '../utils/decimal-rounding';
 
-function numberOfWorkouts({ data }) {
-  const byDiscipline = {};
+type CountByDiscipline = { [discipline: string]: number };
+type MinutesByDiscipline = CountByDiscipline;
+type MilesByDiscipline = CountByDiscipline;
+type CaloriesByDiscipline = CountByDiscipline;
+
+function numberOfWorkouts({ data }: { data: RawData }) {
+  const byDiscipline: CountByDiscipline = {};
   for (const workout of data) {
     // Increment the entry if it already exists or create it
     if (byDiscipline[workout[RAW_KEYS.FitnessDiscipline]]) {
@@ -23,9 +29,9 @@ function numberOfWorkouts({ data }) {
   };
 }
 
-function timeInMinutes({ data }) {
+function timeInMinutes({ data }: { data: RawData }) {
   let sum = 0;
-  const byDiscipline = {};
+  const byDiscipline: MinutesByDiscipline = {};
   for (const workout of data) {
     const inc = workout[RAW_KEYS.LengthInMinutes] || 0;
     sum += inc;
@@ -48,9 +54,9 @@ function timeInMinutes({ data }) {
   };
 }
 
-function distanceInMiles({ data }) {
+function distanceInMiles({ data }: { data: RawData }) {
   let sum = 0;
-  let byDiscipline = {};
+  let byDiscipline: MilesByDiscipline = {};
   for (const workout of data) {
     const inc = workout[RAW_KEYS.DistanceInMiles] || 0;
     sum += inc;
@@ -83,9 +89,9 @@ function distanceInMiles({ data }) {
   };
 }
 
-function caloriesBurned({ data }) {
+function caloriesBurned({ data }: { data: RawData }) {
   let sum = 0;
-  const byDiscipline = {};
+  const byDiscipline: CaloriesByDiscipline = {};
   for (const workout of data) {
     const inc = workout[RAW_KEYS.CaloriesBurned] || 0;
     sum += inc;
@@ -108,7 +114,7 @@ function caloriesBurned({ data }) {
   };
 }
 
-export default function transform({ data }) {
+export default function transform({ data }: { data: RawData }) {
   return {
     numberOfWorkouts: numberOfWorkouts({ data }),
     timeInMinutes: timeInMinutes({ data }),

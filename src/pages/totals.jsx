@@ -5,6 +5,7 @@ import { ListWithIcon } from "../components/list-with-icon";
 import { ContentHeader } from "../components/content-header";
 import { ContentSection } from "../components/content-section";
 import { Pagination } from "../components/pagination";
+import { toDecimalPlaces } from "../utils/decimal-rounding";
 
 export const meta = {
   route: "/totals",
@@ -83,7 +84,7 @@ export function Page({ allWorkoutData, pageMetadata }) {
             <ListWithIcon.Item icon={<>🚴‍♀️</>}>
               Approximately{" "}
               {(([count, plural]) =>
-                `${count} Tour de France${plural ? "s" : ""}`)(
+                `${toDecimalPlaces(count, 1)} Tour de France${plural ? "s" : ""}`)(
                 toTourDeFrances(totals.distanceInMiles.sum)
               )}
             </ListWithIcon.Item>
