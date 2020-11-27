@@ -1,23 +1,25 @@
-import pages from ".";
+import pages from '.';
 
-describe("Page data config", () => {
+export function checkMetaExportStructure(meta, ex) {
+  ex(typeof meta.route).toEqual('string');
+  ex(typeof meta.title).toEqual('string');
+  ex(typeof meta.component).toEqual('function');
+  ex(typeof meta.protected).toEqual('boolean');
+  if (meta.pagination) {
+    ex(typeof meta.pagination).toEqual('object');
+    ex(typeof meta.pagination.previous).toBeDefined();
+    ex(typeof meta.pagination.next).toBeDefined();
+  }
+  ex(meta.sidebar).toBeDefined();
+}
+
+describe('Page data config', () => {
   test.each(Object.entries(pages))(
-    "Ensure %p page has valid metadata",
-    async (name, meta) => {
-      expect(typeof meta.route).toEqual("string");
-      expect(typeof meta.title).toEqual("string");
-      expect(typeof meta.component).toEqual("function");
-      expect(typeof meta.protected).toEqual("boolean");
-      if (meta.pagination) {
-        expect(typeof meta.pagination).toEqual("object");
-        expect(typeof meta.pagination.previous).toBeDefined();
-        expect(typeof meta.pagination.next).toBeDefined();
-      }
-      expect(meta.sidebar).toBeDefined();
-    }
+    'Ensure %p page has valid metadata',
+    async (name, meta) => checkMetaExportStructure(meta, expect)
   );
 
-  test("Should not have changed", () => {
+  test('Should not have changed', () => {
     expect(pages).toMatchInlineSnapshot(`
       Object {
         "/": Object {
