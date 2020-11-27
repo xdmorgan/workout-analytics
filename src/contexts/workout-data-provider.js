@@ -1,11 +1,8 @@
-import React from "react";
-import transformers, { transform } from "../transforms";
-import demo from "../data/workouts.json";
-import {
-  clearSavedSession,
-  loadSavedSession,
-  createSavedSession,
-} from "../utils/local-storage";
+import React from 'react';
+import transformers, { transform } from '../transforms';
+import demo from '../data/workouts.json';
+import { clearSavedSession, createSavedSession } from '../utils/local-storage';
+import { attemptRestoreSession } from '../utils/restore-session';
 
 export const WorkoutDataContext = React.createContext(null);
 
@@ -16,22 +13,11 @@ const INITIAL_STATE = {
   transformed: null,
 };
 
-function attemptRestoreSession() {
-  const saved = loadSavedSession();
-  if (!saved) return {};
-  return {
-    canAccessProtectedPages: true,
-    loadedSavedSession: true,
-    original: saved,
-    transformed: transform({ data: saved, transformers }),
-  };
-}
-
 function reducer(state, action) {
   // console.log(state, action);
   const { type, payload = null } = action;
   switch (type) {
-    case "USER_UPLOADED_CSV":
+    case 'USER_UPLOADED_CSV':
       createSavedSession(payload);
       return {
         ...state,
@@ -39,7 +25,7 @@ function reducer(state, action) {
         original: payload,
         transformed: transform({ data: payload, transformers }),
       };
-    case "USER_REQUESTED_DEMO":
+    case 'USER_REQUESTED_DEMO':
       createSavedSession(demo);
       return {
         ...state,
@@ -47,7 +33,7 @@ function reducer(state, action) {
         original: payload,
         transformed: transform({ data: demo, transformers }),
       };
-    case "USER_REQUESTED_RESET":
+    case 'USER_REQUESTED_RESET':
       clearSavedSession();
       return { ...INITIAL_STATE };
     default:

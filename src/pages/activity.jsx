@@ -1,27 +1,27 @@
-import React from "react";
-import { ResponsiveCalendar } from "@nivo/calendar";
-import * as TRANSFORMED_KEYS from "../transforms/keys";
-import { SelectInput } from "../components/select-input";
-import { ContentHeader } from "../components/content-header";
-import { ContentSection } from "../components/content-section";
-import { Pagination } from "../components/pagination";
+import React from 'react';
+import { ResponsiveCalendar } from '@nivo/calendar';
+import * as TRANSFORMED_KEYS from '../transforms/keys';
+import { SelectInput } from '../components/select-input';
+import { ContentHeader } from '../components/content-header';
+import { ContentSection } from '../components/content-section';
+import { Pagination } from '../components/pagination';
 
-const EMPTY_COLOR = "var(--color-n80)";
+const EMPTY_COLOR = 'var(--color-n80)';
 const ACTIVITY_COLORS = [
-  "var(--color-r80)",
-  "var(--color-r70)",
-  "var(--color-r60)",
-  "var(--color-r50)",
-  "var(--color-r40)",
-  "var(--color-r30)",
-  "var(--color-r20)",
-  "var(--color-r10)",
+  'var(--color-r80)',
+  'var(--color-r70)',
+  'var(--color-r60)',
+  'var(--color-r50)',
+  'var(--color-r40)',
+  'var(--color-r30)',
+  'var(--color-r20)',
+  'var(--color-r10)',
 ];
 
 export const meta = {
-  route: "/activity",
-  title: "Annual Activity",
-  sidebar: "Annual Activity",
+  route: '/activity',
+  title: 'Annual Activity',
+  sidebar: 'Annual Activity',
   component: Page,
   protected: true,
 };
@@ -69,7 +69,7 @@ function ActivityCalendarSection({ years, entries }) {
       <header className="md:d-flex flx-a-fe flx-j-sb mb-2x mb-4x">
         <div className="wysiwyg child-my-0 md:pr-4x">
           <h2>By year</h2>
-          <p style={{ maxWidth: "60ch" }}>
+          <p style={{ maxWidth: '60ch' }}>
             <>So far in {year}, you've averaged </>
             <strong>
               <span className="c-r30">{wpw}</span> workouts per week
@@ -81,8 +81,8 @@ function ActivityCalendarSection({ years, entries }) {
           </p>
         </div>
         <div className="mt-2x md:mt-0">
-          <SelectInput value={year} onChange={(e) => setYear(e.target.value)}>
-            {Object.keys(years).map((y) => (
+          <SelectInput value={year} onChange={e => setYear(e.target.value)}>
+            {Object.keys(years).map(y => (
               <option key={y}>{y}</option>
             ))}
           </SelectInput>
@@ -103,14 +103,14 @@ function ActivityCalendarSection({ years, entries }) {
           dayBorderColor="#ffffff"
           legends={[
             {
-              anchor: "bottom-right",
-              direction: "row",
+              anchor: 'bottom-right',
+              direction: 'row',
               translateY: 36,
               itemCount: 4,
               itemWidth: 42,
               itemHeight: 36,
               itemsSpacing: 14,
-              itemDirection: "right-to-left",
+              itemDirection: 'right-to-left',
             },
           ]}
         />
