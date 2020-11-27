@@ -1,5 +1,5 @@
-import subDays from "date-fns/subDays";
-import { format } from "./date-format";
+import subDays from 'date-fns/subDays';
+import { format } from './date-format';
 
 export const RANGE_TYPES = {
   thirtyDays: 30,
@@ -9,19 +9,32 @@ export const RANGE_TYPES = {
   allTime: 0,
 };
 
-export function isInRange({ start, end }, test) {
+export function isInRange(
+  { start, end }: { start: string; end: string },
+  test: string
+) {
   return start <= test && test <= end;
 }
 
-export function subtractDays(from, count) {
+export function subtractDays(from: string, count: number) {
   return format(subDays(new Date(from), count));
 }
 
-export function getMinimumDate(dates) {
+export function getMinimumDate(dates: string[]) {
   return dates.reduce((min, cur) => (cur < min ? cur : min));
 }
 
-export function filterByRange({ dates, from, length, clampRange = true }) {
+export function filterByRange({
+  dates,
+  from,
+  length,
+  clampRange = true,
+}: {
+  dates: string[];
+  from: string;
+  length: number;
+  clampRange?: boolean;
+}) {
   // from an array of 'dates' (probs via object.keys), an 'end' date, and a 'range'
   // e.g. dates = ["2020-01-31", "2020-01-30", "2020-02-28", "2020-03-31"]
   // & end = "2020-09-10" & range = RANGE_TYPES.ninetyDays
@@ -39,7 +52,7 @@ export function filterByRange({ dates, from, length, clampRange = true }) {
     rangeStart = historyStart;
   }
   // now, with the 'start' and 'end' of the range calculated, `filter()` the `dates` by `isInRange`
-  const filtered = dates.filter((d) =>
+  const filtered = dates.filter(d =>
     isInRange({ start: rangeStart, end: from }, d)
   );
 
