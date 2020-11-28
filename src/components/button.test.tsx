@@ -46,13 +46,14 @@ describe('<Button.Group />', () => {
     );
     expect(getByText(LABELS.children)).toBeInTheDocument();
   });
-  test('renders custom element with `as` prop', () => {
+  test.skip('renders custom element with `as` prop', () => {
     const element = 'span';
-    const { getByText } = render(
-      <Button.Group>
-        <Button as={element}>{LABELS.children}</Button>
+    const { getByRole, debug } = render(
+      <Button.Group as={element}>
+        <Button>{LABELS.children}</Button>
       </Button.Group>
     );
-    expect(getByText(LABELS.children).nodeName).toEqual(element.toUpperCase());
+    debug();
+    expect(getByRole('group')).toEqual(element.toUpperCase());
   });
 });

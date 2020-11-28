@@ -47,7 +47,7 @@ export function Button({
 }
 
 interface ButtonGroupProps {
-  as: any;
+  as?: any;
   className?: string;
   [props: string]: any;
 }
