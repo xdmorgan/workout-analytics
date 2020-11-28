@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import { debug } from 'console';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { Button } from './button';
 
@@ -46,14 +47,17 @@ describe('<Button.Group />', () => {
     );
     expect(getByText(LABELS.children)).toBeInTheDocument();
   });
-  test.skip('renders custom element with `as` prop', () => {
+
+  // skipped, i don't know why this throws for a jest worker error :shrug:
+  test('renders custom element with `as` prop', () => {
     const element = 'span';
-    const { getByRole, debug } = render(
+    const { getByRole } = render(
       <Button.Group as={element}>
-        <Button>{LABELS.children}</Button>
+        <Button href="/hello">{LABELS.children}</Button>
+        <Button href="/hello">{LABELS.children}</Button>
+        <Button href="/hello">{LABELS.children}</Button>
       </Button.Group>
     );
-    debug();
-    expect(getByRole('group')).toEqual(element.toUpperCase());
+    expect(getByRole('group').nodeName).toEqual(element.toUpperCase());
   });
 });
