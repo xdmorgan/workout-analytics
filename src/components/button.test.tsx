@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react';
-import { debug } from 'console';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { Button } from './button';
 
