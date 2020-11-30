@@ -1,31 +1,31 @@
 import React, { ReactNode } from 'react';
 import transformers, { transform } from '../transforms';
-import * as demo from '../data/workouts.json';
+import demo from '../data/workouts';
 import { clearSavedSession, createSavedSession } from '../utils/local-storage';
 import { attemptRestoreSession } from '../utils/restore-session';
-import { WorkoutDataContextState } from './types';
-import { RawData } from '../data/types';
+import {
+  WorkoutDataReducerState,
+  WorkoutDataReducerAction,
+  WorkoutDataContextProviderProps,
+} from './types';
 
-export const WorkoutDataContext = React.createContext(null);
+export const WorkoutDataContext = React.createContext<
+  WorkoutDataContextProviderProps
+>(null);
 
-type WorkoutContextActionTypes =
-  | 'USER_UPLOADED_CSV'
-  | 'USER_REQUESTED_DEMO'
-  | 'USER_REQUESTED_RESET';
+const ERROR_MESSAGE = 'Reducer called with an invalid action.type';
 
-type WorkoutContextAction = {
-  type: WorkoutContextActionTypes;
-  payload: RawData | null;
-};
-
-const INITIAL_STATE: WorkoutDataContextState = {
+const INITIAL_STATE: WorkoutDataReducerState = {
   canAccessProtectedPages: false,
   loadedSavedSession: false,
   original: null,
   transformed: null,
 };
 
-function reducer(state: WorkoutDataContextState, action: WorkoutContextAction) {
+function reducer(
+  state: WorkoutDataReducerState,
+  action: WorkoutDataReducerAction
+) {
   // console.log(state, action);
   const { type, payload = null } = action;
   switch (type) {
@@ -53,7 +53,7 @@ function reducer(state: WorkoutDataContextState, action: WorkoutContextAction) {
       clearSavedSession();
       return { ...INITIAL_STATE };
     default:
-      throw new Error();
+      throw new Error(ERROR_MESSAGE);
   }
 }
 
