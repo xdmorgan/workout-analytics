@@ -6,6 +6,8 @@ import { ContentHeader } from "../components/content-header";
 import { TRANSFORMED_KEYS } from "../constants";
 import { ContentSection } from "../components/content-section";
 import { Pagination } from "../components/pagination";
+import { RANGE_TYPES, filterByRange } from "../utils/date-range";
+import { format } from "../utils/date-format";
 
 export const meta = {
   route: "/outputs",
@@ -56,13 +58,41 @@ const toggleReducer = (state, action) => {
   }
 };
 
-const TIME_OPTIONS = ["This month", "This year", "Last year", "All-time"];
+const TIME_OPTIONS = {
+  "This year": RANGE_TYPES.oneYear,
+  "Last 30 days": RANGE_TYPES.thirtyDays,
+  "Last 60 days": RANGE_TYPES.ninetyDays,
+  "Last 90 days": RANGE_TYPES.ninetyDays,
+  "Last 6 months": RANGE_TYPES.ninetyDays,
+  "Last year": RANGE_TYPES.ninetyDays,
+  "All-time": RANGE_TYPES.allTime,
+};
+
+const TIME_OPTION_NAMES = Object.keys(TIME_OPTIONS);
+
 function ResponsiveLineSection({ type, data, defaultSelected }) {
-  const [option, setOption] = React.useState(TIME_OPTIONS.slice(-1)[0]);
+  const [option, setOption] = React.useState(TIME_OPTION_NAMES[0]);
+  // useMemo to filter
   const [toggleState, dispatchToggle] = React.useReducer(
     toggleReducer,
     defaultSelected
   );
+  const filtered = data
+    .filter((d) => toggleState[d.id])
+    .map((group) =>
+      filterByRange({
+        dates: group.data.map((item) => item.x),
+        from: format(new Date()),
+        length: RANGE_TYPES.oneYear,
+      }).filtered.reduce(
+        (acc, cur) => ({
+          ...acc,
+          data: [...acc.data, ...group.data.filter((item) => item.x === cur)],
+        }),
+        { id: group.id, data: [] }
+      )
+    );
+  console.log(filtered);
   return (
     <ContentSection>
       <h2 className="type-h2">{type}</h2>
@@ -73,7 +103,7 @@ function ResponsiveLineSection({ type, data, defaultSelected }) {
             value={option}
             onChange={(e) => setOption(e.target.value)}
           >
-            {TIME_OPTIONS.map((opt) => (
+            {TIME_OPTION_NAMES.map((opt) => (
               <option key={opt}>{opt}</option>
             ))}
           </SelectInput>
@@ -131,7 +161,7 @@ function ResponsiveLineSection({ type, data, defaultSelected }) {
               ],
             },
           ]}
-          data={data.filter((d) => toggleState[d.id])}
+          data={filtered}
           xScale={{
             type: "time",
             format: "%Y-%m-%d",
