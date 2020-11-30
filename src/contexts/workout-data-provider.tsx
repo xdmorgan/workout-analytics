@@ -1,30 +1,46 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import transformers, { transform } from '../transforms';
-import demo from '../data/workouts.json';
+import * as demo from '../data/workouts.json';
 import { clearSavedSession, createSavedSession } from '../utils/local-storage';
 import { attemptRestoreSession } from '../utils/restore-session';
+import { WorkoutDataContextState } from './types';
+import { RawData } from '../data/types';
 
 export const WorkoutDataContext = React.createContext(null);
 
-const INITIAL_STATE = {
+type WorkoutContextActionTypes =
+  | 'USER_UPLOADED_CSV'
+  | 'USER_REQUESTED_DEMO'
+  | 'USER_REQUESTED_RESET';
+
+type WorkoutContextAction = {
+  type: WorkoutContextActionTypes;
+  payload: RawData | null;
+};
+
+const INITIAL_STATE: WorkoutDataContextState = {
   canAccessProtectedPages: false,
   loadedSavedSession: false,
   original: null,
   transformed: null,
 };
 
-function reducer(state, action) {
+function reducer(state: WorkoutDataContextState, action: WorkoutContextAction) {
   // console.log(state, action);
   const { type, payload = null } = action;
   switch (type) {
     case 'USER_UPLOADED_CSV':
-      createSavedSession(payload);
-      return {
-        ...state,
-        canAccessProtectedPages: true,
-        original: payload,
-        transformed: transform({ data: payload, transformers }),
-      };
+      if (payload) {
+        createSavedSession(payload);
+        return {
+          ...state,
+          canAccessProtectedPages: true,
+          original: payload,
+          transformed: transform({ data: payload, transformers }),
+        };
+      } else {
+        return state;
+      }
     case 'USER_REQUESTED_DEMO':
       createSavedSession(demo);
       return {
@@ -41,7 +57,7 @@ function reducer(state, action) {
   }
 }
 
-export function WorkoutDataProvider({ children }) {
+export function WorkoutDataProvider({ children }: { children: ReactNode }) {
   const restored = attemptRestoreSession();
   const initialState = { ...INITIAL_STATE, ...restored };
   const [state, dispatch] = React.useReducer(reducer, initialState);
