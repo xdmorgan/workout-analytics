@@ -1,20 +1,35 @@
-@import "../../public/skeletor/sass/skeletor.core";
+@import '../../public/skeletor/sass/skeletor.core';
 
 .layout {
   --sidebar-width: 224px;
 
-  padding-left: var(--sidebar-width);
-
-  &__navigation {
-    position: fixed;
+  &__skip {
+    position: absolute;
     left: 0;
     top: 0;
-    height: 100%;
-    width: var(--sidebar-width);
+    background: var(--color-g90);
+    color: var(--color-n10);
+    padding: var(--space-2x) var(--space-3x);
+    z-index: var(--layer-over);
+    font-weight: var(--weight-bold);
   }
 
   &__content {
-    padding-top: 1px; // css is awesome
-    margin-top: -1px; // prevent margin from leaking
+    // CSS is awesome. Finesse CSS into capturing top margin
+    // of content's children
+    padding-top: 1px;
+    margin-top: -1px;
+  }
+
+  @include min-width(breakpoint(lg)) {
+    padding-left: var(--sidebar-width);
+
+    &__navigation {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: var(--sidebar-width);
+    }
   }
 }

@@ -35,7 +35,7 @@ export function Button({
       className={cx(
         styles.button,
         {
-          [styles[`button--${theme}`]]: theme,
+          [styles[`button--${theme}`]]: theme && styles[`button--${theme}`],
           [styles[`button--${theme}--${appearance}`]]: theme && appearance,
           [styles[`button--${size}`]]: !!size,
           'is-active': !!props['aria-pressed'],

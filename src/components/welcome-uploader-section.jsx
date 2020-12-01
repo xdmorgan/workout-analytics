@@ -1,8 +1,8 @@
-import React from "react";
-import cx from "classnames";
-import { Button } from "../components/button";
-import { FileLoader } from "../components/file-loader";
-import styles from "./welcome-uploader-section.module.scss";
+import React from 'react';
+import cx from 'classnames';
+import { Button } from '../components/button';
+import { FileLoader } from '../components/file-loader';
+import styles from './welcome-uploader-section.module.scss';
 
 export function WelcomeUploaderSection({
   canAccessProtectedPages,
@@ -15,8 +15,8 @@ export function WelcomeUploaderSection({
 }) {
   const [showFileUpload, setShowFileUpload] = React.useState(false);
   return (
-    <section {...props} className={cx("container", className)}>
-      <div className={cx(styles.hero, "pt-4x")}>
+    <section {...props} className={cx('container', className)}>
+      <div className={cx(styles.hero, 'lg:pt-4x')}>
         {showFileUpload ? (
           <FileLoader
             accept=".csv"
@@ -107,7 +107,7 @@ function UploaderBlock({ label, buttons, heading, className, ...props }) {
     <div
       {...props}
       className={cx(
-        "d-flex flx-a-c flx-j-c flx-d-c h-fill rc-normal p-3x",
+        'd-flex flx-a-c flx-j-c flx-d-c h-fill rc-normal p-3x',
         className
       )}
     >
@@ -117,7 +117,7 @@ function UploaderBlock({ label, buttons, heading, className, ...props }) {
           return (
             <div
               key={el.key}
-              className={cx("mb-2x xl:mb-0", { "xl:ml-2x": idx > 0 })}
+              className={cx('mb-2x xl:mb-0', { 'xl:ml-2x': idx > 0 })}
             >
               {el}
             </div>
