@@ -1,0 +1,44 @@
+@import '../../public/skeletor/sass/skeletor.core';
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: scroll;
+
+  &__header {
+    padding: var(--header-inset-y, var(--space-3x))
+      var(--header-inset-x, var(--space-3x));
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__content {
+    display: none;
+    &[aria-expanded='true'] {
+      display: block;
+    }
+  }
+
+  @include min-width(breakpoint(md)) {
+    &__header {
+      --header-inset-x: var(--space-4x);
+      --header-inset-y: var(--space-4x);
+    }
+  }
+  @include min-width(breakpoint(lg)) {
+    &__header {
+      --header-inset-x: var(--space-3x);
+    }
+    &__button {
+      display: none;
+    }
+    &__content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

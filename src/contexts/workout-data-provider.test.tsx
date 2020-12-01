@@ -18,11 +18,12 @@ function MockInterface({
   onContextChange,
   payload,
 }: {
-  onContextChange: (ctx: WorkoutDataContextProviderValue) => void;
+  onContextChange: (ctx: WorkoutDataContextProviderValue | null) => void;
   payload?: RawData;
 }) {
   const ctx = useContext(WorkoutDataContext);
   useEffect(() => onContextChange(ctx), [onContextChange, ctx]);
+  if (!ctx) return null;
   return (
     <>
       <button
@@ -75,7 +76,7 @@ test('User upload with no payload data has no effect (simulate failed CSV parse)
   `);
 });
 
-const input = [];
+const input: RawData = [];
 
 test('User upload with payload data is run through transformers, written to localStorage, and protected page access is granted', async () => {
   const onContextChange = jest.fn();
