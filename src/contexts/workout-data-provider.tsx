@@ -6,12 +6,12 @@ import { attemptRestoreSession } from '../utils/restore-session';
 import {
   WorkoutDataReducerState,
   WorkoutDataReducerAction,
-  WorkoutDataContextProviderProps,
+  WorkoutDataContextProviderValue,
 } from './types';
 
-export const WorkoutDataContext = React.createContext<
-  WorkoutDataContextProviderProps
->(null);
+export const WorkoutDataContext = React.createContext<null | WorkoutDataContextProviderValue>(
+  null
+);
 
 const ERROR_MESSAGE = 'Reducer called with an invalid action.type';
 
@@ -39,7 +39,7 @@ function reducer(
           transformed: transform({ data: payload, transformers }),
         };
       } else {
-        return state;
+        return { ...state };
       }
     case 'USER_REQUESTED_DEMO':
       createSavedSession(demo);
@@ -61,7 +61,10 @@ export function WorkoutDataProvider({ children }: { children: ReactNode }) {
   const restored = attemptRestoreSession();
   const initialState = { ...INITIAL_STATE, ...restored };
   const [state, dispatch] = React.useReducer(reducer, initialState);
-  const value = React.useMemo(() => ({ state, dispatch }), [state, dispatch]);
+  const value: WorkoutDataContextProviderValue = React.useMemo(
+    () => ({ state, dispatch }),
+    [state, dispatch]
+  );
   return (
     <WorkoutDataContext.Provider value={value}>
       {children}

@@ -15,10 +15,10 @@ export type WorkoutDataReducerActionTypes =
 
 export type WorkoutDataReducerAction = {
   type: WorkoutDataReducerActionTypes;
-  payload: RawData | null;
+  payload?: RawData;
 };
 
-export type WorkoutDataContextProviderProps = null | {
+export type WorkoutDataContextProviderValue = {
   state: WorkoutDataReducerState;
   dispatch: React.Dispatch<WorkoutDataReducerAction>;
 };
