@@ -134,7 +134,7 @@ test('Restores data from localStorage written by the previous test', async () =>
   expect(typeof initial.state.transformed).toEqual('object');
 });
 
-test('Data is rehydrated from previous tests then reset by user', async () => {
+test('Data is restored from previous tests then reset by user', async () => {
   const onContextChange = jest.fn();
   const { getByText } = render(
     <WorkoutDataProvider>
