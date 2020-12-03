@@ -14,9 +14,7 @@ export function Navigation() {
   const onToggleMenu = useCallback(() => setIsMenuOpen(s => !s), [
     setIsMenuOpen,
   ]);
-  const onCloseMenu = useCallback(() => setIsMenuOpen(s => !s), [
-    setIsMenuOpen,
-  ]);
+  const onCloseMenu = useCallback(() => setIsMenuOpen(false), [setIsMenuOpen]);
   return (
     <div id="nav" className={styles.nav}>
       <header className={cx(styles.nav__header, 'child-my-0')}>
