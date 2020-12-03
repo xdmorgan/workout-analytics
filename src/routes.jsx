@@ -12,7 +12,7 @@ export default function RouterViews() {
   return (
     <AppLayout navigation={<Navigation />}>
       <Switch>
-        {Object.entries(pages).map(([name, meta]) => {
+        {Object.entries(pages).map(([_, meta]) => {
           const RouteElement = meta.protected ? ProtectedRoute : Route;
           return (
             <RouteElement
