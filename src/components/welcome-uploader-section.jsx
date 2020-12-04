@@ -10,7 +10,7 @@ export function WelcomeUploaderSection({
   onRequestSetData,
   onRequestResetData,
   onRequestDemoData,
-  className,
+  className = undefined,
   ...props
 }) {
   const [showFileUpload, setShowFileUpload] = React.useState(false);

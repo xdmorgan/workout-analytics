@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 import { AppLayout } from './layouts/app-layout';
 import pages from './pages';
 import { useProtectedPage } from './hooks/use-protected-page';
@@ -8,11 +8,14 @@ import { Navigation } from './components/global-navigation';
 import { usePageView } from './hooks/use-page-view';
 
 export default function RouterViews() {
-  usePageView({ debug: process.env.NODE_ENV === 'development' });
+  const location = useLocation();
+  const { title, route } = pages[location.pathname || '/'];
+  const debug = process.env.NODE_ENV === 'development';
+  usePageView({ title, route, debug });
   return (
     <AppLayout navigation={<Navigation />}>
       <Switch>
-        {Object.entries(pages).map(([_, meta]) => {
+        {Object.entries(pages).map(([name, meta]) => {
           const RouteElement = meta.protected ? ProtectedRoute : Route;
           return (
             <RouteElement

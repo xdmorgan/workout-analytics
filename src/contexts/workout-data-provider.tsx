@@ -9,10 +9,6 @@ import {
   WorkoutDataContextProviderValue,
 } from './types';
 
-export const WorkoutDataContext = React.createContext<null | WorkoutDataContextProviderValue>(
-  null
-);
-
 const ERROR_MESSAGE = 'Reducer called with an invalid action.type';
 
 const INITIAL_STATE: WorkoutDataReducerState = {
@@ -21,6 +17,10 @@ const INITIAL_STATE: WorkoutDataReducerState = {
   original: null,
   transformed: null,
 };
+
+export const WorkoutDataContext = React.createContext<
+  WorkoutDataContextProviderValue
+>({ state: INITIAL_STATE, dispatch: () => {} });
 
 function reducer(
   state: WorkoutDataReducerState,
