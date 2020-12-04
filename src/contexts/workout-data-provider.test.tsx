@@ -18,12 +18,11 @@ function MockInterface({
   onContextChange,
   payload,
 }: {
-  onContextChange: (ctx: WorkoutDataContextProviderValue | null) => void;
+  onContextChange: (ctx: WorkoutDataContextProviderValue) => void;
   payload?: RawData;
 }) {
   const ctx = useContext(WorkoutDataContext);
   useEffect(() => onContextChange(ctx), [onContextChange, ctx]);
-  if (!ctx) return null;
   return (
     <>
       <button
@@ -44,11 +43,21 @@ function MockInterface({
 beforeAll(clearSavedSession);
 afterAll(clearSavedSession);
 
-test('context is null outside of provider', async () => {
+test('context is reasonable even outside of provider', async () => {
   const onContextChange = jest.fn();
   render(<MockInterface onContextChange={onContextChange} />);
   const [[initial]] = onContextChange.mock.calls as null[][];
-  expect(initial).toEqual(null);
+  expect(initial).toMatchInlineSnapshot(`
+    Object {
+      "dispatch": [Function],
+      "state": Object {
+        "canAccessProtectedPages": false,
+        "loadedSavedSession": false,
+        "original": null,
+        "transformed": null,
+      },
+    }
+  `);
 });
 
 test('User upload with no payload data has no effect (simulate failed CSV parse)', async () => {
