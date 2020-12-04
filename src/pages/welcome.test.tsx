@@ -48,6 +48,7 @@ describe('Demo flow', () => {
 
 describe('Upload flow', () => {
   // TODO: test  upload (requires a bunch of mocks)
+  // https://github.com/testing-library/react-testing-library/issues/93
   test('Click through the upload data flow but cancel at the uploader?', () => {
     const { getByText } = render(
       <MockedEnv>
