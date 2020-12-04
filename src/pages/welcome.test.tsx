@@ -1,23 +1,18 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { render } from '@testing-library/react';
-import { MemoryRouter as Router } from 'react-router-dom';
-import { WorkoutDataProvider } from '../contexts/workout-data-provider';
+import { MockedEnv } from '../test-utils';
 import { meta } from './welcome';
 
 const LABELS = {
   flowStartHeading: 'Start here',
   flowCompleteHeading: "You're all set!",
+  flowUploaderHeading: 'Add data',
+  uploadDataButton: 'Analyze my workouts',
+  uploadCancelButton: 'Cancel',
+  uploadBrowseFilesButton: 'Select file',
   seeDemoButton: 'See demo',
   resetStateButton: 'Start over',
 };
-
-function MockedEnv({ children }: { children: ReactNode }) {
-  return (
-    <Router>
-      <WorkoutDataProvider>{children}</WorkoutDataProvider>
-    </Router>
-  );
-}
 
 describe('Renders without crashing', () => {
   test('Welcomes new users with "start here" message', () => {
@@ -46,6 +41,28 @@ describe('Demo flow', () => {
     expect(getByText(LABELS.resetStateButton)).toBeInTheDocument();
     // now reset data
     getByText(LABELS.resetStateButton).click();
+    // and back to square one
+    expect(getByText(LABELS.flowStartHeading)).toBeInTheDocument();
+  });
+});
+
+describe('Upload flow', () => {
+  // TODO: test  upload (requires a bunch of mocks)
+  test('Click through the upload data flow but cancel at the uploader?', () => {
+    const { getByText } = render(
+      <MockedEnv>
+        <meta.component />
+      </MockedEnv>
+    );
+    // start with welcome
+    expect(getByText(LABELS.flowStartHeading)).toBeInTheDocument();
+    expect(getByText(LABELS.uploadDataButton)).toBeInTheDocument();
+    getByText(LABELS.uploadDataButton).click();
+    // click to browse files and fake uploading of data
+    expect(getByText(LABELS.flowUploaderHeading)).toBeInTheDocument();
+    expect(getByText(LABELS.uploadBrowseFilesButton)).toBeInTheDocument();
+    expect(getByText(LABELS.uploadCancelButton)).toBeInTheDocument();
+    getByText(LABELS.uploadCancelButton).click();
     // and back to square one
     expect(getByText(LABELS.flowStartHeading)).toBeInTheDocument();
   });
