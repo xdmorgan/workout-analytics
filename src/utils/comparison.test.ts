@@ -32,8 +32,8 @@ describe('toHours()', () => {
 
 describe('toDays()', () => {
   test('pluralize it', async () => {
-    expect(toHours(1440)).toEqual([1, false]);
-    expect(toHours(2880)).toEqual([2, true]);
+    expect(toDays(1440)).toEqual([1, false]);
+    expect(toDays(2880)).toEqual([2, true]);
   });
 });
 
