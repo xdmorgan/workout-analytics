@@ -5,6 +5,7 @@ import { SelectInput } from '../components/select-input';
 import { ContentHeader } from '../components/content-header';
 import { ContentSection } from '../components/content-section';
 import { Pagination } from '../components/pagination';
+import { DataTooltip } from '../components/data-tooltip';
 
 const EMPTY_COLOR = 'var(--color-n80)';
 const ACTIVITY_COLORS = [
@@ -113,6 +114,28 @@ function ActivityCalendarSection({ years, entries }) {
               itemDirection: 'right-to-left',
             },
           ]}
+          tooltip={data => {
+            console.log(data);
+            return (
+              <DataTooltip title={data.day}>
+                <div className="d-flex flx-a-c">
+                  <span
+                    style={{
+                      display: 'block',
+                      backgroundColor: data.color ? data.color : '#fff',
+                      height: 15,
+                      width: 15,
+                      marginRight: 2,
+                    }}
+                  />
+                  Calories:{' '}
+                  <strong className="ml-05x">
+                    {data.value ? data.value : '0'}
+                  </strong>
+                </div>
+              </DataTooltip>
+            );
+          }}
         />
       </div>
     </ContentSection>

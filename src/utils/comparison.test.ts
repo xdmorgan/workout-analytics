@@ -1,6 +1,7 @@
 import {
   comparison,
   toHours,
+  toDays,
   toOfficeEpisodes,
   toTitanicMovies,
   toNurburgrings,
@@ -9,6 +10,7 @@ import {
   toOreos,
   toBigMacs,
   toVermonsters,
+  toCabs,
 } from './comparison';
 
 describe('comparison()', () => {
@@ -25,6 +27,13 @@ describe('toHours()', () => {
   test('pluralize it', async () => {
     expect(toHours(60)).toEqual([1, false]);
     expect(toHours(120)).toEqual([2, true]);
+  });
+});
+
+describe('toDays()', () => {
+  test('pluralize it', async () => {
+    expect(toHours(1440)).toEqual([1, false]);
+    expect(toHours(2880)).toEqual([2, true]);
   });
 });
 
@@ -89,5 +98,13 @@ describe('toVermonsters()', () => {
     expect(toVermonsters(1)).toEqual([0, true]);
     expect(toVermonsters(14000)).toEqual([1, false]);
     expect(toVermonsters(28000)).toEqual([2, true]);
+  });
+});
+
+describe('toCabs()', () => {
+  test('pluralize it', async () => {
+    expect(toCabs(1)).toEqual([0, true]);
+    expect(toCabs(120)).toEqual([1, false]);
+    expect(toCabs(240)).toEqual([2, true]);
   });
 });

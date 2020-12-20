@@ -8,6 +8,7 @@ import { Pagination } from '../components/pagination';
 import { toDecimalPlaces } from '../utils/decimal-rounding';
 import {
   toHours,
+  toDays,
   toOfficeEpisodes,
   toTitanicMovies,
   toNurburgrings,
@@ -16,6 +17,7 @@ import {
   toOreos,
   toBigMacs,
   toVermonsters,
+  toCabs,
 } from '../utils/comparison';
 
 export const meta = {
@@ -58,6 +60,12 @@ export function Page({ allWorkoutData, pageMetadata }) {
             <ListWithIcon.Item icon={<>⏱</>}>
               {(([count, plural]) => `${count} hour${plural ? 's' : ''}`)(
                 toHours(totals.timeInMinutes.sum)
+              )}
+            </ListWithIcon.Item>
+            <ListWithIcon.Item icon={<>📆</>}>
+              {(([count, plural]) =>
+                `${toDecimalPlaces(count, 1)} day${plural ? 's' : ''}`)(
+                toDays(totals.timeInMinutes.sum)
               )}
             </ListWithIcon.Item>
             <ListWithIcon.Item icon={<>🏢</>}>
@@ -111,6 +119,12 @@ export function Page({ allWorkoutData, pageMetadata }) {
             <ListWithIcon.Item icon={<>🍪</>}>
               {(([count, plural]) => `${count} Oreo${plural ? 's' : ''}`)(
                 toOreos(totals.caloriesBurned.sum)
+              )}
+            </ListWithIcon.Item>
+            <ListWithIcon.Item icon={<>🍷</>}>
+              {(([count, plural]) =>
+                `${count} Glass${plural ? 'es' : ''} of Cab`)(
+                toCabs(totals.caloriesBurned.sum)
               )}
             </ListWithIcon.Item>
             <ListWithIcon.Item icon={<>🍔</>}>

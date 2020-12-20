@@ -13,6 +13,10 @@ export function toHours(minutes: number) {
   return comparison(minutes, 60);
 }
 
+export function toDays(minutes: number) {
+  return comparison(minutes, 1440, false);
+}
+
 export function toOfficeEpisodes(minutes: number) {
   return comparison(minutes, 22);
 }
@@ -43,4 +47,8 @@ export function toBigMacs(calories: number) {
 
 export function toVermonsters(calories: number) {
   return comparison(calories, 14000);
+}
+
+export function toCabs(calories: number) {
+  return comparison(calories, 120);
 }

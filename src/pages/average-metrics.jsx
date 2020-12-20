@@ -1,23 +1,30 @@
-import React, { useState } from "react";
-import { ResponsiveLine } from "@nivo/line";
-import { ContentHeader } from "../components/content-header";
-import { ContentSection } from "../components/content-section";
-import { Pagination } from "../components/pagination";
+import React, { useState } from 'react';
+import { ResponsiveLine } from '@nivo/line';
+import { ContentHeader } from '../components/content-header';
+import { ContentSection } from '../components/content-section';
+import { Pagination } from '../components/pagination';
 import * as RAW_KEYS from '../data/keys';
-import * as TRANSFORMED_KEYS from "../transforms/keys";
-import { SelectInput } from "../components/select-input";
+import * as TRANSFORMED_KEYS from '../transforms/keys';
+import { SelectInput } from '../components/select-input';
+import { DataTooltip } from '../components/data-tooltip';
+import { instructorData } from '../data/instructor-data';
 
 const { AverageResistance, AverageCadenceRPM, AverageWatts } = RAW_KEYS;
 
 export const meta = {
-  route: "/average-metrics",
-  title: "Average Metrics",
-  sidebar: "Average Metrics",
+  route: '/average-metrics',
+  title: 'Average Metrics',
+  sidebar: 'Average Metrics',
   component: Page,
   protected: true,
 };
 
-const OPTIONS = [AverageResistance, AverageCadenceRPM, AverageWatts, "All"];
+function getInstructorImage(name: string): string {
+  const match = instructorData.find(instructor => instructor.name === name);
+  return match ? match.image_url : '';
+}
+
+const OPTIONS = [AverageResistance, AverageCadenceRPM, AverageWatts, 'All'];
 
 export function Page({ allWorkoutData, pageMetadata }) {
   const pageWorkoutData = allWorkoutData[TRANSFORMED_KEYS.AverageMetrics];
@@ -36,9 +43,9 @@ export function Page({ allWorkoutData, pageMetadata }) {
           <SelectInput
             size="small"
             value={option}
-            onChange={(e) => setOption(e.target.value)}
+            onChange={e => setOption(e.target.value)}
           >
-            {OPTIONS.map((opt) => (
+            {OPTIONS.map(opt => (
               <option key={opt}>{opt}</option>
             ))}
           </SelectInput>
@@ -52,20 +59,20 @@ export function Page({ allWorkoutData, pageMetadata }) {
             margin={{ top: 24, right: 120, bottom: 70, left: 90 }}
             legends={[
               {
-                anchor: "bottom-right",
-                direction: "column",
+                anchor: 'bottom-right',
+                direction: 'column',
                 justify: false,
                 translateX: 130,
                 translateY: 0,
                 itemWidth: 80,
                 itemHeight: 12,
                 itemsSpacing: 5,
-                itemDirection: "left-to-right",
+                itemDirection: 'left-to-right',
                 symbolSize: 12,
-                symbolShape: "circle",
+                symbolShape: 'circle',
                 effects: [
                   {
-                    on: "hover",
+                    on: 'hover',
                     style: {
                       itemOpacity: 1,
                     },
@@ -73,49 +80,63 @@ export function Page({ allWorkoutData, pageMetadata }) {
                 ],
               },
             ]}
-            data={Object.values(pageWorkoutData).filter(({ id }) => {
-              return id === option || option === "All";
+            data={Object.values(pageWorkoutData).filter(({ id, ...rest }) => {
+              console.log(rest);
+              return id === option || option === 'All';
             })}
             xScale={{
-              type: "time",
-              format: "%Y-%m-%d",
-              precision: "day",
+              type: 'time',
+              format: '%Y-%m-%d',
+              precision: 'day',
             }}
             xFormat="time:%b %d %Y"
             axisLeft={{
-              orient: "left",
+              orient: 'left',
               tickSize: 5,
               tickPadding: 5,
               tickRotation: 0,
-              legend: "Metric",
-              legendPosition: "middle",
+              legend: 'Metric',
+              legendPosition: 'middle',
               legendOffset: -60,
             }}
             axisBottom={{
-              format: "%b %d %Y",
-              orient: "left",
+              format: '%b %d %Y',
+              orient: 'left',
               tickSize: 5,
               tickPadding: 5,
               tickRotation: 45,
-              legendPosition: "middle",
+              legendPosition: 'middle',
               legendOffset: 46,
             }}
             tooltip={({ point }) => {
+              const { data } = point;
+              console.log(data);
+              const img = getInstructorImage(data.instructor);
               return (
-                <div
-                  className="bg-n90 p-1x rc-small"
-                  style={{
-                    border: "1px solid #ccc",
-                  }}
-                >
-                  <small>{point.data.xFormatted}</small>
-                  <p className="mt-1x">
-                    {point.serieId}: <strong>{point.data.yFormatted}</strong>
-                  </p>
-                </div>
+                <DataTooltip title={data.xFormatted}>
+                  <div className="d-flex flx-a-fs">
+                    <img
+                      src={img}
+                      height="60"
+                      width="60"
+                      alt={data.instructor}
+                      style={{
+                        borderRadius: '50%',
+                        border: '2px solid var(--color-n70)',
+                      }}
+                    />
+                    <div className="ml-1x">
+                      <p className="type-caption">{data.title}</p>
+                      <p className="type-caption">{data.instructor}</p>
+                      <p className="mt-1x">
+                        {point.serieId}: <strong>{data.yFormatted}</strong>
+                      </p>
+                    </div>
+                  </div>
+                </DataTooltip>
               );
             }}
-            enableSlices={option === "All" ? "x" : false}
+            enableSlices={option === 'All' ? 'x' : false}
           />
         </div>
       </ContentSection>
