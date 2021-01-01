@@ -1,7 +1,13 @@
 import * as RAW_KEYS from '../data/keys';
 import { RawData } from '../data/types';
 
-type OutputsByRideLength = { [length: string]: { [date: string]: number } };
+type Workout = {
+  output: number;
+  instructor: string;
+  title: string;
+};
+
+type OutputsByRideLength = { [length: string]: { [date: string]: Workout } };
 
 const CYCLING_DISCIPLINE = 'Cycling';
 const INCREMENTS = [5, 10, 15, 20, 30, 45, 60, 75, 90];
@@ -18,9 +24,14 @@ function computeFromRawValues(data: RawData) {
     if (!byRideLength[length]) {
       byRideLength[length] = {};
     }
-    byRideLength[length][workout[RAW_KEYS.WorkoutTimestamp]] =
-      workout[RAW_KEYS.TotalOutput];
+    byRideLength[length][workout[RAW_KEYS.WorkoutTimestamp]] = {
+      output: workout[RAW_KEYS.TotalOutput],
+      instructor: workout[RAW_KEYS.InstructorName],
+      title: workout[RAW_KEYS.Title],
+    };
   }
+
+  console.log(byRideLength);
   return {
     byRideLength,
   };
@@ -32,9 +43,11 @@ function chartDataByRideLength(byRideLength: OutputsByRideLength) {
       ...all,
       [name]: {
         id: name,
-        data: Object.entries(values).map(([timestamp, output]) => ({
+        data: Object.entries(values).map(([timestamp, data]) => ({
           x: timestamp.split(' ')[0],
-          y: output,
+          y: data.output,
+          instructor: data.instructor,
+          title: data.title,
         })),
       },
     }),

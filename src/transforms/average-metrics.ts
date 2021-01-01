@@ -8,6 +8,8 @@ const {
   AverageWatts,
   WorkoutTimestamp,
   FitnessDiscipline,
+  InstructorName,
+  Title,
 } = RAW_KEYS;
 
 type AverageCyclingMetrics = {
@@ -15,6 +17,8 @@ type AverageCyclingMetrics = {
     [AverageCadenceRPM]: number;
     [AverageResistance]: string;
     [AverageWatts]: number;
+    [InstructorName]: string;
+    [Title]: string;
   };
 };
 
@@ -28,6 +32,8 @@ function computeFromRawValues(data: RawData) {
       [AverageCadenceRPM]: workout[AverageCadenceRPM],
       [AverageResistance]: workout[AverageResistance],
       [AverageWatts]: workout[AverageWatts],
+      [InstructorName]: workout[InstructorName],
+      [Title]: workout[Title],
     };
   }
   return {
@@ -41,6 +47,8 @@ function chartDataByMetric(workouts: AverageCyclingMetrics) {
       data: Object.entries(workouts).map(([timestamp, val]) => ({
         x: timestamp.split(' ')[0],
         y: val[AverageCadenceRPM],
+        instructor: val[InstructorName],
+        title: val[Title],
       })),
     },
     {
@@ -48,6 +56,8 @@ function chartDataByMetric(workouts: AverageCyclingMetrics) {
       data: Object.entries(workouts).map(([timestamp, val]) => ({
         x: timestamp.split(' ')[0],
         y: val[AverageResistance],
+        instructor: val[InstructorName],
+        title: val[Title],
       })),
     },
     {
@@ -55,6 +65,8 @@ function chartDataByMetric(workouts: AverageCyclingMetrics) {
       data: Object.entries(workouts).map(([timestamp, val]) => ({
         x: timestamp.split(' ')[0],
         y: val[AverageWatts],
+        instructor: val[InstructorName],
+        title: val[Title],
       })),
     },
   ];
