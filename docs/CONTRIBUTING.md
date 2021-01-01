@@ -30,3 +30,7 @@ The result of the transformer should be (at least) snapshot tested in an adjacen
 - [ ] Create a test file in `src/transforms/expample.test.js`.
 - [ ] Import and export the transformer function in `src/transforms/index.js`
 - [ ] Add the reference name as a constant to `TRANSFORMED_KEYS` in `src/constants.js`
+
+## Codegen
+
+Soon: `yarn hygen generator with-prompt new` (via `npx`)

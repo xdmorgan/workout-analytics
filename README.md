@@ -1,8 +1,6 @@
 # 📈 Workout Analytics
 
-A React application to visualize workout data.
-
-**URL**: https://workout-analytics.netlify.app
+A React application to visualize workout data. Try it at https://workout-analytics.netlify.app.
 
 ## 🔥 Status
 
@@ -10,13 +8,28 @@ A React application to visualize workout data.
 
 ## 🏃‍♂️ Scripts
 
-- `yarn` : Install dependencies
-- `yarn start` : Start [create-react-app server](http://localhost:3000)
-- `yarn test` : Run jest tests
-- `yarn build` : Create production ready build
-- `yarn serve` : Start a [local server](http://localhost:3000) to preview the production build
+### Run locally
+
+1. `yarn` : Install dependencies
+1. `yarn start` : Start [create-react-app server](http://localhost:3000)
+
+### Build & deploy
+
+After running the project locally (see above), the following steps will product a deployment-ready build.
+
+1. `yarn test` : Run Jest tests
+1. `yarn build` : Create a production ready build
+1. `yarn serve` : Start a [local server](http://localhost:3000) to preview the production build
+
+### Contributing
+
+For more information, [see `docs/`](./docs/CONTRIBUTING.md)
+
 - `yarn skeletor` : Generate Skeletor styles
 - `yarn typebeast` : Generate Typebeast styles
+- `yarn codegen:page`: Follow prompts to create a new page
+- `yarn codegen:transformer`: Follow prompts to create a new transformer
+- `yarn run`: Show scripts defined in [`./package.json`](./package.json)
 
 ## 🎨 Built with
 
