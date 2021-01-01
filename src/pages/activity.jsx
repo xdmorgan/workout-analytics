@@ -114,28 +114,25 @@ function ActivityCalendarSection({ years, entries }) {
               itemDirection: 'right-to-left',
             },
           ]}
-          tooltip={data => {
-            console.log(data);
-            return (
-              <DataTooltip title={data.day}>
-                <div className="d-flex flx-a-c">
-                  <span
-                    style={{
-                      display: 'block',
-                      backgroundColor: data.color ? data.color : '#fff',
-                      height: 15,
-                      width: 15,
-                      marginRight: 2,
-                    }}
-                  />
-                  Calories:{' '}
-                  <strong className="ml-05x">
-                    {data.value ? data.value : '0'}
-                  </strong>
-                </div>
-              </DataTooltip>
-            );
-          }}
+          tooltip={data => (
+            <DataTooltip title={data.day}>
+              <div className="d-flex flx-a-c">
+                <span
+                  style={{
+                    display: 'block',
+                    backgroundColor: data.color ? data.color : '#fff',
+                    height: 15,
+                    width: 15,
+                    marginRight: 2,
+                  }}
+                />
+                Calories:{' '}
+                <strong className="ml-05x">
+                  {data.value ? data.value : '0'}
+                </strong>
+              </div>
+            </DataTooltip>
+          )}
         />
       </div>
     </ContentSection>

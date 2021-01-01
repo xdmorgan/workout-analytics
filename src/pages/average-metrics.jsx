@@ -80,10 +80,9 @@ export function Page({ allWorkoutData, pageMetadata }) {
                 ],
               },
             ]}
-            data={Object.values(pageWorkoutData).filter(({ id, ...rest }) => {
-              console.log(rest);
-              return id === option || option === 'All';
-            })}
+            data={Object.values(pageWorkoutData).filter(
+              ({ id }) => id === option || option === 'All'
+            )}
             xScale={{
               type: 'time',
               format: '%Y-%m-%d',
@@ -110,7 +109,6 @@ export function Page({ allWorkoutData, pageMetadata }) {
             }}
             tooltip={({ point }) => {
               const { data } = point;
-              console.log(data);
               const img = getInstructorImage(data.instructor);
               return (
                 <DataTooltip title={data.xFormatted}>

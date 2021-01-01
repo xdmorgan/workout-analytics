@@ -66,7 +66,6 @@ function ResponsiveLineSection({ type, data, defaultSelected }) {
     toggleReducer,
     defaultSelected
   );
-  console.log({ data });
   return (
     <ContentSection>
       <h2 className="type-h2">{type}</h2>
