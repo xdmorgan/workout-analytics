@@ -38,7 +38,14 @@
     "eject": "react-scripts eject",
     "skeletor": "skeletor --output public/skeletor --no-sourcemap",
     "typebeast": "typebeast --output public/typebeast --no-sourcemap",
-    "serve": "serve -s build -p 3000"
+    "serve": "serve -s build -p 3000",
+    "format:check": "prettier --check \"{src,docs}/**/*.{md,js,ts,tsx,jsx}\"",
+    "format:fix": "prettier --write \"{src,docs}/**/*.{md,js,ts,tsx,jsx}\"",
+    "generate": "npx hygen",
+    "postgenerate": "yarn format:fix && yarn test -u --watchAll=false",
+    "generate:transformer": "yarn generate transformer new",
+    "generate:page-app": "yarn generate page app",
+    "generate:page-other": "yarn generate page other"
   },
   "eslintConfig": {
     "extends": [

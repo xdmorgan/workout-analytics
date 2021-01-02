@@ -4,12 +4,12 @@ import { WorkoutDataProvider } from './contexts/workout-data-provider';
 import { PageMetadataConfig, PageMetadataProp } from './pages/types';
 
 // strip self-component reference and replace with pagination, if needed
-export const convertMetaConfigToProp = ({
-  component,
-  ...rest
-}: PageMetadataConfig): PageMetadataProp => ({
+export const convertMetaConfigToProp = (
+  { component, ...rest }: PageMetadataConfig,
+  { pagination = { previous: null, next: null } } = {}
+): PageMetadataProp => ({
   ...rest,
-  pagination: { previous: null, next: null },
+  pagination,
 });
 
 /**

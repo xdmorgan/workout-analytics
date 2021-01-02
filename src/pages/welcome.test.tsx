@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { MockedEnv } from '../test-utils';
+import { MockedEnv, convertMetaConfigToProp } from '../test-utils';
 import { meta } from './welcome';
 
 const LABELS = {
@@ -18,7 +18,7 @@ describe('Renders without crashing', () => {
   test('Welcomes new users with "start here" message', () => {
     const { getByText } = render(
       <MockedEnv>
-        <meta.component />
+        <meta.component pageMetadata={convertMetaConfigToProp(meta)} />
       </MockedEnv>
     );
     expect(getByText(LABELS.flowStartHeading)).toBeInTheDocument();
@@ -29,7 +29,7 @@ describe('Demo flow', () => {
   test('Click through the demo data flow', () => {
     const { getByText } = render(
       <MockedEnv>
-        <meta.component />
+        <meta.component pageMetadata={convertMetaConfigToProp(meta)} />
       </MockedEnv>
     );
     // start with welcome
@@ -52,7 +52,7 @@ describe('Upload flow', () => {
   test('Click through the upload data flow but cancel at the uploader?', () => {
     const { getByText } = render(
       <MockedEnv>
-        <meta.component />
+        <meta.component pageMetadata={convertMetaConfigToProp(meta)} />
       </MockedEnv>
     );
     // start with welcome

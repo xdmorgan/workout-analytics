@@ -1,8 +1,8 @@
-import transformer from "./top-instructors";
-import TEST_DATA from "../data/workouts.json";
+import transformer from './top-instructors';
+import TEST_DATA from '../data/workouts';
 
-describe("transform()", () => {
-  test("Calculate number of classes by instructor name", async () => {
+describe('transform()', () => {
+  test('Calculate number of classes by instructor name', async () => {
     const transformed = transformer({ data: TEST_DATA });
     expect(transformed).toMatchInlineSnapshot(`
       Object {

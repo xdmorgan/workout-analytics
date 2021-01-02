@@ -1,10 +1,10 @@
-import React from "react";
-import { ContentHeader } from "../components/content-header";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { ContentHeader } from '../components/content-header';
+import { Link } from 'react-router-dom';
 
 export const meta = {
-  route: "/styleguide",
-  title: "Styleguide",
+  route: '/styleguide',
+  title: 'Styleguide',
   sidebar: null,
   component: Page,
   protected: false,

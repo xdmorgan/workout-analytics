@@ -1,11 +1,11 @@
-import React from "react";
-import { Button } from "./button";
+import React from 'react';
+import { Button } from './button';
 
 export function Pagination({
-  previousRoute,
-  previousLabel,
-  nextRoute,
-  nextLabel,
+  previousRoute = null,
+  previousLabel = null,
+  nextRoute = null,
+  nextLabel = null,
 }) {
   return (
     <nav className="container py-4x md:py-6x d-flex flx-a-c flx-j-sb">

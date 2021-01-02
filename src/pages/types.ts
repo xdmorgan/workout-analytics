@@ -1,20 +1,20 @@
 import { Transformed } from '../transforms';
 
-export type PageMetadataProp = {
+export interface PageMetadataProp {
   route: string;
   title: string;
-  sidebar: string;
+  sidebar: null | string;
   protected: boolean;
   pagination?: {
     previous: null | string;
     next: null | string;
   };
-};
+}
 
-export type PageProps = {
+export interface PageProps {
   allWorkoutData?: Transformed;
-  pageMetadata?: PageMetadataProp;
-};
+  pageMetadata: PageMetadataProp;
+}
 
 export type PageMetadataConfig = {
   route: string;

@@ -6,6 +6,7 @@ import activityCalendar from './activity-calendar';
 import topInstructors from './top-instructors';
 import cyclingOutputs from './cycling-outputs';
 import averageMetrics from './average-metrics';
+// CODEGEN -- INJECT_TRANSFORMER_NEW_IMPORT
 
 /**
  * Constants & types.
@@ -17,8 +18,8 @@ import averageMetrics from './average-metrics';
  * which can be done immediately after converting the user's workout data csv to json. That way,
  * any expensive calculations are done once and ready for immediate use while navigating the app.
  *
- * There's probably a better way to do this but iono :shrug: This is gonna be a hassle until new
- * transformer creation could be automated and these defined with an AST
+ * Do not move or delete the "// CODEGEN -- ..." comments, they're used by the Hygen `codegen:x`
+ * scripts. See README/docs for more info.
  */
 const all = {
   [keys.TotalWorkouts]: totalWorkouts,
@@ -26,6 +27,7 @@ const all = {
   [keys.TopInstructors]: topInstructors,
   [keys.CyclingOutputs]: cyclingOutputs,
   [keys.AverageMetrics]: averageMetrics,
+  // CODEGEN -- INJECT_TRANSFORMER_NEW_FUNCTION
 };
 
 // all transform functions
@@ -35,6 +37,7 @@ export interface Transformers {
   [keys.TopInstructors]?: typeof topInstructors;
   [keys.CyclingOutputs]?: typeof cyclingOutputs;
   [keys.AverageMetrics]?: typeof averageMetrics;
+  // CODEGEN -- INJECT_TRANSFORMER_NEW_FUNCTION_TYPE
 }
 
 // all transform functions
@@ -44,6 +47,7 @@ export interface Transformed {
   [keys.TopInstructors]?: ReturnType<typeof topInstructors>;
   [keys.CyclingOutputs]?: ReturnType<typeof cyclingOutputs>;
   [keys.AverageMetrics]?: ReturnType<typeof averageMetrics>;
+  // CODEGEN -- INJECT_TRANSFORMER_NEW_RESULT_TYPE
 }
 
 export default all;

@@ -1,6 +1,6 @@
-import React from "react";
-import cx from "classnames";
-import styles from "./select-input.module.scss";
+import React from 'react';
+import cx from 'classnames';
+import styles from './select-input.module.scss';
 
 export function SelectInput({
   className = undefined,

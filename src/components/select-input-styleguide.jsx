@@ -1,12 +1,12 @@
-import React from "react";
-import { SelectInput } from "./select-input";
+import React from 'react';
+import { SelectInput } from './select-input';
 import {
   StyleguideGrid,
   StyleguideLabel,
   StyleguideSection,
-} from "./styleguide-elements";
+} from './styleguide-elements';
 
-const OPTIONS = ["One", "Two", "Three", "Four", "One hundred"];
+const OPTIONS = ['One', 'Two', 'Three', 'Four', 'One hundred'];
 
 export function SelectInputStyleguide() {
   const [option, setOption] = React.useState(OPTIONS[0]);
@@ -20,9 +20,9 @@ export function SelectInputStyleguide() {
           <StyleguideGrid.Item>
             <SelectInput
               value={option}
-              onChange={(e) => setOption(e.target.value)}
+              onChange={e => setOption(e.target.value)}
             >
-              {OPTIONS.map((opt) => (
+              {OPTIONS.map(opt => (
                 <option key={opt}>{opt}</option>
               ))}
             </SelectInput>
@@ -31,10 +31,10 @@ export function SelectInputStyleguide() {
           <StyleguideGrid.Item>
             <SelectInput
               value={option}
-              onChange={(e) => setOption(e.target.value)}
+              onChange={e => setOption(e.target.value)}
               disabled
             >
-              {OPTIONS.map((opt) => (
+              {OPTIONS.map(opt => (
                 <option key={opt}>{opt}</option>
               ))}
             </SelectInput>
@@ -48,9 +48,9 @@ export function SelectInputStyleguide() {
           <StyleguideGrid.Item>
             <SelectInput
               value={option}
-              onChange={(e) => setOption(e.target.value)}
+              onChange={e => setOption(e.target.value)}
             >
-              {OPTIONS.map((opt) => (
+              {OPTIONS.map(opt => (
                 <option key={opt}>{opt}</option>
               ))}
             </SelectInput>
@@ -59,10 +59,10 @@ export function SelectInputStyleguide() {
           <StyleguideGrid.Item>
             <SelectInput
               value={option}
-              onChange={(e) => setOption(e.target.value)}
+              onChange={e => setOption(e.target.value)}
               disabled
             >
-              {OPTIONS.map((opt) => (
+              {OPTIONS.map(opt => (
                 <option key={opt}>{opt}</option>
               ))}
             </SelectInput>
@@ -77,9 +77,9 @@ export function SelectInputStyleguide() {
             <SelectInput
               size="small"
               value={option}
-              onChange={(e) => setOption(e.target.value)}
+              onChange={e => setOption(e.target.value)}
             >
-              {OPTIONS.map((opt) => (
+              {OPTIONS.map(opt => (
                 <option key={opt}>{opt}</option>
               ))}
             </SelectInput>
@@ -88,9 +88,9 @@ export function SelectInputStyleguide() {
           <StyleguideGrid.Item>
             <SelectInput
               value={option}
-              onChange={(e) => setOption(e.target.value)}
+              onChange={e => setOption(e.target.value)}
             >
-              {OPTIONS.map((opt) => (
+              {OPTIONS.map(opt => (
                 <option key={opt}>{opt}</option>
               ))}
             </SelectInput>
@@ -100,9 +100,9 @@ export function SelectInputStyleguide() {
             <SelectInput
               size="large"
               value={option}
-              onChange={(e) => setOption(e.target.value)}
+              onChange={e => setOption(e.target.value)}
             >
-              {OPTIONS.map((opt) => (
+              {OPTIONS.map(opt => (
                 <option key={opt}>{opt}</option>
               ))}
             </SelectInput>

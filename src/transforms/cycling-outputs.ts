@@ -31,7 +31,6 @@ function computeFromRawValues(data: RawData) {
     };
   }
 
-  console.log(byRideLength);
   return {
     byRideLength,
   };

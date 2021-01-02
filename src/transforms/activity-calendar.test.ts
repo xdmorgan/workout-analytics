@@ -1,8 +1,8 @@
-import transformer from "./activity-calendar";
-import TEST_DATA from "../data/workouts.json";
+import transformer from './activity-calendar';
+import TEST_DATA from '../data/workouts';
 
-describe("transform()", () => {
-  test("Convert raw data to calendar friendly format", async () => {
+describe('transform()', () => {
+  test('Convert raw data to calendar friendly format', async () => {
     const transformed = transformer({ data: TEST_DATA });
     expect(transformed).toMatchInlineSnapshot(`
       Object {
