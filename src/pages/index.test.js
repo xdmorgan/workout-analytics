@@ -43,24 +43,13 @@ describe('Page data config', () => {
         "/average-metrics": Object {
           "component": [Function],
           "pagination": Object {
-            "next": "/hello-daniel",
+            "next": null,
             "previous": "/outputs",
           },
           "protected": true,
           "route": "/average-metrics",
           "sidebar": "Average Metrics",
           "title": "Average Metrics",
-        },
-        "/hello-daniel": Object {
-          "component": [Function],
-          "pagination": Object {
-            "next": null,
-            "previous": "/average-metrics",
-          },
-          "protected": true,
-          "route": "/hello-daniel",
-          "sidebar": "Hello Daniel",
-          "title": "Hello Daniel",
         },
         "/instructors": Object {
           "component": [Function],
