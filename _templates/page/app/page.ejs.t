@@ -13,6 +13,7 @@ import { Pagination } from '../components/pagination';
 function Page({ allWorkoutData, pageMetadata }: PageProps) {
   const totalWorkouts = allWorkoutData?.[TRANSFORMED_KEYS.TotalWorkouts];
   console.log({ pageMetadata, totalWorkouts })
+  
   return (
     <>
       <ContentHeader

@@ -3,7 +3,6 @@ to: src/pages/<%=name%>.test.tsx
 ---
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import data from '../data/workouts';
 import { meta } from './<%=name%>';
 import { MockedEnv, convertMetaConfigToProp } from '../test-utils';
 

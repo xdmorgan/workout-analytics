@@ -10,19 +10,27 @@ import { ContentHeader } from '../components/content-header';
 import { ContentSection } from '../components/content-section';
 import { Pagination } from '../components/pagination';
 
-function Page({ allWorkoutData, pageMetadata }: PageProps) {
-  const totalWorkouts = allWorkoutData?.[TRANSFORMED_KEYS.TotalWorkouts];
-  console.log({ pageMetadata, totalWorkouts })
+function Page({ pageMetadata }: PageProps) {
+  console.log({ pageMetadata })
+  
   return (
     <>
-      <ContentHeader
-        previousRoute={pageMetadata.pagination?.previous}
-        nextRoute={pageMetadata.pagination?.next}
-      >
+      <ContentHeader>
         {pageMetadata.title}
       </ContentHeader>
       <ContentSection className="wysiwyg child-my-0">
-        <h2>First Section</h2>
+        <p>
+          Incidunt reiciendis et, nesciunt quis quia eum vel inventore est 
+          debitis ab, molestias ex, dolore repellendus? Beatae eos minus 
+          laudantium placeat eligendi?
+        </p>
+        <h2>Something</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
+          reiciendis et, nesciunt quis quia eum vel inventore est debitis ab,
+          molestias ex, dolore repellendus?
+        </p>
+        <h2>Another thing</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
           reiciendis et, nesciunt quis quia eum vel inventore est debitis ab,
@@ -30,24 +38,6 @@ function Page({ allWorkoutData, pageMetadata }: PageProps) {
           placeat eligendi?
         </p>
       </ContentSection>
-      <ContentSection>
-        <div className="wysiwyg child-my-0">
-          <h2>Second Section</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
-            reiciendis et, nesciunt quis quia eum vel inventore est debitis ab,
-            molestias ex, dolore repellendus? Beatae eos minus laudantium
-            placeat eligendi?
-          </p>
-        </div>
-        <pre>
-          <code>{JSON.stringify(totalWorkouts, null, 2)}</code>
-        </pre>
-      </ContentSection>
-      <Pagination
-        previousRoute={pageMetadata.pagination?.previous}
-        nextRoute={pageMetadata.pagination?.next}
-      />
     </>
   );
 }
