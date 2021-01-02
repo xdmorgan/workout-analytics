@@ -41,7 +41,7 @@ function Page({ allWorkoutData, pageMetadata }: PageProps) {
           </p>
         </div>
         <pre>
-          <code>{JSON.stringify(allWorkoutData, null, 2)}</code>
+          <code>{JSON.stringify(totalWorkouts, null, 2)}</code>
         </pre>
       </ContentSection>
       <Pagination
