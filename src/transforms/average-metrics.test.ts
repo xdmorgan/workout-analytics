@@ -1,5 +1,5 @@
 import transformer from './average-metrics';
-import TEST_DATA from '../data/workouts.json';
+import TEST_DATA from '../data/workouts';
 
 describe('transform()', () => {
   test('Convert raw data to calculated totals', async () => {

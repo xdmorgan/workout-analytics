@@ -1,5 +1,5 @@
 import transformer from './cycling-outputs';
-import TEST_DATA from '../data/workouts.json';
+import TEST_DATA from '../data/workouts';
 
 describe('transform()', () => {
   test('Calculate average output trends over time', async () => {

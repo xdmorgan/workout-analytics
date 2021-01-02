@@ -38,7 +38,10 @@
     "eject": "react-scripts eject",
     "skeletor": "skeletor --output public/skeletor --no-sourcemap",
     "typebeast": "typebeast --output public/typebeast --no-sourcemap",
-    "serve": "serve -s build -p 3000"
+    "serve": "serve -s build -p 3000",
+    "codegen": "npx hygen",
+    "postcodegen": "yarn test -u --watchAll=false",
+    "codegen:transformer": "yarn run codegen transformer new"
   },
   "eslintConfig": {
     "extends": [

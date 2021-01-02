@@ -1,11 +1,11 @@
-import transformer from "./total-workouts";
-import TEST_DATA from "../data/workouts.json";
+import transformer from './total-workouts';
+import TEST_DATA from '../data/workouts';
 
 // TODO: more Jest config later?
 // https://developer-log.netlify.app/testing-react-components-with-jest-enzyme-nextjs/
 // https://jestjs.io/docs/en/getting-started
-describe("transform()", () => {
-  test("Convert raw data to calculated totals", async () => {
+describe('transform()', () => {
+  test('Convert raw data to calculated totals', async () => {
     const totals = transformer({ data: TEST_DATA });
     expect(totals).toMatchInlineSnapshot(`
       Object {
