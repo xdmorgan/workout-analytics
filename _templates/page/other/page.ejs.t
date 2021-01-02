@@ -42,7 +42,7 @@ function Page({ pageMetadata }: PageProps) {
 export const meta: PageMetadataConfig = {
   route: '/<%=name%>',
   title: '<%= h.changeCase.title(name) %>',
-  sidebar: '<%= h.changeCase.title(name) %>',
+  sidebar: null,
   component: Page,
-  protected: true,
+  protected: false,
 };

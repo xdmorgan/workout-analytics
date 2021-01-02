@@ -3,7 +3,7 @@ import { Transformed } from '../transforms';
 export interface PageMetadataProp {
   route: string;
   title: string;
-  sidebar: string;
+  sidebar: null | string;
   protected: boolean;
   pagination?: {
     previous: null | string;

@@ -3,9 +3,9 @@ import cx from 'classnames';
 import { Button } from '../components/button';
 
 export function ContentHeader({
-  previousRoute,
-  nextRoute,
   children,
+  previousRoute = undefined,
+  nextRoute = undefined,
   className = undefined,
   ...props
 }) {
