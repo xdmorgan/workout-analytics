@@ -39,11 +39,11 @@
     "skeletor": "skeletor --output public/skeletor --no-sourcemap",
     "typebeast": "typebeast --output public/typebeast --no-sourcemap",
     "serve": "serve -s build -p 3000",
-    "codegen": "npx hygen",
-    "postcodegen": "yarn format:write && yarn test -u --watchAll=false",
-    "codegen:transformer": "yarn codegen transformer new",
     "format:check": "prettier --check \"{src,docs}/**/*.{md,js,ts,tsx,jsx}\"",
-    "format:fix": "prettier --write \"{src,docs}/**/*.{md,js,ts,tsx,jsx}\""
+    "format:fix": "prettier --write \"{src,docs}/**/*.{md,js,ts,tsx,jsx}\"",
+    "codegen": "npx hygen",
+    "postcodegen": "yarn format:fix && yarn test -u --watchAll=false",
+    "codegen:transformer": "yarn codegen transformer new"
   },
   "eslintConfig": {
     "extends": [
