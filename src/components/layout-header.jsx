@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import cx from "classnames";
-import { Button } from "./button";
-import styles from "./layout-header.module.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import cx from 'classnames';
+import { Button } from './button';
+import styles from './layout-header.module.scss';
 
 export function LayoutHeader() {
   const [menuVisible, setMenuVisible] = React.useState(false);
@@ -10,7 +10,7 @@ export function LayoutHeader() {
   return (
     <header className="bg-g10 c-n90">
       <div
-        className={cx(styles.container, "container d-flex flx-a-c flx-j-sb")}
+        className={cx(styles.container, 'container d-flex flx-a-c flx-j-sb')}
       >
         <Link className="is-stealth" to="/">
           <p className="type-h4">Workout Analytics</p>

@@ -40,8 +40,10 @@
     "typebeast": "typebeast --output public/typebeast --no-sourcemap",
     "serve": "serve -s build -p 3000",
     "codegen": "npx hygen",
-    "postcodegen": "yarn test -u --watchAll=false",
-    "codegen:transformer": "yarn run codegen transformer new"
+    "postcodegen": "yarn format:write && yarn test -u --watchAll=false",
+    "codegen:transformer": "yarn codegen transformer new",
+    "format:check": "prettier --check \"{src,docs}/**/*.{md,js,ts,tsx,jsx}\"",
+    "format:fix": "prettier --write \"{src,docs}/**/*.{md,js,ts,tsx,jsx}\""
   },
   "eslintConfig": {
     "extends": [

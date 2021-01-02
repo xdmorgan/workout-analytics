@@ -1,13 +1,13 @@
-import React from "react";
-import cx from "classnames";
-import { Button } from "./button";
-import { HorizontalRule } from "./horizontal-rule";
-import styles from "./download-guide-and-info-section.module.scss";
+import React from 'react';
+import cx from 'classnames';
+import { Button } from './button';
+import { HorizontalRule } from './horizontal-rule';
+import styles from './download-guide-and-info-section.module.scss';
 
 export function DownloadGuideAndInfoSection() {
   return (
     <section className="py-6x md:py-8x lg:py-10x">
-      <div className={cx("container", styles.container)}>
+      <div className={cx('container', styles.container)}>
         <div>
           <h2 className="type-h2 mt-0 mb-3x">How do I export my&nbsp;data?</h2>
           <p className="type-para mt-0 mb-4x" style={{ maxWidth: 480 }}>

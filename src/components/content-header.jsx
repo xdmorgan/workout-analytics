@@ -1,6 +1,6 @@
-import React from "react";
-import cx from "classnames";
-import { Button } from "../components/button";
+import React from 'react';
+import cx from 'classnames';
+import { Button } from '../components/button';
 
 export function ContentHeader({
   previousRoute,
@@ -13,7 +13,7 @@ export function ContentHeader({
     <header
       {...props}
       className={cx(
-        "container d-flex flx-a-c flx-j-sb py-3x md:py-4x",
+        'container d-flex flx-a-c flx-j-sb py-3x md:py-4x',
         className
       )}
     >

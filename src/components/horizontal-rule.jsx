@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export function HorizontalRule(props) {
   return (
@@ -6,12 +6,12 @@ export function HorizontalRule(props) {
       <hr
         style={{
           height: 1,
-          width: "100%",
-          background: "currentColor",
+          width: '100%',
+          background: 'currentColor',
           margin: 0,
           padding: 0,
-          outline: "none",
-          border: "none",
+          outline: 'none',
+          border: 'none',
         }}
       />
     </div>

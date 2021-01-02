@@ -1,14 +1,14 @@
-import React from "react";
-import { ResponsiveBar } from "@nivo/bar";
-import * as TRANSFORMED_KEYS from "../transforms/keys";
-import { ContentHeader } from "../components/content-header";
-import { ContentSection } from "../components/content-section";
-import { Pagination } from "../components/pagination";
+import React from 'react';
+import { ResponsiveBar } from '@nivo/bar';
+import * as TRANSFORMED_KEYS from '../transforms/keys';
+import { ContentHeader } from '../components/content-header';
+import { ContentSection } from '../components/content-section';
+import { Pagination } from '../components/pagination';
 
 export const meta = {
-  route: "/instructors",
-  title: "Favorite Instructors",
-  sidebar: "Favorite Instructors",
+  route: '/instructors',
+  title: 'Favorite Instructors',
+  sidebar: 'Favorite Instructors',
   component: Page,
   protected: true,
 };
@@ -47,7 +47,7 @@ function BarChartSection({ type, data }) {
           data={data}
           margin={{ top: 50, right: 0, bottom: 100, left: 32 }}
           padding={0.3}
-          borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
+          borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
           axisTop={null}
           axisRight={null}
           // colors={["var(--color-r40)"]}

@@ -1,15 +1,15 @@
-import React from "react";
-import { ContentHeader } from "../components/content-header";
-import { Button } from "../components/button";
+import React from 'react';
+import { ContentHeader } from '../components/content-header';
+import { Button } from '../components/button';
 import {
   StyleguideGrid,
   StyleguideLabel,
   StyleguideSection,
-} from "../components/styleguide-elements";
+} from '../components/styleguide-elements';
 
 export const meta = {
-  route: "/styleguide/buttons",
-  title: "Buttons",
+  route: '/styleguide/buttons',
+  title: 'Buttons',
   sidebar: null,
   component: Page,
   protected: false,

@@ -1,8 +1,8 @@
-import React, { useCallback } from "react";
-import { useDropzone } from "react-dropzone";
-import csv from "csvtojson";
-import cx from "classnames";
-import { Button } from "./button";
+import React, { useCallback } from 'react';
+import { useDropzone } from 'react-dropzone';
+import csv from 'csvtojson';
+import cx from 'classnames';
+import { Button } from './button';
 
 async function convertCSVToJSON(str) {
   const json = await csv({ checkType: true, flatKeys: true }).fromString(str);
@@ -22,8 +22,8 @@ export function FileLoader({
   accept,
 }) {
   const onDrop = useCallback(
-    (acceptedFiles) => {
-      acceptedFiles.forEach((file) => {
+    acceptedFiles => {
+      acceptedFiles.forEach(file => {
         const reader = new FileReader();
         reader.onabort = onAbort;
         reader.onerror = onError;
@@ -42,21 +42,21 @@ export function FileLoader({
   return (
     <div
       className={cx(
-        "d-flex flx-a-c flx-j-c flx-d-c h-fill rc-normal",
-        isDragActive ? "bg-g80" : "bg-g90",
-        isDragActive ? "c-g20" : "c-n10"
+        'd-flex flx-a-c flx-j-c flx-d-c h-fill rc-normal',
+        isDragActive ? 'bg-g80' : 'bg-g90',
+        isDragActive ? 'c-g20' : 'c-n10'
       )}
       style={{
-        position: "relative",
+        position: 'relative',
         borderWidth: 2,
-        borderStyle: isDragActive ? "solid" : "dashed",
-        borderColor: isDragActive ? "var(--color-g50)" : "var(--color-g60)",
+        borderStyle: isDragActive ? 'solid' : 'dashed',
+        borderColor: isDragActive ? 'var(--color-g50)' : 'var(--color-g60)',
         minHeight: 180,
       }}
     >
       <div
         {...getRootProps({
-          className: "d-flex w-fill flx-a-c flx-d-c flx-g-1 flx-j-c p-4x",
+          className: 'd-flex w-fill flx-a-c flx-d-c flx-g-1 flx-j-c p-4x',
         })}
       >
         <input {...getInputProps({ accept })} />
@@ -76,9 +76,9 @@ export function FileLoader({
         size="small"
         appearance="ghost"
         style={{
-          position: "absolute",
-          top: "var(--space-1x)",
-          right: "var(--space-1x)",
+          position: 'absolute',
+          top: 'var(--space-1x)',
+          right: 'var(--space-1x)',
         }}
       >
         <span className="sr-only">Cancel</span>
