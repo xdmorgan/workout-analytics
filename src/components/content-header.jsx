@@ -6,7 +6,7 @@ export function ContentHeader({
   previousRoute,
   nextRoute,
   children,
-  className,
+  className = undefined,
   ...props
 }) {
   return (

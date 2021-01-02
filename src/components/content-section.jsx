@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function ContentSection({ divider, ...props }) {
+export function ContentSection({ divider = null, ...props }) {
   return (
     <div className="container mb-6x md:mb-8x xl:mb-12x">
       <div {...props}></div>

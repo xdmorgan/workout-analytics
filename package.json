@@ -43,7 +43,8 @@
     "format:fix": "prettier --write \"{src,docs}/**/*.{md,js,ts,tsx,jsx}\"",
     "codegen": "npx hygen",
     "postcodegen": "yarn format:fix && yarn test -u --watchAll=false",
-    "codegen:transformer": "yarn codegen transformer new"
+    "codegen:transformer": "yarn codegen transformer new",
+    "codegen:app-page": "yarn codegen page app"
   },
   "eslintConfig": {
     "extends": [
