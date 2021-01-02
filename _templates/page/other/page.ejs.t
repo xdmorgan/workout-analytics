@@ -3,12 +3,9 @@ to: src/pages/<%=name%>.tsx
 ---
 // types
 import { PageMetadataConfig, PageProps } from './types';
-// constants
-import * as TRANSFORMED_KEYS from '../transforms/keys';
 // components
 import { ContentHeader } from '../components/content-header';
 import { ContentSection } from '../components/content-section';
-import { Pagination } from '../components/pagination';
 
 function Page({ pageMetadata }: PageProps) {
   console.log({ pageMetadata })
