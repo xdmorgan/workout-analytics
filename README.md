@@ -27,8 +27,9 @@ For more information, [see `docs/`](./docs/CONTRIBUTING.md)
 
 - `yarn skeletor` : Generate Skeletor styles
 - `yarn typebeast` : Generate Typebeast styles
-- `yarn codegen:page`: Follow prompts to create a new page
-- `yarn codegen:transformer`: Follow prompts to create a new transformer
+- `yarn generate:transformer`: Follow prompts to create a new transformer
+- `yarn generate:page-app`: Follow prompts to create a protected app page (requires data)
+- `yarn generate:page-other`: Follow prompts to create an unprotected support page
 - `yarn run`: Show scripts defined in [`./package.json`](./package.json)
 
 ## 🎨 Built with
