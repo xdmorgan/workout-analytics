@@ -3,25 +3,27 @@ import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 import { AppLayout } from './layouts/app-layout';
 import pages from './pages';
 import { useProtectedPage } from './hooks/use-protected-page';
-import { usePageMeta } from './hooks/use-page-meta';
 import { Navigation } from './components/global-navigation';
 import { usePageView } from './hooks/use-page-view';
 
 export default function RouterViews() {
   const location = useLocation();
   const { title, route } = pages[location.pathname || '/'];
-  const debug = process.env.NODE_ENV === 'development';
-  usePageView({ title, route, debug });
+  usePageView({ title, route, debug: process.env.NODE_ENV === 'development' });
+
   return (
     <AppLayout navigation={<Navigation />}>
       <Switch>
         {Object.entries(pages).map(([name, meta]) => {
-          const RouteElement = meta.protected ? ProtectedRoute : Route;
+          const RouteElement = meta.protected
+            ? ProtectedRoute
+            : UnprotectedRoute;
           return (
             <RouteElement
               key={meta.route}
               exact
               path={meta.route}
+              meta={meta}
               component={meta.component}
             />
           );
@@ -31,13 +33,20 @@ export default function RouterViews() {
   );
 }
 
-function ProtectedRoute({ component: Component, ...props }) {
+function ProtectedRoute({ component: Component, meta, ...props }) {
   const { nope, goto, transformed } = useProtectedPage();
-  const meta = usePageMeta();
   if (nope || !Component) return <Redirect to={goto} />;
   return (
     <Route {...props}>
       <Component allWorkoutData={transformed} pageMetadata={meta} />
+    </Route>
+  );
+}
+
+function UnprotectedRoute({ component: Component, meta, ...props }) {
+  return (
+    <Route {...props}>
+      <Component pageMetadata={meta} />
     </Route>
   );
 }
