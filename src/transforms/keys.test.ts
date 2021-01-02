@@ -7,6 +7,7 @@ describe('constants', () => {
         "ActivityCalendar": "activity-calendar",
         "AverageMetrics": "average-metrics",
         "CyclingOutputs": "cycling-outputs",
+        "HelloDaniel": "hello-daniel",
         "TopInstructors": "top-instructors",
         "TotalWorkouts": "total-workouts",
       }

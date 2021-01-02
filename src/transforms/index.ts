@@ -6,6 +6,7 @@ import activityCalendar from './activity-calendar';
 import topInstructors from './top-instructors';
 import cyclingOutputs from './cycling-outputs';
 import averageMetrics from './average-metrics';
+import helloDaniel from './hello-daniel';
 // CODEGEN -- INJECT_TRANSFORMER_NEW_IMPORT
 
 /**
@@ -27,6 +28,7 @@ const all = {
   [keys.TopInstructors]: topInstructors,
   [keys.CyclingOutputs]: cyclingOutputs,
   [keys.AverageMetrics]: averageMetrics,
+  [keys.HelloDaniel]: helloDaniel,
   // CODEGEN -- INJECT_TRANSFORMER_NEW_FUNCTION
 };
 
@@ -37,6 +39,7 @@ export interface Transformers {
   [keys.TopInstructors]?: typeof topInstructors;
   [keys.CyclingOutputs]?: typeof cyclingOutputs;
   [keys.AverageMetrics]?: typeof averageMetrics;
+  [keys.HelloDaniel]?: typeof helloDaniel;
   // CODEGEN -- INJECT_TRANSFORMER_NEW_FUNCTION_TYPE
 }
 
@@ -47,6 +50,7 @@ export interface Transformed {
   [keys.TopInstructors]?: ReturnType<typeof topInstructors>;
   [keys.CyclingOutputs]?: ReturnType<typeof cyclingOutputs>;
   [keys.AverageMetrics]?: ReturnType<typeof averageMetrics>;
+  [keys.HelloDaniel]?: ReturnType<typeof helloDaniel>;
   // CODEGEN -- INJECT_TRANSFORMER_NEW_RESULT_TYPE
 }
 
