@@ -14,13 +14,13 @@ export default function RouterViews() {
   return (
     <AppLayout navigation={<Navigation />}>
       <Switch>
-        {Object.entries(pages).map(([name, meta]) => {
+        {Object.entries(pages).map(([key, meta]) => {
           const RouteElement = meta.protected
             ? ProtectedRoute
             : UnprotectedRoute;
           return (
             <RouteElement
-              key={meta.route}
+              key={key}
               exact
               path={meta.route}
               meta={meta}
