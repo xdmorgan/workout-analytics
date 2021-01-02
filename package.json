@@ -44,8 +44,8 @@
     "generate": "npx hygen",
     "postgenerate": "yarn format:fix && yarn test -u --watchAll=false",
     "generate:transformer": "yarn generate transformer new",
-    "generate:app-page": "yarn generate page app",
-    "generate:other-page": "yarn generate page other"
+    "generate:page-app": "yarn generate page app",
+    "generate:page-other": "yarn generate page other"
   },
   "eslintConfig": {
     "extends": [
