@@ -51,6 +51,13 @@ describe('Page data config', () => {
           "sidebar": "Average Metrics",
           "title": "Average Metrics",
         },
+        "/how-to": Object {
+          "component": [Function],
+          "protected": false,
+          "route": "/how-to",
+          "sidebar": null,
+          "title": "How To Export Data",
+        },
         "/instructors": Object {
           "component": [Function],
           "pagination": Object {
