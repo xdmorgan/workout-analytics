@@ -56,7 +56,7 @@ describe('Page data config', () => {
           "protected": false,
           "route": "/how-to",
           "sidebar": null,
-          "title": "How To",
+          "title": "How To Export Data",
         },
         "/instructors": Object {
           "component": [Function],
