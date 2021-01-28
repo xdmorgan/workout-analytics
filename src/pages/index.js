@@ -6,6 +6,7 @@ import { meta as outputs } from './outputs';
 import { meta as averageMetrics } from './average-metrics';
 import { meta as styleguide } from './styleguide';
 import { meta as styleguideButtons } from './styleguide-buttons';
+import { meta as howTo } from './how-to';
 // CODEGEN -- INJECT_PAGE_IMPORT
 
 const appViews = [
@@ -39,6 +40,7 @@ const pagesByRoute = {
   // supporting pages
   [styleguide.route]: styleguide,
   [styleguideButtons.route]: styleguideButtons,
+  [howTo.route]: howTo,
   // CODEGEN -- INJECT_PAGE_OTHER_UNORDERED
 };
 

@@ -84,31 +84,26 @@ export function Navigation() {
                 Contribution Guidelines
               </a>
             </li>
-            <li className="mb-05x">
-              <a className="is-stealth" href="//twitter.com/xdanmorgan">
-                Leave feedback
-              </a>
-            </li>
             {/* <li className="mb-05x">
             <a
               className="is-stealth"
               href="//danny.codes/blog/workout-analytics"
             >
-              Read case study
+              Case study
             </a>
           </li> */}
-            <li className="mb-05x">
+            {/* <li className="mb-05x">
               <a className="is-stealth" href="/styleguide">
-                View styleguide
+                See styleguide
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
         <footer className="child-my-0 c-n40 px-3x pb-3x">
           <p className="type-caption mb-1x">
-            This site has no affiliation with Peloton Interactive in any way.
+            This site is not affiliated with Peloton Interactive in any way.
           </p>
-          <p className="type-caption mt-0">All rights reserved, 2020.</p>
+          <p className="type-caption mt-0">All rights reserved, 2021.</p>
         </footer>
       </div>
     </div>

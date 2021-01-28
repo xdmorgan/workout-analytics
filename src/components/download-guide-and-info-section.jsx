@@ -14,7 +14,9 @@ export function DownloadGuideAndInfoSection() {
             Want a step-by-step guide for downloading your workout data? See
             here for the two-step walkthrough
           </p>
-          <Button appearance="secondary">Show me how</Button>
+          <Button href="/how-to" appearance="secondary">
+            Show me how
+          </Button>
         </div>
         <HorizontalRule className="md:d-none c-n60" />
         <div>
@@ -23,8 +25,8 @@ export function DownloadGuideAndInfoSection() {
             For more information on this project, see the accompanying blog post
             on my personal blog.
           </p>
-          <Button href="//danny.codes" appearance="secondary">
-            Tell me more
+          <Button appearance="secondary" disabled>
+            Coming soon
           </Button>
         </div>
       </div>
