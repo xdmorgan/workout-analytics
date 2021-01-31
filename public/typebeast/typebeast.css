@@ -46,16 +46,28 @@ blockquote, figure, dd { margin-inline-start: 0; margin-inline-end: 0; }
 
 .wysiwyg h1, .wysiwyg h2, .wysiwyg h3, .wysiwyg h4, .wysiwyg h5, .wysiwyg h6, .wysiwyg p, .wysiwyg ul, .wysiwyg ol, .wysiwyg dl { margin-block-start: 1rem; margin-block-end: 1rem; }
 
-.wysiwyg h1, .wysiwyg h2 { margin-block-start: 3rem; }
+.wysiwyg h1, .wysiwyg h2 { margin-block-start: 2rem; }
 
-.wysiwyg h3, .wysiwyg h4, .wysiwyg h5, .wysiwyg h6 { margin-block-start: 2rem; }
+.wysiwyg h3, .wysiwyg h4, .wysiwyg h5, .wysiwyg h6 { margin-block-start: 1.5rem; }
 
-.wysiwyg pre, .wysiwyg iframe, .wysiwyg figure, .wysiwyg > img, .wysiwyg blockquote { margin-block-start: 3rem; margin-block-end: 3rem; }
+.wysiwyg pre, .wysiwyg iframe, .wysiwyg figure, .wysiwyg > img, .wysiwyg blockquote { margin-block-start: 2rem; margin-block-end: 2rem; }
 
 @media screen and (min-width: 768px) { .wysiwyg h1, .wysiwyg h2, .wysiwyg h3, .wysiwyg h4, .wysiwyg h5, .wysiwyg h6, .wysiwyg p, .wysiwyg ul, .wysiwyg ol, .wysiwyg dl { margin-block-start: 1.5rem; margin-block-end: 1.5rem; }
-  .wysiwyg h1, .wysiwyg h2 { margin-block-start: 4rem; }
-  .wysiwyg h3, .wysiwyg h4, .wysiwyg h5, .wysiwyg h6 { margin-block-start: 3rem; }
-  .wysiwyg pre, .wysiwyg iframe, .wysiwyg figure, .wysiwyg > img, .wysiwyg blockquote { margin-block-start: 4rem; margin-block-end: 4rem; } }
+  .wysiwyg h1, .wysiwyg h2 { margin-block-start: 3rem; }
+  .wysiwyg h3, .wysiwyg h4, .wysiwyg h5, .wysiwyg h6 { margin-block-start: 2rem; }
+  .wysiwyg pre, .wysiwyg iframe, .wysiwyg figure, .wysiwyg > img, .wysiwyg blockquote { margin-block-start: 3rem; margin-block-end: 3rem; } }
+
+a, .type-link { color: var(--color-g40); }
+
+a:hover, .type-link:hover { color: var(--color-g30); }
+
+a:active, .type-link:active { color: var(--color-g40); }
+
+code, .type-code { color: var(--color-r30); background-color: var(--color-r80); border-radius: var(--radius-small); font-size: 0.9em; padding: 0.2em 0.3em 0.3em; }
+
+kbd, .type-kbd { position: relative; font-size: 0.9em; color: var(--color-n20); background-color: var(--color-n70); border-radius: var(--radius-small); padding: 0.2em 0.3em 0.3em; border: 1px solid var(--color-n40); box-shadow: 0 0.15em 0 0 var(--color-n40); }
+
+.wysiwyg > img { display: block; max-width: 100%; height: auto; }
 
 a.is-stealth, a.no-underline:not(:hover):not(:active):not(:focus) { text-decoration: none; }
 
