@@ -46,7 +46,7 @@
     margin-block-end: 2rem;
   }
 
-  @include typebeast-break-min(768px) {
+  @include typebeast-break-min(var(--break-md)) {
     // ----------------------------------------
     // breakpoint: large
     // ----------------------------------------
@@ -94,7 +94,7 @@
       margin-block-end: 3rem;
     }
   }
-  @include typebeast-break-min(1280px) {
+  @include typebeast-break-min(var(--break-xl)) {
     // ----------------------------------------
     // breakpoint: xlarge
     // ----------------------------------------

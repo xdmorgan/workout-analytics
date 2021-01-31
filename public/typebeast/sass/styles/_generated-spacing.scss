@@ -24,8 +24,8 @@ dd {
   margin-inline-end: 0;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: var(--break-md)) {
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: var(--break-xl)) {
 }

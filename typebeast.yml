@@ -210,8 +210,8 @@ inline-elements:
   a:
     include: .type-link
     settings:
-      color: 'var(--color-g40)'
-      hover: 'var(--color-g30)'
+      color: 'var(--color-g30)'
+      hover: 'var(--color-g40)'
       active: 'var(--color-g20)'
       visited: 'var(--color-g20)'
   # default styling for <code />
