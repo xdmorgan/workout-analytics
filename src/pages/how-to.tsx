@@ -11,51 +11,48 @@ import imgAllSet from './how-to/all-set.jpg';
 import imgStartOver from './how-to/start-over.jpg';
 
 function Page({ pageMetadata }: PageProps) {
-  console.log({ pageMetadata });
-
   return (
     <>
       <ContentHeader>{pageMetadata.title}</ContentHeader>
       <ContentSection className="wysiwyg child-my-0">
-        <h2>Download</h2>
+        <h2>Downloading your data</h2>
         <p>
-          To download your data as a CSV, log in to{' '}
+          To download your data, log in to{' '}
           <a href="https://members.onepeloton.com/profile/workouts">
             members.onepeloton.com/profile/workouts
           </a>{' '}
           and click <kbd>Download workouts</kbd>
         </p>
         <img src={imgDownload} alt="Peloton member workouts page" />
-        <h2>Add your data</h2>
+        <h2>Using this site</h2>
         <p>
-          Once you've downloaded your data from the Peloton members page, go to{' '}
-          <a href="https://workout-analytics.netlify.app/">
-            workout-analytics.netlify.app
-          </a>{' '}
-          and click <kbd>Analyze my workouts</kbd>
+          Once you've downloaded your data, navigate to{' '}
+          <a href="https://workout-analytics.netlify.app/">the landing page</a>{' '}
+          and select <kbd>Analyze my workouts</kbd>
         </p>
         <img src={imgStartHere} alt="Workout Analytics landing page" />
-        <h2>Choose file</h2>
+        <h2>Adding downloaded file</h2>
         <p>
-          Drag and drop or click <kbd>Select file</kbd> to browse hard drive.
+          Drag and drop your file onto the highlighted area or use the{' '}
+          <kbd>Select file</kbd> button to browse for it on your computer.
         </p>
         <img src={imgAddData} alt="File upload screen" />
         <h2>All set</h2>
         <p>
-          That's it! Your data is analyzed locally on your machine and never
-          leaves it. For your convenience, its saved locally so you can come
-          back to it again later. Click <kbd>Let's go</kbd> to proceed and see
-          your stats.
+          And, just like that, your data is analyzed locally and ready for your
+          review. Lastly, select <kbd>Let's go!</kbd> to see your stats.
+        </p>
+        <p>
+          For your convenience, the analyzed workout data is saved in your
+          browser so you can come back and view it again later.
         </p>
         <img src={imgAllSet} alt="File upload screen" />
-        <h2>Update saved data</h2>
+        <h2>Updating previously saved data</h2>
         <p>
-          If you'd like to update your data to see new stats or clear the data
-          saved to your browser. Go back to{' '}
-          <a href="https://workout-analytics.netlify.app/">
-            workout-analytics.netlify.app
-          </a>{' '}
-          and click <kbd>Start over</kbd>
+          If you'd like to update or clear saved data from a previous session,
+          go back to{' '}
+          <a href="https://workout-analytics.netlify.app/">the landing page</a>{' '}
+          and select <kbd>Start over</kbd>.
         </p>
         <img src={imgStartOver} alt="Start over screen" />
       </ContentSection>
@@ -65,7 +62,7 @@ function Page({ pageMetadata }: PageProps) {
 
 export const meta: PageMetadataConfig = {
   route: '/how-to',
-  title: 'How To Export Data',
+  title: 'How-to Guide',
   sidebar: null,
   component: Page,
   protected: false,
