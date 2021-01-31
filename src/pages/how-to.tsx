@@ -25,11 +25,7 @@ function Page({ pageMetadata }: PageProps) {
           </a>{' '}
           and click <kbd>Download workouts</kbd>
         </p>
-        <img
-          className="w-fill"
-          src={imgDownload}
-          alt="Peloton member workouts page"
-        />
+        <img src={imgDownload} alt="Peloton member workouts page" />
         <h2>Add your data</h2>
         <p>
           Once you've downloaded your data from the Peloton members page, go to{' '}
@@ -38,24 +34,20 @@ function Page({ pageMetadata }: PageProps) {
           </a>{' '}
           and click <kbd>Analyze my workouts</kbd>
         </p>
-        <img
-          className="w-fill"
-          src={imgStartHere}
-          alt="Workout Analytics landing page"
-        />
+        <img src={imgStartHere} alt="Workout Analytics landing page" />
         <h2>Choose file</h2>
         <p>
           Drag and drop or click <kbd>Select file</kbd> to browse hard drive.
         </p>
-        <img className="w-fill" src={imgAddData} alt="File upload screen" />
+        <img src={imgAddData} alt="File upload screen" />
         <h2>All set</h2>
         <p>
           That's it! Your data is analyzed locally on your machine and never
           leaves it. For your convenience, its saved locally so you can come
-          back to it again later. Click <code>Let's go</code> to proceed and see
+          back to it again later. Click <kbd>Let's go</kbd> to proceed and see
           your stats.
         </p>
-        <img className="w-fill" src={imgAllSet} alt="File upload screen" />
+        <img src={imgAllSet} alt="File upload screen" />
         <h2>Update saved data</h2>
         <p>
           If you'd like to update your data to see new stats or clear the data
@@ -65,7 +57,7 @@ function Page({ pageMetadata }: PageProps) {
           </a>{' '}
           and click <kbd>Start over</kbd>
         </p>
-        <img className="w-fill" src={imgStartOver} alt="Start over screen" />
+        <img src={imgStartOver} alt="Start over screen" />
       </ContentSection>
     </>
   );

@@ -3,6 +3,7 @@ format-version: 1
 settings:
   calculate-rem-size: true
   include-utility-classes: true
+  wysiwyg-block-images: true
 
 breakpoints:
   large: 768px
@@ -177,9 +178,9 @@ wysiwyg:
         - h2
       breakpoints:
         default:
-          block-start: 3rem
+          block-start: 2rem
         large:
-          block-start: 4rem
+          block-start: 3rem
     smaller-headings:
       include:
         - h3
@@ -188,9 +189,9 @@ wysiwyg:
         - h6
       breakpoints:
         default:
-          block-start: 2rem
+          block-start: 1.5rem
         large:
-          block-start: 3rem
+          block-start: 2rem
     other-content:
       include:
         - pre
@@ -200,6 +201,31 @@ wysiwyg:
         - blockquote
       breakpoints:
         default:
-          block: 3rem
+          block: 2rem
         large:
-          block: 4rem
+          block: 3rem
+
+inline-elements:
+  # default styling for links (<a />)
+  a:
+    include: .type-link
+    settings:
+      color: 'var(--color-g30)'
+      hover: 'var(--color-g40)'
+      active: 'var(--color-g20)'
+      visited: 'var(--color-g20)'
+  # default styling for <code />
+  code:
+    include: .type-code
+    settings:
+      color: 'var(--color-r30)'
+      background: 'var(--color-r80)'
+      radius: 'var(--radius-small)'
+  # default styling for <kbd />
+  kbd:
+    include: .type-kbd
+    settings:
+      color: 'var(--color-n20)'
+      background: 'var(--color-n70)'
+      border: 'var(--color-n40)'
+      radius: 'var(--radius-small)'
